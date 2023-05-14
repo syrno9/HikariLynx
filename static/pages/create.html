@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<title>Moderation</title>
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+    <img src="/.static/logo.png" class="logoImg" alt="logo">
+  </header>
+
+  <div class="titleWrapper">
+    <fieldset class="titleFieldset">
+      <legend><p>Board Owner's Guide</p></legend>
+
+</p>
+<p>
+Welcome to 8chan.moe! Here you'll find all of the info you'll need to create or maintain a board, including some information on administration, customization and moderation.
+</p>
+<div id="toc_container">
+<ul class="toc_list">
+  <li><a href="#Board_Creation">1. Board Creation</a>
+  <ul>
+    <li><a href="#BC_Requirements">1.1. Requirements</a></li>
+    <li><a href="#BC_Claims">1.2. Claims</a></li>
+    <li><a href="#User">1.3. User Account</a></li>
+  </ul>
+</li>
+<li><a href="#Board_Settings">2. Board Settings</a></li>
+<li><a href="#Board_Moderation">3. Board Moderation</a>
+<ul>
+    <li><a href="#Reports">3.1. Reports</a></li>
+	  <li><a href="#With_JS">3.2. With Javascript</a></li>
+	  <li><a href="#WO_JS">3.3. Without Javascript</a></li>
+    <li><a href="#Other_Mod">3.4. Related Addenda</a></li>
+  </ul>
+</li>
+<li><a href="#Board_Customization">4. Board Customization</a></li>
+<li><a href="#Best_Practices">5. Best/Recommended Practices</a></li>
+<li><a href="#Contact">6. Additional Resources</a></li>
+</div>
+<h2 id="#Board_Creation">1. Board Creation</h2>
+<p>
+Creating a board is as easy as creating a <a href="https://8chan.moe/login.html">User Account</a>, then accessing said account. Note that while a valid, verified email address is not required to create an account, it <i>is</i> required if you want to create or claim a board.
+</p>
+<h3 id="#BC_Requirements">1.1. Requirements</h3>
+There are only two requirements for board ownership on 8chan.moe: a <a href="https://8chan.moe/login.html">User Account</a> with a verified email and following of the <a href="https://8chan.moe/.static/pages/globalRules.html">Global Rules</a>. <b><i>All</i></b> board owners are expected to be familiar with the Global Rules and to enforce them accordingly.
+<h3 id="#Claims">1.2. Claims</h3>
+To place a claim on an existing board with the *Abandoned* tag, simply create a <a href="https://8chan.moe/login.html">User Account</a> and send an email to <a href="mailto:8moeadmin@protonmail.com">the admin team</a>. Make sure to include the board you want and your user account name in that email. Note that, again, your email address must be verified.
+<h3 id="#User">1.3. User Account</h3>
+<p>
+Creation of a User Account is easy. Navigate to the <a href="https://8chan.moe/login.html">User Account</a> section (in the default CSS, it's the lightning bolt to the right of the CSS selection dropdown), choose a username and password, and add an email address. The server will automatically send you a verification email. Once this is done, <a href="Moderation_files\user account.png" target="_blank">this</a> is the screen you'll be greeted with. The options are:
+  <p style="margin-left:3%">
+<b>Moderation Manual</b>: This is a document that explains how moderation works.
+<br>
+<b>E-mail</b>: You can change the email on record if you ever lose access to your email or simply want to use a different address.
+<br>
+<b>Always use role signature</b>: This is how you'll capcode, which is posting with a unique signature beside your name so that posters can verify the role of whoever posted. If you have enabled the Name field on your board, you (and any vols) can also accomplish this by adding #rs in the name field, either after a typed name or in an otherwise-blank field. This is the recommended way to capcode.
+<br>
+<b>Receive e-mail report notifications</b>: This will automatically email the address saved above with every report that your board generates.
+<br>
+<b>Don't show board reports on the global list</b>: This will turn off board reports in your report queue and only show global reports. However, global reports are only visible to global staff, so as a Board Owner this option should not be used.
+<br>
+<b>Password Change</b>: The section should be self-explanatory.
+<br>
+<b>Delete Account</b>: This will delete your User Account, but will not delete any boards you own; instead they will be listed as *Abandoned* in the Board List.
+<br>
+<b>Owned Boards</b>: Any boards you own will be listed here, and clicking them will bring you to the <a href="Moderation_files\board settings crop.png" target="_blank">Board Management</a> page which is explained below.
+<br>
+<b>Volunteered Boards/Latest Postings</b>: This is an <i>extremely</i> valuable tool for moderation purposes. Click Latest Postings and it will show you the latest postings, but only for boards you own or are a volunteer for. Using a tab-reloading addon for your browser of choice on this page is the most efficient method of monitoring your board(s).
+<br>
+<b>Create Board</b>: Board URL is what your board's actual URL would be. In the example posted in this guide, the URL is "Kwyjibo", and so the board shows as "/kwyjibo/", and would be accessible via the link of "https://8chan.moe/kwyjibo/". This cannot be changed later. Board Name is your board's name. Board Description is a description of the board, which will show underneath your board's name on your board's index page, as well as at the top of every new thread. Both the board's name and description can be changed at any time.
+</p>
+<h2 id="#Board_Settings">2. Board Settings</h2>
+  <a href="Moderation_files\board settings crop.png" target="_blank"><img src="Moderation_files\board settings crop thumb.png" align="right" border="2"></a>
+Click <a href="Moderation_files\board settings crop thumb.png">Figure 2</a> to the right to see a screenshot of the Board Management page. This is where you'll change your board's settings. These items will be listed and explained from top to bottom. It is important to note that any item that has a global limit can be set lower (but not higher) on a board-by-board basis by the Board Owner (you!).
+<p style="margin-left:3%">
+<b>Manage banners:</b> See the <a href="#Board_Customization">Board Customization</a> section.
+<br>
+<b>Manage filters:</b> This option is to add or remove wordfilters. See <a href="Moderation_files\filters.png" target="_blank">here</a> for an example of how this works.
+<br>
+<b>Manage rules:</b> Sets up your board's rules in numbered order, that any user can see by clicking your local board rules link (located under the posting window on your Board Index or in any thread). By default, the rules are numbered in the order that you added them, but can be edited or deleted one by one at any time later.
+<br>
+<b>Manage flags:</b> See the <a href="#Board_Customization">Board Customization</a> section.
+<br>
+<b>Trash bin down to Appealed Bans:</b> See the <a href="#Board_Moderation">Board Moderation</a> section.
+<br>
+<b>Board name:</b> The name of your board. Note that changing this will not change your board's URL - that is permanent.
+<br>
+<b>Board description:</b> A brief description that users can see when browsing the <a href="https://8chan.moe/boards.js">Board List</a>.
+<br>
+<b>Anonymous name:</b> The name that all your users will have by default. Leaving this blank will give all users the name of "Anonymous".
+<br>
+<b>Maximum files:</b> How many files a user can upload within a single post. The global limit is 5 files.
+<br>
+<b>Max file size:</b> How large an individual file can be within a post. The global limit is 32MB.
+<br>
+<b>For how many days a non-cyclic thread is allowed to be bumped after its creation:</b> You can set an expiration date on a thread, which can be useful if your board is focused on timed events, such as sports competitions or awards shows. When the expiration date is reached, the board will begin auto-saging. If this field is left empty there is no expiration date.
+<br>
+<b>Reply limit (autosage):</b> How many posts can be made in a single thread before it stops bumping to the top of the catalog with every post. The global limit is 600.
+<br>
+<b>Allowed file types:</b> If you want to allow only certain types of files, add them to this box. By default every type of allowed file on 8chan as a site will be allowed on your board.
+<br>
+<b>Thread limit:</b> Set a maximum amount of concurrent threads running on your board. The global limit is 450.
+<br>
+<b>Hourly thread limit:</b> If more than x threads are created within 60 minutes, thread creation will be locked for 60 minutes. This can be a very useful tool in case of a spam attack targeted at your board specifically.
+<br>
+<b>Enable captcha for new threads if this many threads are created within one hour:</b> If more than x threads are created within 60 minutes, captchas will automatically become required for thread creation. This can also be a useful tool during spam attacks.
+<br>
+<b>Enable captcha for all posts if this many replies are posted within one hour:</b> Same as above, except with posts instead of threads.
+<br>
+<b>Tags:</b> This will add tags to your board which will show up, along with your board name and description, in the <a href="https://8chan.moe/boards.js">Board List</a>.
+<br>
+<b>Board Message:</b> This will show up under your board's name at the top of your Board Index (front page), as well as within any thread on your board.
+<br>
+<b>Location flags:</b> There are three options in this dropdown - Disabled (off), Enabled (posters can choose which flag to post with) and Mandatory (posters do not get a choice).
+<br>
+<b>Captcha mode:</b> There are three options in this dropdown: No captcha (off), Only for threads (posters must solve a captcha before creating a thread) and For all posts, which is... for all posts.
+<br>
+<b>Preferred language:</b> This will automatically translate certain board elements into the chosen language. This feature is in development and currently has limited functionality.
+<br>
+<b>Disable thread-wide IDs:</b> This will show a unique ID string after a poster's name. This ID is specific only on a thread-wise basis; the same poster will have a different ID in every different thread he posts in. Only Torposters will have a consistent ID (000000).
+<br>
+<b>Require at least one file for new threads:</b> Force a poster to include at least one file when creating a new thread.
+<br>
+<b>Textboard:</b> Disable <i>all</i> filetypes from being posted on your board. This can be useful to get a handle on certain kinds of spam.
+<br>
+<b>Block users from deleting their posts:</b> By default, users can choose to delete their own posts for any reason. This will disable that functionality so that only volunteers can do so.
+<br>
+<b>Allow use of code tags:</b> Allows or disallows users from using the [code] tags while posting.
+<br>
+<b>Don't index on top boards and board list:</b> This allows a Board Owner to "hide" their board from viewers, and to not have their board end up in the Top Boards ticker. Global volunteers and admins can still see/interact with hidden boards and the content on them as normal.
+<br>
+<b>Force anonymity:</b> Disallows users from using the Name field while posting. Board volunteers and owners can still add their role signature to posts.
+<br>
+<b>Early 404: threads that are not replied to at least 5 times will be deleted after they leave the top 1/3 threads:</b> Self-explanatory.
+<br>
+<b>Unique Files:</b> Only one of each individual file can be posted on your board at any time. This means if you post "cute_cat.jpeg" on your board, nobody else will be able to post that exact image in any other thread on your board until that first post is deleted (either naturally, by the poster or by a volunteer).
+<br>
+<b>Unique Posts:</b> Stops users from posting the exact same body of text as any other posters. Can be useful during spam waves where the spammer repeats the exact same message, but is also easy to circumvent.
+</p>
+<h2 id="#Board_Moderation">3. Board Moderation</h2>
+<p>
+Moderation of your board can be as strict or as lax as you like. Whether you want your board to be a barely-restrained whirlwind of funposts or a tightly focused laser on one specific topic, the choice is yours. However, as mentioned before, no matter how loosely you want your board moderated, the <a href="https://8chan.moe/.static/pages/globalRules.html">Global Rules</a> must be observed at all times on your board. Moderation can be performed either with Javascript, resulting in easily-clicked functions on a post-by-post (or poster-by-poster) basis, or without Javascript, with much of the same functionality (and some additional options).
+<h3 id="#Reports">3.1. Reports</h3>
+Anyone visiting your board can choose to report any post for rule violations. See the image to the left to see what a report looks like and what a volunteer or Board Owner can choose to do with reports in their queue. To get to this queue, go into your <a href="https://8chan.moe/login.html">User Account</a> and click your board's name, under the heading Owned Boards, then click "Open Reports". In the queue, you will see all currently open reports, along with options at the top of the page - these options allow for report moderation without Javascript, and also for more robust tools regarding moderation of a large number of posts at once, or the person who reported the post in the first place. From top to bottom, these options are:
+<p style="margin-left:3%">
+<b>Close all reports from these reporters:</b> Simply click this checkbox, click the checkbox to the left of the name of the first report's poster, then click "Close selected reports". This will automatically close all reports made by the user who reported that post.
+<br>
+<b>Delete reported content after closing the reports:</b> This will delete the reported posts you have selected, then close the reports for them.
+<br>
+<b>Ban target:</b> This dropdown has three options: None, Post, and Reporter. This will ban the selected user based on which reported post you have selected. Post will ban whoever posted the reported content, and Reporter will ban whoever reported the post, which can be useful if a user is spamming reports.
+</p>
+Beneath these options you will see any reported posts and can interact with them using Javascript, which will be addressed in the next section.
+<h3 id="#With_JS">3.2. With Javascript</h3>
+Using Javascript, you can interact with and moderate any post you see on your board or report queue by clicking the small right-facing triangle beside a poster's name, as seen <a href="Moderation_files\javascript.png" target=_blank>here.</a> This will bring up a menu, that you can see in Figure 4. Note that as Board Owner you can see nearly every available option, whereas a regular user or volunteer will not see some of these. From top to bottom, these options are:
+<p style="margin-left:3%">
+<b>Report:</b> Click this option to report this post locally, meaning that if a user reported a post on /kwyjibo/ it would only show up in my local report queue. Any user, including users who do not have User Accounts or are not logged in, can report.
+<br>
+<b>Global Report:</b> This option will report this post to the Global Queue, visible only to global staff. Avoid using this unless the post in question has violated any of the <a href="https://8chan.moe/.static/pages/globalRules.html">Global Rules</a>. There are exceptions to this, which will be explained at the end of this guide.
+<br>
+<b>Delete Post:</b> This will delete this post. Only volunteers or up can delete posts.
+<br>
+<b>Trash Post:</b> This will soft-delete this post and put it into your board's Trash Bin. The post will disappear from the thread/board in question, but the post can be restored by the Board Owner or administration after the fact.
+<br>
+<b>Unlink Files:</b> This will remove all files from the post in question, but leave the post up.
+<br>
+<b>Spoil Files:</b> This will apply the spoiler image over all images attached to the post in question.
+<br>
+<b>Delete by IP/Bypass:</b> This will delete all of the poster's posts from your board. This is done on an IP+bypass basis, which is one of the captchas a user fills out before they are able to post. Avoid using this option unless you are <i>very sure</i>.
+<br>
+<b>Ban:</b> Brings up the <a href="Moderation_files\ban.png" target="_blank">Ban window.</a> The options within will be explained below.
+</p>
+  <p style="margin-left:5%">
+    <b>Answer:</b> This is the answer to the captcha at the top of this window.
+    <br>
+    <b>Reason:</b> This will show a ban reason to the poster, and will also show the ban reason on the board's log.
+    <br>
+    <b>Duration:</b> The length of the ban. Use the code "d" for days, "h" for hours, "m" for minutes. So if I wanted to ban a user for 4 hours and 30 minutes, I could use the ban length "4h30m", or "270m". If this field is left empty, <u>the ban will be permanent</u>.
+    <br>
+    <b>Message:</b> This will set a large, red message below the body of text on the banned post. The default (if this field is left empty) is "USER WAS BANNED FOR THIS POST", as seen in <a href="Moderation_files\banned.png" target="_blank">Figure 6.</a>
+    <br>
+    <b>Type:</b> There are 5 options in this dropdown menu, to choose what kind of ban you want to issue.
+      <p style="margin-left:7%">
+        <b>--IP/Bypass Ban:</b> This default kind of ban. Will stop this IP and bypass from being able to post for the length of time you've selected.
+        <br>
+        <b>--Range Ban (1/2 Octets):</b> A standard IP address consists of four (4) octets, resulting in an IP that commonly looks like xxx.xxx.xxx.xxx. This option will ban the first two octets from posting. Be very cautious when using range bans, as they are very often inaccurate.
+        <br>
+        <b>--Range Ban (3/4 Octets):</b> The same as above, except it bans the first <i>three</i> octets.
+        <br>
+        <b>--ASN Ban:</b> An ASN is essentially a categorization of IP addresses. Many ISPs have IP addressed grouped by ASN to make it easier for them to serve (or monitor) their customers. This option will ban an entire ASN from posting. For more information on ASNs, see <a href="https://www.whatismyip.com/asn/" target="_blank">this article</a>.
+        <br>
+        <b>--IP/Bypass warning:</b> This option functions essentially as a "temporary ban" that is only valid until the length (set by you) expires or the user sees it <a href="Moderation_files\warning.png" target="_blank">(Figure X)</a>, which is a popup that the user will see next time they try to post. Once they have clicked through that warning they will be able to post as normal.
+      </p>
+      <p style="margin-left:5%">
+      <b>Deletion Action:</b> Another dropdown, with four more options.
+        <p style="margin-left:7%">
+          <b>--Do not delete:</b> This will leave the post up while banning the user, and display the ban message. Note that not displaying the ban message while leaving the post up is not an option.
+          <br>
+          <b>--Delete post:</b> Ban the user and delete the post.
+          <br>
+          <b>--Delete post and media:</b> Deletes the post as well as any files attached to it. Note that this will actually delete the files from the media catalog, which is something the global volunteers will very much appreciate if you are deleting illegal content.
+          <br>
+          <b>--Delete by IP/bypass:</b> Bans the user and deletes all their posts on your board. This is the nuclear option and as mentioned above should be used only with extreme care.
+        </p>
+        <p style="margin-left:5%">
+        <b>Non-bypassable:</b> If this checkbox is un-ticked, the user can simply fill out a new bypass and continue posting. If it is ticked, it bans the IP from being able to bypass said ban until it expires.
+      </p>
+    </p>
+<br>
+<h3 id="#WO_JS">3.3. Without Javascript</h3>
+<br>
+<h3 id="#Other_Mod">3.4. Related Addenda</h3>
+<br>
+To add or remove volunteers, go into your Board Management page,
+<br>
+<h2 id="Board_Customization">4. Board Customization</h2>
+In the <a href="Moderation_files\board settings crop.png" target="_blank">Board Management</a> page, there were several options to customize your board, which will now be explained in greater detail.
+<p style="margin-left:3%">
+<b>Custom CSS:</b> Custom CSS can be developed by any interested users in order to personalize your own board. More detail when I have more details
+<br>
+<b>Custom Javascript:</b> Self-explanatory. This option is currently disabled and is being developed - anything you upload will not be saved/applied to your board.
+<br>
+<b>Custom Spoiler:</b> This will allow you to upload a custom spoiler image, which is displayed over any image that has been spoilered by either the poster or a volunteer. The dimensions should be 128x128 pixels.
+<br>
+<b>Manage banners:</b> This will allow you to upload custom banners to your board, which will be displayed at the <a href="Moderation_files\index.png" target="_blank">top of your board's index, catalog and individual threads.</a> A board can have up to 100 banners saved at any one time, and maximum filesize is 1MB. If you have more than one banner in your list, one will be randomly selected and displayed on every refresh. Banner dimensions should be 300x100, and can be jpeg, png, or gif in format (yes, this means your banners can be animated).
+</p>
+<h2 id="Best_Practices">5. Best/Recommended Practices</h2>
+<br>
+<h2 id="Contact">6. Additional Resources</h2>
+<marquee>codexx is a gay</marquee>
+
+</p>
+<div id="footer" dir="ltr"><p style="margin-bottom: 0cm"><a name="linkEngine"></a><a name="linkFrontend"></a>
+	<a href="https://8chan.moe/.static/pages/about.html">About</a> &bull;
+	<a href="https://8chan.moe/site/res/27.html#">Feedback</a> &bull;
+	<a href="https://8chan.moe/.static/pages/globalRules.html">Global
+	Rules</a> &bull; <a href="https://8chan.moe/.static/pages/legal.html">Legal</a>
+	&bull; <a href="https://8chan.moe/.static/pages/contact.html">Contact</a>
+	&bull; <a href="https://8chan.moe/.static/pages/donate.html">Donate</a>
+	<br/>
++
+	</p>
+</div>
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+
+</html>
+
