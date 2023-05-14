@@ -1,7 +1,5 @@
 # HikariLynx
 
-Aleph is a heavily modified fork of [PenumbraLynx](https://gitgud.io/LynxChan/PenumbraLynx) written for [8chan](https://8chan.moe), bringing enhanced features and performance. **Embrace the Moe!**
-
 HikariLynx is a modified fork of [Aleph](https://gitgud.io/8chan/Aleph) written for [hikari3.ch](https://hikari3.ch/).
 
 ## Installation ##
