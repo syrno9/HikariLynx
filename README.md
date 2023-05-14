@@ -1,6 +1,8 @@
-# Aleph ℵ
+# HikariLynx
 
 Aleph is a heavily modified fork of [PenumbraLynx](https://gitgud.io/LynxChan/PenumbraLynx) written for [8chan](https://8chan.moe), bringing enhanced features and performance. **Embrace the Moe!**
+
+HikariLynx is a modified fork of [Aleph](https://gitgud.io/8chan/Aleph) written for [hikari3.ch](https://hikari3.ch/).
 
 ## Installation ##
 You can install the frontend anywhere you want, just be sure to set the current location in your global settings.
@@ -13,9 +15,3 @@ This fork contains a number of customization choices for 8chan. If you wish to s
 The favicon in the static directory is served from mongo and will need to be uploaded into MongoDB manually. To do this you need to get the mongofiles tool and run  `mongofiles -h localhost -d {dbName} -l {/path/to/yourfavicon} put /favicon.ico`
 
 This front end currently requires you to set the URI of the overboard as "overboard".
-
-## License ##
-
-Aleph is released under the AGPL3. This applies to code in the project, but not copy within pages.
-Image assets, excluding logos, are licensed under CC-BY-NC 4.0.
-You may use the frontend as you'd like, but must utilize your own name and logos.
