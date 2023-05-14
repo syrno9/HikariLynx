@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+  </header>
+
+  <div class="titleWrapper">
+
+    <fieldset class="titleFieldset">
+
+      <legend>Trash Bin</legend>
+
+      <form
+        method="post"
+        action="/contentActions.js"
+        enctype="multipart/form-data">
+        <div id="actionsForm"></div>
+        <div>
+          <button
+            type="submit"
+            id="restoreFormButton"
+            value="restore"
+            name="action">Restore</button>
+        </div>
+
+        <div id="threadList"></div>
+
+        <h4>Posts</h4>
+
+        <div id="postList"></div>
+
+      </form>
+
+    </fieldset>
+  </div>
+
+  <div id="thread-post-template" class="hidden"></div>
+  <div id="thread-upload-template" class="hidden"></div>
+
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+<script src="/.static/js/postCommon.js"></script>
+<script src="/.static/js/thumbs.js"></script>
+<script src="/.static/js/embed.js"></script>
+<script src="/.static/js/tooltips.js"></script>
+<script src="/.static/js/hiding.js"></script>
+<script src="/.static/js/postingMenu.js"></script>
+<script src="/.static/js/posting.js"></script>
+<script src="/.static/js/captchaUtils.js"></script>
+<script src="/.static/js/bypassUtils.js"></script>
+<script src="/.static/js/trashBin.js"></script>
+<script src="/.static/js/multiboardMenu.js"></script>
+<script src="/.static/js/ruffle/ruffle.js" defer></script>
+
+</html>

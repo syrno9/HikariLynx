@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+  </header>
+
+<div class="titleWrapper" id="indexWrapper">
+    <fieldset class="titleFieldset" style="margin-bottom: 10px;">
+      <legend>Account</legend>
+	  <div class="box-content">
+    <p>Logged in as: <span id="labelLogin"></span>, <span id="labelGlobalRole"></span></p>       <form action="/logout.js">
+        <button
+          id="logoutFormButton"
+          type="submit">Logout</button>
+      </form>
+	</fieldset>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+  <fieldset class="box-g" style="flex: 0.5;">
+    <div class="box-g-title">Sections</div>
+    <div class="box-content">
+      <u><a href="#1">Account settings</a></u>
+	  <ul><u><li><a href="#2">Email</a></li></u>
+	  <u><li><a href="#p">Change Password</a></li></u>
+	  <u><li><a href="#d">Delete Account</a></li></u></ul>
+	  <hr>
+	  <u><a href="#3">Dashboard</a></u>
+	  <ul><u><li><a href="#4">Boards Owned</a></li></u>
+	  <u><li><a href="#5">Boards Volunteered</a></li></u></ul>
+	  <hr>
+	  <u><a href="/.static/pages/moderation.html">Create a board</a></u>
+    </div>
+  </fieldset>
+  <div style="flex: 1; margin-left: 10px;">
+  <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
+    <div class="box-b-title" id="1">Account settings</div>
+    <div class="box-content">
+            <form
+        action="/changeAccountSettings.js"
+        method="post"
+        enctype="multipart/form-data">
+        <label id="2">
+          Email:
+          <input
+            type="email"
+            name="email"
+            class="settingsField"
+            autocomplete="none"
+            id="emailField">
+        </label>
+		  <form
+			action="/requestEmailConfirmation.js"
+			method="post"
+			enctype="multipart/form-data"
+			id="confirmationForm">
+			<button
+			  type="submit"
+			  id="requestConfirmationFormButton">Request Email</button>
+		  </form>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            class="settingsField"
+            name="alwaysSignRole"
+            id="checkboxAlwaysSign">
+          Role Signature Force
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            class="settingsField"
+            name="noSettingsPassword"
+            id="checkboxNoSettingsPassword">
+	  Disable Password Check
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            class="settingsField"
+            name="reportNotify"
+            id="checkboxReportNotify">
+	  Notifications
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            class="settingsField"
+            name="noBoardReports"
+            id="checkboxNoBoardReports">
+	  Global ReportsOnly
+        </label>
+		<hr>
+        <label id="divSettingsPassword">
+          Password Confirmation:
+          <input
+            type="password"
+            class="settingsField"
+            name="password"
+            id="fieldPasswordConfirmation">
+        </label>
+		<hr>
+		<h3 id="p">Change Password</h3>
+		      <form
+        action="/changeAccountPassword.js"
+        method="post"
+        enctype="multipart/form-data">
+		
+        <p><label>
+          Current Password:
+          <input
+            type="password"
+            class="passwordChangeField"
+            name="password"
+            id="fieldPassword">
+        </label></p>
+        <p><label>
+          New Password:
+          <input
+            type="password"
+            class="passwordChangeField"
+            name="newPassword"
+            id="fieldNewPassword">
+        </label></p>
+        <p><label>
+          Confirm Password:
+          <input
+            type="password"
+            class="passwordChangeField"
+            name="confirmation"
+            id="fieldConfirmation">
+        </label></p>
+
+        <p><button
+          type="submit"
+          id="passwordFormButton">Change Password</button></p>
+
+      </form>
+		<hr>
+        <button
+          type="submit"
+          id="saveFormButton">Save</button>
+      </form>
+	 <hr>
+	 <h3 id="d">Delete Account</h3>
+	       <form
+        action="/deleteAccount.js"
+        method="post"
+        enctype="multipart/form-data">
+
+        <label>
+          <input
+            id="confirmationCheckbox"
+            type="checkbox"
+            class="deleteAccountField"
+            name="confirmation">
+	  Yes, I wish to delete my account.
+        </label>
+
+        <button
+          id="deleteAccountFormButton"
+          type="submit">Delete Account</button>
+
+      </form>
+    </div>
+  </fieldset>
+  <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
+    <div class="box-b-title" id="3">Dashboard</div>
+    <div class="box-content">
+        <a
+        href="/globalManagement.js"
+        id="globalManagementLink">
+        Global Management
+        <br />
+      </a>
+
+      <a
+        href="/openReports.js"
+        id="globalReportsLink">
+        Global Reports (<span id="openReportsLabel"></span>)
+        <br />
+      </a>
+
+      <a
+        href="/appealedBans.js"
+        id="globalBansLink">
+        Global Appeals (<span id="appealedBansLabel"></span>)
+        <br />
+      </a>
+
+      <hr />
+
+      <h3 id="4">Boards Owned</h3>
+      <div id="ownedDiv" class="linkList"></div>
+      <hr />
+
+      <h3 id="5">Boards Volunteered</h3>
+      <div id="volunteeredDiv" class="linkList"></div>
+
+      <a
+        href="/latestPostings.js"
+        id="latestPostingsLink">Latest Posts</a>
+
+    </div>
+  </fieldset>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/account.js"></script>
+<script src="/.static/js/captchaUtils.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+
+</html>

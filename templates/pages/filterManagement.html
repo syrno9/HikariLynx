@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+  </header>
+
+  <div class="titleWrapper">
+
+    <!-- XXX this page is used by both "Global Filters" and "Board Filters", controlled by the presence of a GET variable. -->
+    <div class="breadcrumb">
+      <h2>
+        <a href="/account.js">Account</a> &gt;
+        Filters
+      </h2> 
+    </div>
+
+    <fieldset class="titleFieldset">
+
+      <legend>Filters</legend>
+
+      <p>
+        Maximum filter length: <span id="maxLengthLabel"></span>
+      </p>
+
+      <form
+        action="/createFilter.js"
+        method="post"
+        enctype="multipart/form-data">
+        <input
+          type="hidden"
+          name="boardUri"
+          id="boardIdentifier">
+        <label>
+          Original term:
+          <input
+            type="text"
+            class="addFilterField"
+            name="originalTerm"
+            id="fieldOriginalTerm">
+        </label>
+        <label>
+          Replacement term:
+          <input
+            type="text"
+            class="addFilterField"
+            name="replacementTerm"
+            id="fieldReplacementTerm">
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="addFilterField"
+            name="caseInsensitive"
+            id="checkboxCaseInsensitive">
+          Case-insensitive
+        </label>
+        <button
+          type="submit"
+          id="addFormButton">Add filter</button>
+
+      </form>
+      <hr />
+      <div id="divFilters"></div>
+    </fieldset>
+  </div>
+
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/filterManagement.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+
+</html>

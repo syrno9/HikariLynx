@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+  </header>
+
+  <div class="titleWrapper">
+
+    <fieldset class="titleFieldset">
+
+      <legend>Banners</legend>
+
+      <form
+        action="/createBanners.js"
+        method="post"
+        enctype="multipart/form-data">
+
+        <input
+          type="hidden"
+          name="boardUri"
+          id="boardIdentifier">
+        
+        <label>
+          <input
+          type="file"
+          id="files"
+          multiple
+          name="files">
+        </label>
+        
+        <button
+          type="submit"
+          id="addFormButton">Submit Banner</button>
+
+        <p>
+          Max Size: <span id="maxSizeLabel"></span>
+        </p>
+        <p id="maxBannerDiv">
+          Max Banners: <span id="maxBannerLabel"></span>
+        </p>
+
+      </form>
+
+      <hr>
+
+      <div
+        id="bannersDiv"
+        class="banners"></div>
+
+    </fieldset>
+
+  </div>
+
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/bannerManagement.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+
+</html>

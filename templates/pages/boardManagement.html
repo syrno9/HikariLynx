@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+  </header>
+
+
+<div class="titleWrapper" id="indexWrapper">
+    <fieldset class="titleFieldset" style="margin-bottom: 10px;">
+      <legend>Board Management</legend>
+	  <div class="box-content">
+    <p>    <div class="breadcrumb">
+        <a href="/account.js">Account</a> &gt;
+        <span id="boardLabel"></span>
+        (<a id="linkSelf">Index</a>)
+    </div></p>
+	</fieldset>
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+  <fieldset class="box-g" style="flex: 0.5;">
+    <div class="box-g-title">Sections</div>
+    <div class="box-content">
+	<u><a href="#1">Dashboard</a></u>
+	<hr>
+	<u><a href="#2">Settings Board</a></u>
+	<ul>
+    <u><li><a href="#1.5">Captcha</a></li></u>
+    <u><li><a href="#2.5">Posting</a></li></u>
+	</ul>
+	<hr>
+	<u><a href="#3">Board Customization</a></u>
+	<ul>
+    <u><li><a href="#3.5">Custom CSS</a></li></u>
+    <u><li><a href="#4.5">Custom JavaScript</a></li></u>
+	<u><li><a href="#5.5">Custom Spoiler</a></li></u>
+	</ul>
+	<hr>
+	<u><a href="#4">Volunteers</a></u>
+	<ul>
+    <u><li><a href="#6.5">Current Volunteers</a></li></u>
+    <u><li><a href="#7.5">Add Volunteers</a></li></u>
+	</ul>
+	<hr>
+	<u><a href="#5">Ownership</a></u>
+	<ul>
+	<u><li><a href="#8.5">Ownership Transfer</a></li></u>
+	<u><li><a href="#9.5">Ownership Delete</a></li></u>
+	</ul>
+	</div>
+  </fieldset>
+  <div style="flex: 1; margin-left: 10px;">
+  <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
+    <div class="box-b-title" id="1">Dashboard</div>
+    <div class="box-content">
+            <p>
+        <a
+          id="linkTrash"
+          title="helpTrashBin">
+          Trash Bin (<span id="trashBinLabel"></span>)
+        </a>
+      </p>
+      <p>
+        <a 
+          id="bansLink"
+          title="$helpBansHeader">
+          Bans Header
+        </a>
+      </p>
+      <p>
+        <a 
+           id="rangeBansLink"
+           title="$helpBansRange">
+           Bans Range
+        </a>
+      </p>
+      <p>
+        <a 
+          id="asnBansLink"
+          title="$helpBansASN">
+          Bans ASN
+        </a>
+      </p>
+      <p>
+        <a
+          id="hashBansLink"
+          title="View and repeal currently active file hash bans">
+          Bans Hash
+        </a>
+      </p>
+      <p>
+        <a 
+          id="appealedBansLink"
+          title="$helpBansAppeals">
+          Bans Appeals (<span id="appealedBansLabel"></span>)
+        </a>
+      </p>
+      <p>
+        <a 
+          id="closedReportsLink"
+          title="$helpReportsClosed">
+          Reports Closed
+        </a>
+      </p>
+      <p>
+        <a 
+          id="openReportsLink"
+          title="$helpReportsOpen">
+          Reports Open (<span id="openReportsLabel"></span>)
+        </a>
+      </p>
+	</div>
+  </fieldset>
+    <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
+    <div class="box-b-title" id="1">Board Settings</div>
+    <div class="box-content">
+      <form
+        id="settingsForm"
+        action="/setBoardSettings.js"
+        method="post"
+        enctype="multipart/form-data">
+
+        <input
+          type="hidden"
+          id="boardSettingsIdentifier"
+          name="boardUri">
+
+        <label>
+          Board Name: <br>
+          <input
+            id="boardNameField"
+            class="boardSettingsField"
+            type="text"
+            name="boardName">
+        </label>
+		<hr>
+        <label>
+          <span
+            title="Displays on the boards list and at the top of pages on this board under URI and name."
+            class="altTextLabel" > Board Description 
+          </span>:
+          <br>
+          <input
+            id="boardDescriptionField"
+            name="boardDescription"
+            class="wide boardSettingsField"></input>
+        </label>
+		<hr>
+        <label>
+          <span
+            title="The tags can be used in search."
+	    class="altTextLabel"> Tags:
+	  </span>
+	  <br>
+
+          <input
+            type="text"
+            id="tagsField"
+            name="tags"
+            class="wide boardSettingsField">
+        </label>
+		<hr>
+        <label>
+	  <span
+	    title="Announcement at top of all board pages."
+	    class="altTextLabel"> Board Message: <br>
+          <textarea
+            name="boardMessage"
+            id="boardMessageField"
+            class="wide"></textarea>
+        </label>
+            Max Length: <span id="messageLengthLabel"></span>
+		<hr>
+        <label>
+          <span
+            title="Disables bumping non-cyclic threads after exceeding this many replies."
+            class="altTextLabel" > Bump Limit
+          </span>:
+          <br>
+          <input
+            id="autoSageLimitField"
+            type="number"
+            class="boardSettingsField"
+            name="autoSageLimit"> replies
+        </label>
+		<hr>
+        <label>
+          <span
+            title="Disabled bumping non-cyclic threads older than this many days"
+            class="altTextLabel" > Maximum Bump Age
+          </span>:
+          <br>
+          <input
+            id="maxBumpAgeField"
+            type="number"
+            class="boardSettingsField"
+            name="maxBumpAge"> days
+        </label>
+		<hr>
+        <label>
+          <span
+            title="Set the maximum number of threads on the board. If more than this many threads exist, the oldest will be purged"
+            class="altTextLabel" >  Thread Limit (Total): <br>
+          <input
+            id="maxThreadsField"
+            type="number"
+            class="boardSettingsField"
+            name="maxThreadCount"> threads
+        </label>
+		<hr>
+        <label>
+          <span
+            title="Temporarily disabled thread creation if this many threads are created within one hour."
+            class="altTextLabel" > Thread Limit (Hourly)
+          </span>:
+          <br>
+          <input
+            id="hourlyThreadLimitField"
+            type="number"
+            class="boardSettingsField"
+            name="hourlyThreadLimit"> threads
+        </label>
+		<hr>
+        <label>
+          Preferred Language: <br>
+          <select
+            id="languageCombobox"
+            name="preferredLanguage"></select>
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            name="textBoard"
+            class="boardSettingsField"
+            id="textBoardCheckbox">
+
+          <span 
+            title="Disabled file uploads."
+            class="altTextLabel" > Textboard
+          </span>
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            class="boardSettingsField"
+            name="unindex"
+            id="unindexCheckbox">
+
+          <span 
+            title="Board will not be indexed on top boards, boards list, or overboard."
+            class="altTextLabel" > Hidden
+          </span>
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            name=early404
+            class="boardSettingsField"
+            id="early404Checkbox">
+
+          <span 
+            title="If a thread does not recieve 5 replies before leaving the top third, it will be deleted."
+            class="altTextLabel" > Early 404
+          </span>
+        </label>
+		<hr>
+        <button
+          type="submit"
+          id="saveSettingsFormButton">Save</button>
+        <hr />
+        <h3 id="1.5">CAPTCHA</h3>
+
+        <label>
+          CAPTCHA Mode: <br>
+          <select
+            id="captchaModeComboBox"
+            name="captchaMode"></select>
+        </label>
+		<hr>
+        <label>
+          <span
+            title="Enables CAPTCHA for new threads if this many threads are created within one hour."
+            class="altTextLabel" > Hourly Thread Trigger
+          </span>:
+          <br>
+          <input
+            id="autoCaptchaThresholdField"
+            type="number"
+            class="boardSettingsField"
+            name="autoCaptchaLimit"> threads/hour
+        </label>
+		<hr>
+        <label>
+          <span
+            title="Enables CAPTCHA for new threads and replies if this many replies are created within one hour."
+            class="altTextLabel" > Hourly Reply Trigger
+          </span>:
+          <br>
+          <input
+            id="autoFullCaptchaThresholdField"
+            type="number"
+            class="boardSettingsField"
+            name="autoFullCaptchaLimit"> replies/hour
+        </label>
+		<hr>
+
+        <button
+          type="submit"
+          id="saveSettingsFormButton">Save</button>
+        <hr />
+        <h3 id="2.5">Posting</h3>
+
+        <label>
+          <span
+            title="Name given to users who leave name field blank (Default: Anonymous)"
+            class="altTextLabel" > Anonymous Name
+          </span>:
+          <br>
+          <input
+            id="anonymousNameField"
+            type="text"
+            class="boardSettingsField"
+            name="anonymousName">
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            class="boardSettingsField"
+            name="forceAnonymity"
+            id="forceAnonymityCheckbox">
+
+          <span 
+            title="Disables name field so all posts are anonymous"
+            class="altTextLabel" > Forced Anonymity
+          </span>
+        </label>
+		<hr>
+        <label>
+          Maximum number of files per post <br>
+          <input
+            id="maxFilesField"
+            type="number"
+            class="boardSettingsField"
+	    name="maxFiles"> files
+        </label>
+		<hr>
+        <label>
+          Maximum size per file <br>
+          <input
+            id="maxFileSizeField"
+            type="number"
+            class="boardSettingsField"
+            name="maxFileSizeMB"> MB
+        </label>
+		<hr>
+        <label>
+          <span
+            title="File types allowed on the board. Specified by MIME types. Separate by comma. Entering anything in this field will override the global whitelist."
+            class="altTextLabel" > Allowed file types
+          </span>:
+          <br>
+
+          <input
+            id="validMimesField"
+            type="text"
+            class="boardSettingsField"
+            name="acceptedMimes"
+            class="wide">
+        </label>
+		<hr>
+        <label>
+          Location Flags:
+          <select
+            id="locationComboBox"
+            name="locationFlagMode"></select>
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            name="disableIds"
+            class="boardSettingsField"
+            id="disableIdsCheckbox">
+          
+          <span 
+            title="Disabled assigning IDs to users based on their IP or bypass. IDs are assigned on a per-thread basis."
+            class="altTextLabel" > Disable IDs
+          </span>
+        </label>
+		<hr>
+        <label>
+
+          <input
+            type="checkbox"
+            class="boardSettingsField"
+            name="requireThreadFile"
+            id="requireFileCheckbox">
+
+          <span 
+            title="Forced new threads to include a file."
+            class="altTextLabel" > Require file for new threads
+          </span>
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            name="blockDeletion"
+            class="boardSettingsField"
+            id="blockDeletionCheckbox">
+          <span 
+            title="Prevents users from deleting their post using a password."
+            class="altTextLabel" > Disable User Self-Deletion
+        </label>
+		<hr>
+        <label>
+
+          <input
+            type="checkbox"
+            class="boardSettingsField"
+            name="allowCode"
+            id="allowCodeCheckbox">
+          <span 
+            title="Code tags display code in a monospace font with syntax highlighting. LaTeX is a typesetting and formatting system with support for mathematical notation. Please see the FAQ for more information."
+            class="altTextLabel" > Enable [code] and LaTeX tags
+          </span>
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            class="boardSettingsField"
+            name="uniqueFiles"
+            id="uniqueFilesCheckbox">
+
+          <span 
+            title="Uploaded file must be different from existing files on the board (or thread, if threadwise enabled)."
+            class="altTextLabel" > R9k Files
+          </span>
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            class="boardSettingsField"
+            name="uniquePosts"
+            id="uniquePostsCheckbox">
+
+          <span 
+            title="Unique posts."
+            class="altTextLabel" > R9k Posts
+          </span>
+        </label>
+		<hr>
+        <label>
+          <input
+            type="checkbox"
+            class="boardSettingsField"
+            name="threadR9K"
+            id="threadR9KCheckbox">
+
+          <span 
+            title="Unique file/post settings will only compare to the same thread instead of the entire board."
+            class="altTextLabel" > R9k Threadwise
+          </span>
+        </label>
+		<hr>
+        <button
+          type="submit"
+          id="saveSettingsFormButton">Save</button>
+
+        <br>
+        <small>*Values are ignored if they are higher than the global equivalent or are not present on the global equivalent, unless unbounded board settings are enabled</small>
+
+      </form>
+
+      <form
+        action="/resetBoardLock.js"
+        method="post"
+        enctype="multipart/form-data"
+        id="resetBoardLockForm">
+
+        <hr />
+
+        <input
+          type="hidden"
+          name="boardUri"
+          id="resetLockIdentifier">
+        <button
+          type="submit"
+          id="resetLockButton">Reset Board Lock</button>
+      </form>
+	</div>
+  </fieldset>
+  <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
+    <div class="box-b-title" id="3">Board Customization</div>
+    <div class="box-content">
+        <p>
+          <a id="bannerManagementLink">Banners</a>
+        </p>
+        <p>
+          <a id="filterManagementLink">Filters</a>
+        </p>
+        <p>
+          <a id="ruleManagementLink">Rules</a>
+        </p>
+        <p>
+          <a id="flagManagementLink">Flags</a>
+        </p>
+
+        <hr />
+
+        <h3 id="3.5">Custom CSS</h3>
+
+        <form
+          action="/setCustomCss.js"
+          method="post"
+          enctype="multipart/form-data">
+
+          <input
+            type="hidden"
+            name="boardUri"
+            id="customCssIdentifier">
+
+          <label>
+            <input
+              type="file"
+              id="files"
+              name="files">
+          </label>
+
+          <button
+            id="cssFormButton"
+            type="submit">Upload</button>
+
+        </form>
+
+        <hr />
+
+        <div id="customJsForm">
+
+          <h3 id="4.5">Custom JavaScript</h3>
+
+          <form
+            action="/setCustomJs.js"
+            method="post"
+            enctype="multipart/form-data">
+
+            <input
+              type="hidden"
+              name="boardUri"
+              id="customJsIdentifier">
+
+            <label>
+              <input
+                type="file"
+                id="JsFiles"
+                name="files">
+            </label>
+
+            <button
+              id="jsFormButton"
+              type="submit">Upload</button>
+
+          </form>
+          <hr />
+        </div>
+
+        <h3 id="5.5">Custom Spoiler</h3>
+
+        <div id="customSpoilerIndicator">
+          <p>There is a custom spoiler saved for this board</p>
+        </div>
+
+        <form
+          id="indicatorMarker"
+          action="/setCustomSpoiler.js"
+          method="post"
+          enctype="multipart/form-data">
+
+          <input
+            type="hidden"
+            name="boardUri"
+            id="customSpoilerIdentifier">
+
+          <label>
+            <input
+              type="file"
+              id="filesSpoiler"
+              name="files">
+          </label>
+
+          <button
+            id="spoilerFormButton"
+            type="submit">Upload</button>
+
+        </form>
+	</div>
+  </fieldset>
+    <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
+    <div class="box-b-title" id="4">Volunteers</div>
+    <div class="box-content">
+      <h3 id="6.5">Current Volunteers:</h3>
+
+      <div id="volunteersDiv">
+      </div>
+      <hr />
+
+      <div id="ownerControlDiv">
+
+        <h3 id="7.5">Add Volunteers</h3>
+
+        <form
+          action="/setVolunteer.js"
+          method="post"
+          enctype="multipart/form-data">
+
+          <label>
+            Username:
+            <input
+              type="text"
+              name="login"
+              class="addVolunteerField"
+              id="addVolunteerFieldLogin">
+          </label>
+
+          <input
+            type="hidden"
+            name="add"
+            value=true>
+
+          <input
+            type="hidden"
+            name="boardUri"
+            id="addVolunteerBoardIdentifier">
+
+          <button
+            type="submit"
+            id="addVolunteerFormButton">Volunteers Add</button>
+
+        </form>
+
+      </div>
+	</fieldset>
+    <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
+    <div class="box-b-title" id="5">Ownership</div>
+	<div class="box-content">
+      <h3 id="8.5">Ownership Transfer</h3>
+
+      <form
+        action="/transferBoardOwnership.js"
+        method="post"
+        enctype="multipart/form-data">
+
+        <label>
+          Username:
+          <input
+            type="text"
+            name="login"
+            class="transferBoardField"
+            id="transferBoardFieldLogin">
+        </label>
+
+        <input
+          type="hidden"
+          name="boardUri"
+          id="transferBoardIdentifier">
+
+        <button
+          type="submit"
+          id="transferBoardFormButton">Transfer Ownership</button>
+
+      </form>
+
+      <hr />
+
+      <h3 id="9.5">Ownership Delete</h3>
+
+      <form
+        method="post"
+        action="/deleteBoard.js"
+        enctype="multipart/form-data">
+
+        <label>
+          <input
+            type="checkbox"
+            class="deleteBoardField"
+            name="confirmDeletion"
+            id="confirmDelCheckbox">
+          Ownership Delete Confirm
+        </label>
+
+        <input
+          id="deletionIdentifier"
+          name="boardUri"
+          type="hidden">
+
+        <button
+          type="submit"
+          id="deleteBoardFormButton">Ownership Delete</button>
+
+      </form>
+	</div>
+  </fieldset>
+  	</div>
+  </fieldset>
+  </div>
+  </div>
+</div>
+  <div id="management-volunteer-template" class="hidden"></div>
+  <footer>"Always click on fishing link" - Fish</footer>
+  <hr>
+  <footer id="dynamicFooter"></footer>
+</body>
+  </div>
+
+  <div id="management-volunteer-template" class="hidden"></div>
+
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/boardManagement.js"></script>
+<script src="/.static/js/bans.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+<link
+  href="/.static/css/katex.min.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header class="boardHeader">
+    <img
+      id="bannerImage"
+      src="/randomBanner.js" />
+  </header>
+
+  <div id="dynamicAnnouncement"></div>
+
+
+  <div id="threadList">
+
+    <form
+      action="/contentActions.js"
+      method="post"
+      enctype="multipart/form-data">
+
+      <div class="innerUtility">
+		<a class="navButton" href="#footer">Bottom</a>
+        <a class="reloadButton">Refresh</a>
+      </div>
+
+      <div id="divThreads"></div>
+
+    </form>
+
+	<!-- XXX I have no idea why this is inconsistent with the board.html page-->
+    <hr class="clearer">
+
+    <div class="innerUtility bottom">
+		<a class="navButton" href="#">Top</a>
+        <a class="reloadButton">Refresh</a>
+      <hr>
+    </div>
+
+    <div id="bottomForms">
+    <!--TODO template this like with actionsForm-->
+    <details class="showFormDetails">
+      <summary class="glowOnHover">Forms</summary>
+
+      <fieldset class="reportFieldset">
+        <legend>Delete</legend>
+
+        <div class="contentAction">
+          <label>
+            Password
+            <input
+              type="text"
+              class="deletionField"
+              id="deletionFieldPassword"
+              name="password">
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              class="deletionField"
+              id="checkboxOnlyFiles"
+              name="deleteUploads">
+            Delete only files (Removes the file reference to the posts)
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              class="deletionField"
+              id="checkboxMediaDeletion"
+              name="deleteMedia">
+            Delete media (Removes the saved files from the server)
+          </label>
+          <button
+            type="submit"
+            id="deleteFormButton"
+            value="delete"
+            name="action">Delete</button>
+          <button
+            type="submit"
+            id="trashFormButton"
+            value="trash"
+            name="action">Trash</button>
+
+        </div>
+      </fieldset>
+
+      <fieldset class="reportFieldset">
+        <legend>Report</legend>
+
+        <div class="contentAction">
+
+          <label>
+            Reason
+            <input
+              type="text"
+              class="reportField"
+              id="reportFieldReason"
+              name="reasonReport">
+          </label>
+          <label id="reportCategoriesDiv">
+            Category
+            <select
+              class="reportField"
+              id="reportComboboxCategory"
+              name="categoryReport"></select>
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              class="reportField"
+              id="checkboxGlobalReport"
+              name="globalReport">
+            Global
+          </label>
+
+          <div id="divReportCaptcha">
+            <img
+              class="captchaImage"
+              src="/captcha.js">
+
+            <input
+              type="button"
+              class="hidden reloadCaptchaButton"
+              value="Reload">
+            <span class="captchaTimer"></span>
+            <br>
+
+            <input
+              name="captchaReport"
+              type="text"
+              class="captchaField reportField"
+              id="fieldCaptchaReport"
+              placeholder="answer">
+
+            <a
+              href="/noCookieCaptcha.js"
+              class="small">no cookies?</a>
+            <br>
+          </div>
+
+          <button
+            type="submit"
+            id="reportFormButton"
+            value="report"
+            name="action">Report</button>
+
+        </div>
+
+      </fieldset>
+    </details>
+    </div>
+
+  </div>
+
+  <footer id="dynamicFooterAlt"></footer>
+  <div id="thread-post-template" class="hidden"></div>
+  <div id="thread-upload-template" class="hidden"></div>
+
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/postCommon.js"></script>
+<script src="/.static/js/board.js"></script>
+
+<script src="/.static/js/watcher.js"></script>
+<script src="/.static/js/thumbs.js"></script>
+<script src="/.static/js/embed.js"></script>
+<script src="/.static/js/tooltips.js"></script>
+<script src="/.static/js/hiding.js"></script>
+<script src="/.static/js/postingMenu.js"></script>
+<script src="/.static/js/posting.js"></script>
+<script src="/.static/js/multiboardMenu.js"></script>
+
+<script src="/.static/js/captchaUtils.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/ruffle/ruffle.js" defer></script>
+
+</html>

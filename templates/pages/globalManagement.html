@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+    <img
+      src="/.static/logo.png"
+      class="logoImg"
+      alt="logo" />
+  </header>
+
+  <div class="titleWrapper">
+
+    <div class="breadcrumb">
+      <h2>
+        <a href="/account.js">Account</a> &gt;
+        Global Managment
+      </h2> 
+    </div>
+
+    <fieldset class="titleFieldset">
+
+      <legend>Dashboard</legend>
+      <p> <a
+        id="globalSettingsLink"
+        title="Change HTTP settings, posting settings, posting limits, and other miscellanenous options"
+        href="/globalSettings.js">
+        Global settings
+      </a> </p>
+      <p> <a
+        id="customThumbsLink"
+        title="Set custom thumbnails for a particular MIME type"
+        href="/customThumbs.js">
+        Custom thumbs
+      </a> </p>
+      <p> <a
+        id="socketLink"
+        title="Reset the UNIX socket"
+        href="/socketControl.js">
+        Unix socket
+      </a> </p>
+      <p> <a
+        id="languagesLink"
+        title="Add language packs"
+        href="/languages.js">
+        Alternative languages
+      </a>
+      <p> <a
+        id="accountsLink"
+        title="Add or remove users"
+        href="/accounts.js">
+        User accounts
+      </a> </p>
+      <p> <a
+        id="globalBannersLink"
+        title="Add or remove global banners"
+        href="/bannerManagement.js">
+        Global banners
+      </a> </p>
+      <p> <a
+        id="globalFiltersLink"
+        title="Apply a global find/replace filter"
+        href="/filterManagement.js">
+        Global filters
+      </a> </p>
+      <a 
+        title="View and manage currently posted files"
+        href="/mediaManagement.js">
+        Media management
+      </a> </p>
+
+      <hr />
+      <h3>Bans and Reports</h3>
+
+      <p> <a
+        title="Review and act on trashed posts"
+        href="/trashBin.js">
+        Trash Bin (<span id="trashBinLabel"></span>)
+      </a> </p>
+      <p> <a
+        id="bansLink"
+        title="View and repeal currently active bans"
+        href="/bans.js">
+        Bans
+      </a> </p>
+      <p> <a
+        id="rangeBansLink"
+        title="View and repeal currently active range bans"
+        href="/rangeBans.js">
+        Range bans
+      </a> </p>
+      <p> <a
+        id="asnBansLink"
+        title="View and repeal currently active ASN bans"
+        href="/asnBans.js">
+        ASN bans
+      </a> </p>
+      <p> <a
+        id="hashBansLink"
+        title="View and repeal currently active file hash bans"
+        href="/hashBans.js">
+        Hash bans
+      </a> </p>
+      <p> <a 
+        id="appealedBansLink"
+        title="View ban appeals"
+        href="/appealedBans.js">
+        Ban Appeals (<span id="appealedBansLabel"></span>)
+      </a> </p>
+      <p> <a 
+        id="closedReportsLink"
+        title="Review closed reports"
+        href="/closedReports.js">
+        Closed Reports
+      </a> </p>
+      <p> <a 
+        id="openReportsLink"
+        title="View open reports"
+        href="/openReports.js">
+        Open Reports (<span id="openReportsLabel"></span>)
+      </a> </p>
+
+
+      <hr />
+      <h3>Purge Block Bypasses</h3>
+
+      <form
+        id="purgeBypassesForm"
+        method="post"
+        enctype="multipart/form-data"
+        action="/purgeBypasses.js">
+
+        <label>
+          Within the last <input
+            type="number"
+            class="purgeField"
+            id="fieldPurgeLimit"
+            name="timeLimit"> hours
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            class="purgeField"
+            id="checkboxPurgeUnused"
+            name="unused">
+          Only purge unused
+        </label>
+
+        <label>
+          <input
+            class="purgeField"
+            type="checkbox"
+            id="checkboxPurgeConfirm"
+            name="confirmation">
+          Yes, I am sure I want to purge block bypasses.
+        </label>
+
+        <button
+          id="purgeBypassesButton"
+          type="submit">Purge</button>
+      </form>
+
+    </fieldset>
+
+    <fieldset class="titleFieldset">
+
+      <legend>Global Staff</legend>
+
+      <div id="divStaff">
+        <h3>Current Members:</h3>
+        <hr/>
+      </div>
+
+      <form
+        id="addStaffForm"
+        method="post"
+        enctype="multipart/form-data"
+        action="/setGlobalRole.js">
+        <h3>Add user to Global Staff</h3>
+
+        <label>
+          Username:
+          <input
+            type="text"
+            name="login"
+            class="addUserField"
+            id="fieldLogin">
+        </label>
+        <label>
+          Role:
+          <select
+            name="role"
+            id="newStaffCombo"></select>
+        </label>
+
+        <button
+          type="submit"
+          id="addFormButton">Add user</button>
+
+      </form>
+
+    </fieldset>
+
+    <fieldset class="titleFieldset">
+
+      <legend>Mass Ban</legend>
+
+      <div id="massBanPanel">
+        <form
+          method="post"
+          action="/massBan.js"
+          enctype="multipart/form-data">
+
+          <label>
+            Clear text IPs, separated by commas:
+            <input
+              type="text"
+              name="ips"
+              class="massBanField"
+              id="fieldIps">
+          </label>
+
+          <label>
+            Ban duration:
+            <input
+              type="text"
+              name="duration"
+              class="massBanField"
+              id="fieldDuration"> <!-- TODO: specify units -->
+          </label>
+
+          <label>
+            Ban reason:
+            <input
+              type="text"
+              class="massBanField"
+              name="reason"
+              id="fieldReason">
+          </label>
+
+          <label>
+            <button
+              type="submit"
+              id="massBanFormButton">Ban</button>
+          </label>
+        </form>
+      </div>
+
+    </fieldset>
+
+  </div>
+
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/globalManagement.js"></script>
+<script src="/.static/js/bans.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+
+</html>

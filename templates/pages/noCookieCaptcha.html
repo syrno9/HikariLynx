@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+    <img
+      src="/.static/logo.png"
+      class="logoImg"
+      alt="logo" />
+  </header>
+
+  <div class="titleWrapper">
+  <fieldset class="titleFieldset">
+    <legend>No Cookies?</legend>
+    <div id="divSolvedCaptcha">
+      <h3>
+        Captcha solved. Input this ID as the answer to the captcha when posting:
+        <span id="labelCaptchaId"></span>
+      </h3>
+      <hr />
+    </div>
+    <div>
+      <p>No problem! Solve this captcha here instead.</p>
+      <img id="imageCaptcha">
+      <form
+        method="post"
+        action="/solveCaptcha.js"
+        enctype="multipart/form-data">
+
+        <input
+          type="hidden"
+          name="captchaId"
+          id="inputCaptchaId">
+
+        <label>
+          <input
+            type="text"
+            name="answer"
+            placeholder="answer">
+        </label>
+
+        <input
+          type="submit"
+          value="Solve">
+
+      </form>
+    </div>
+  </fieldset>
+  </div>
+
+  <footer id="dynamicFooter"></footer>
+
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+
+</html>

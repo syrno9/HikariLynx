@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="/.static/css/global.css">
+
+  <script src="/.static/js/theme.js"></script>
+  <script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+    <img
+      src="/.static/logo.png"
+      class="logoImg"
+      alt="logo" />
+  </header>
+
+  <div class="titleWrapper">
+
+    <div class="breadcrumb">
+      <h2>
+        <a href="/account.js">Account</a> &gt;
+        <a href="/globalManagement.js">Global Management</a> &gt;
+        MIME Thumbs
+      </h2> 
+    </div>
+
+    <fieldset class="titleFieldset">
+
+      <legend>Custom mime thumbs</legend>
+
+      <form
+        action="/createMimeThumb.js"
+        method="post"
+        enctype="multipart/form-data">
+
+        <label>
+          <input
+            type="file"
+            id="files"
+            name="files">
+        </label>
+
+        <label id="nameLabel">
+          Mime for this thumb:
+          <input
+            name="mime"
+            id="fieldMime"
+            type="text">
+        </label>
+
+        <button
+          type="submit"
+          id="addFormButton">Add thumb</button>
+      </form>
+      <hr>
+      <div id="thumbList"></div>
+
+    </fieldset>
+
+  </div>
+
+</body>
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/mimeThumbs.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+
+</html>

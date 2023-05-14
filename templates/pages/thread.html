@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+<link
+  href="/.static/css/katex.min.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeaderThread"></nav>
+
+  <input type=checkbox value="showSideCatalog" id="showSideCatalog"/>
+  <label for="showSideCatalog" id="sideCatalogMenu">
+    <div
+      id="sideCatalogDiv">
+
+      <div id="sideCatalogHeader">
+
+        <button
+          id="sideCatalogRefreshButton"
+        class="catalogLabel">Refresh</button>
+        <span
+          id="closeSideCatalogButton"
+          class="close-btn coloredIcon glowOnHover"></span>
+      </div>
+
+      <div id="sideCatalogBody"></div>
+
+    </div>
+
+    <div id="sideCatalogOverlay"> </div>
+  </label>
+
+  <div id="mainPanel">
+
+    <header class="boardHeader">
+      <img id="bannerImage" />
+      <div>
+	      <strong><p id="labelName"></p></strong>
+      </div>
+      <p id="labelDescription"></p>
+    </header>
+
+	<div class="innerUtility top">
+		<a href="../">Index</a>
+		<a href="../catalog.html">Catalog</a>
+		<a target="_blank" class="archiveLinkThread">Archive</a>
+		<a class="navButton" href="#footer">Bottom</a>
+		<a class="reloadButton">Refresh</a>
+	</div>
+
+    <div id="postingForm">
+
+      <fieldset id="newPostFieldset" class="threadFieldset">
+        <legend><label for="newPostFieldHide">Submit a Reply</label></legend>
+        <input type="checkbox" id="newPostFieldHide" class="hidden" />
+
+        <form
+          action="/replyThread.js"
+          enctype="multipart/form-data"
+          method="post">
+
+          <input
+            type="hidden"
+            name="threadId"
+            id="threadIdentifier">
+
+          <div id="postingFormContents"></div>
+
+          <p class="small">
+            Before posting, don't forget to check the 
+            <a href="../rules.html"
+              class="localPageLink">rules</a>
+          </p>
+
+          <input type="submit" id="formButton" value="Reply">
+
+        </form>
+
+      </fieldset>
+
+    </div>
+
+    <div id="divControls">
+
+      <form
+        action="/changeThreadSettings.js"
+        method="post"
+        enctype="multipart/form-data">
+
+        <fieldset class="titleFieldset">
+          <legend>Thread Settings</legend>
+
+          <label>
+            <input
+              name="lock"
+              class="threadSettingsField"
+              id="checkboxLock"
+              type="checkbox">
+            Lock
+          </label>
+          <label>
+            <input
+              name="bumplock"
+              class="threadSettingsField"
+              id="checkboxBumplock"
+              type="checkbox">
+            Autosage
+          </label>
+          <label>
+            <input
+              class="threadSettingsField"
+              name="pin"
+              id="checkboxPin"
+              type="checkbox">
+            Pin
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              class="threadSettingsField"
+              name="cyclic"
+              id="checkboxCyclic">
+            Cyclic
+          </label>
+
+          <input
+            type="hidden"
+            name="boardUri"
+            id="controlBoardIdentifier">
+          <input
+            type="hidden"
+            name="threadId"
+            id="controlThreadIdentifier">
+          <input
+            type="submit"
+            class="titleFormButton"
+            id="settingsFormButton"
+            value="Save">
+
+        </fieldset>
+      </form>
+
+    </div>
+    <div id="divArchive">
+
+      <form
+        action="/archiveThread.js"
+        method="post"
+        enctype="multipart/form-data">
+
+        <fieldset class="titleFieldset">
+          <legend>Archive Thread</legend>
+
+          <label>
+            <input
+              name="confirmation"
+              class="archiveField"
+              id="checkboxArchive"
+              type="checkbox">
+            Yes, I wish to lock and archive this thread
+          </label>
+
+          <input
+            type="hidden"
+            name="boardUri"
+            id="archiveBoardIdentifier">
+          <input
+            type="hidden"
+            name="threadId"
+            id="archiveThreadIdentifier">
+          <input
+            type="submit"
+            id="archiveFormButton"
+            value="Archive">
+
+        </fieldset>
+      </form>
+
+    </div>
+
+    <div id="transferControls">
+
+      <form
+        action="/transferThread.js"
+        enctype="multipart/form-data"
+        method="post"
+        id="formTransfer"
+        class="formTransfer">
+
+        <fieldset class="titleFieldset">
+          <legend>Transfer Thread</legend>
+
+          <input
+            type="hidden"
+            name="boardUri"
+            id="transferBoardIdentifier">
+
+          <input
+            type="hidden"
+            name="threadId"
+            id="transferThreadIdentifier">
+
+          <label>
+            Destination Board:
+            <input
+              type="text"
+              class="transferField"
+              id="fieldDestinationBoard"
+              name="boardUriDestination">
+          </label>
+
+          <input
+            type="submit"
+            id="transferFormButton"
+            value="Transfer thread">
+
+        </fieldset>
+      </form>
+
+    </div>
+
+    <div id="divMerge">
+
+      <form
+        action="/mergeThread.js"
+        enctype="multipart/form-data"
+        method="post"
+        id="formMerge"
+        class="formMerge">
+
+        <fieldset class="titleFieldset">
+          <legend>Merge Thread</legend>
+
+          <input
+            type="hidden"
+            name="boardUri"
+            id="mergeBoardIdentifier">
+
+          <input
+            type="hidden"
+            name="threadSource"
+            id="mergeThreadIdentifier">
+
+          <label>
+            Destination Thread:
+            <input
+              type="text"
+              class="mergeField"
+              id="fieldDestinationThread"
+              name="threadDestination">
+          </label>
+
+          <input
+            type="submit"
+            id="mergeFormButton"
+            value="Merge thread">
+
+        </fieldset>
+      </form>
+
+    </div>
+
+    <div id="ipDelete">
+
+      <form
+        id="ipDeletionForm"
+        method="post"
+        action="/deleteFromIp.js"
+        enctype="multipart/form-data">
+
+        <fieldset class="titleFieldset">
+          <legend>Delete IP</legend>
+
+          <label>
+            NonHashedIP:
+            <input
+              type="text"
+              class="ipDeletionField"
+              name="ip"
+              id="ipField">
+          </label>
+          <label>
+            <input
+              type="text"
+              class="ipDeletionField"
+              name="boards"
+              id="fieldBoards">
+          </label>
+
+          <input
+            type="submit"
+            id="deleteFromIpFormButton"
+            value="Delete from IP">
+        </fieldset>
+      </form>
+
+    </div>
+
+    <div id="dynamicAnnouncement"></div>
+    <div id="panelMessage">
+      <hr>
+      <div id="divMessage"></div>
+    </div>
+
+    <div id="threadList">
+
+      <form
+        method="post"
+        action="/contentActions.js"
+        enctype="multipart/form-data">
+
+        <div id="divThreads"></div>
+
+        <hr class="clearer" />
+
+		<div class="threadBottom">
+			<span class="innerUtility">
+				<a href="../">Index</a>
+				<a href="../catalog.html">Catalog</a>
+				<a target="_blank" class="archiveLinkThread">Archive</a>
+				<a class="navButton" href="#">Top</a>
+				<a id="replyButton" href="#postingForm">Reply</a>
+			</span>
+
+			<span class="threadInfo">
+				<span id="postCount"></span>
+				<span id="idCount"></span>
+				<span id="fileCount"></span>
+			</span>
+
+		</div>
+
+		<hr>
+
+        <div class="divRefresh hidden">
+
+          <input
+            type="button"
+            id="refreshButton"
+            value="Refresh">
+
+          <label>
+            <input
+              id="checkboxChangeRefresh"
+              type="checkbox"
+              checked >
+            <span id="labelWsStatus" title="Connecting to WS...">&#x2B24;</span>
+            <span id="labelAutoIndicator">Auto</span> <span id="labelRefresh"></span>
+          </label>
+
+        </div>
+
+        <div id="boardContentLinks" class="innerUtility">
+          <a id="linkManagement">Manage Board</a>
+          <a id="linkModeration">Moderate Board</a>
+          <a id="linkMod">Moderate Thread</a>
+        </div>
+
+        <div id="actionsForm"></div>
+
+      </form>
+
+    </div>
+
+    <div id="quick-reply" style="top: 50px;"></div>
+    <div id="thread-post-template" class="hidden"></div>
+    <div id="thread-upload-template" class="hidden"></div>
+
+  </div>
+<hr>
+  <footer id="dynamicFooterAlt"></footer>
+
+</body>
+
+<script src="/.static/js/crypto.js"></script>
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/postCommon.js"></script>
+<script src="/.static/js/thread.js"></script>
+
+<script src="/.static/js/qr.js"></script>
+<script src="/.static/js/watcher.js"></script>
+<script src="/.static/js/thumbs.js"></script>
+<script src="/.static/js/embed.js"></script>
+<script src="/.static/js/tooltips.js"></script>
+<script src="/.static/js/hiding.js"></script>
+<script src="/.static/js/postingMenu.js"></script>
+<script src="/.static/js/posting.js"></script>
+<script src="/.static/js/multiboardMenu.js"></script>
+
+<script src="/.static/js/captchaUtils.js"></script>
+<script src="/.static/js/gallery.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/sideCatalog.js"></script>
+<script src="/.static/js/bypassUtils.js"></script>
+<script src="/.static/js/ruffle/ruffle.js" defer></script>
+
+</html>

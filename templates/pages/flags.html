@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+  </header>
+
+  <div class="titleWrapper">
+
+    <fieldset class="titleFieldset">
+
+      <legend>Flags</legend>
+
+      <form
+        action="/createFlag.js"
+        method="post"
+        enctype="multipart/form-data">
+        <input
+          type="hidden"
+          name="boardUri"
+          id="boardIdentifier">
+
+        <div
+          class="hidden"
+          id="dragAndDropDiv">
+          <div
+            class="dropzone"
+            id="dropzone">
+	Submit a new flag
+            <br>
+        Drag and Drop
+          </div>
+          <div id="selectedDiv"></div>
+        </div>
+
+        <label id="nameLabel">
+          Flag Name:
+          <input
+            name="flagName"
+            id="fieldFlagName"
+            type="text">
+        </label>
+        <input
+          type="file"
+          id="files"
+          name="files">
+        <button
+          type="submit"
+          id="addFormButton">Add Flag</button>
+        <p class="small">
+          Max Size: <span id="maxSizeLabel"></span>
+          <br>
+          Max Length: <span id="maxNameLengthLabel"></span>
+        </p>
+      </form>
+      <hr />
+      <div id="flagsDiv"></div>
+    </fieldset>
+  </div>
+
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/flags.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+
+</html>

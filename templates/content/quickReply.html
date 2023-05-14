@@ -1,0 +1,129 @@
+<!--can't be nested in another form, so it has to come after moderation forms-->
+<form
+  action="/replyThread.js"
+  enctype="multipart/form-data"
+  method="post">
+
+ <input type="text"
+	    id="qr_prevent_autofill_uname"
+	    class="hidden"
+	    autocomplete="off"
+	    tabindex="-1" />
+ <input type="password"
+        id="qr_prevent_autofill_pwd"
+   	    class="hidden"
+        autocomplete="off"
+        tabindex="-2" />
+
+<table><tbody>
+	<tr><th class="handle">
+		Quick Reply
+		<a class="close-btn coloredIcon"></a>
+    </th> </tr>
+
+    <tr id="qr-name-row" class="hidden"><td>
+		<input id="qrname" type="text" maxlength="35" name="name"
+			autocomplete="none" placeholder="Name">
+	</td></tr>
+
+	<tr><td>
+		<input id="qrsubject" type="text" maxlength="100" name="subject"
+			autocomplete="none" placeholder="Subject">
+	</td></tr>
+
+	<tr><td>
+		<input type="checkbox" name="sage"
+			id="qrdoSageCheckbox" class="postingCheckbox">
+		<label for="qrdoSageCheckbox" class="spoilerCheckbox">
+			Sage
+		</label>
+		<input type="checkbox" id="qralwaysUseBypassCheckBox" class="postingCheckbox">
+		<label for="qralwaysUseBypassCheckBox" class="spoilerCheckbox">
+			Bypass Check
+		</label>
+	</td></tr>
+
+	<tr><td>
+		<textarea id="qrbody" rows="5" placeholder="Comment"></textarea>
+	</td></tr>
+</tbody> 
+</table>
+
+<details open id="qrFilesBody" class="hidden">
+<summary id="qrFilesButton" class="glowOnHover"> </summary>
+<table></tbody>
+
+	<tr><td>
+		<div class="dropzone" id="dropzoneQr">
+			Drag files to upload or <br>
+			click here to select them
+		</div>
+		<div id="selectedDivQr"></div>
+	</td></tr>
+
+    <tr><td class="centered">
+		<input type="checkbox" id="qrcheckboxSpoiler" name="spoiler" class="postingCheckbox">
+		<label for="qrcheckboxSpoiler"> </label>
+		<input type="checkbox" id="qrcheckboxScramble" class="postingCheckbox">
+		<label for="qrcheckboxScramble"> </label>
+	</td></tr>
+
+</tbody></table>
+</details>
+
+<details open class="hidden" id="captchaBody">
+<summary id="qrCaptchaButton" class="glowOnHover"></summary>
+<table><tbody>
+
+    <tr><td colspan="2">
+		<img id="qr-captcha-image" class="captchaImage"/>
+	</td></tr>
+
+	<tr><td colspan="2">
+		<a href="/noCookieCaptcha.js" target="_blank" class="small">
+			No cookies?
+		</a>
+	</td></tr>
+
+    <tr><td>
+		<input name="captcha" type="text" class="captchaField" id="QRfieldCaptcha" placeholder="Answer">
+	</td><td>
+		<input type="button" class="reloadCaptchaButton" value="Reload">
+		<span class="captchaTimer">0</span>
+	</td></tr>
+
+</tbody> </table>
+</details>
+
+<details class="postingFormExtra">
+<summary class="glowOnHover"></summary>
+<table><tbody>
+
+	<tr><td>
+		<input id="qremail" type="text" maxlength="40" autocomplete="none" name="email" placeholder="Email">
+	</td></tr>
+
+	<tr><td>
+		<input id="qrpassword" name="password" type="password" placeholder="Password">
+	</td></tr>
+
+    <tr id="qr-flags-row" class="hidden"><td>
+		<div id="qrFlagsDiv"></div>
+	</td></tr>
+
+    <tr id="qr-flags-check-row" class="hidden"><td class="centered">
+		<input type="checkbox" id="qrcheckboxNoFlag" class="postingCheckbox" name="noflag">
+		<label for="qrcheckboxNoFlag" class="spoilerCheckbox">
+    		Don't show location
+		</label>
+	</td>
+</tbody></table>
+</details>
+
+<table><tbody>
+<tr><td class="centered">
+	<input accesskey="s" id="qrbutton" type="submit" value="Reply">
+</td></tr>
+</tbody></table>
+
+</form>

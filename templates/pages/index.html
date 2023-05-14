@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <div class="titleWrapper" id="indexWrapper">
+
+	<div style="display: flex; flex-direction: row; align-items: flex-start;">
+  <fieldset class="titleFieldset" style="flex: 0.4;">
+    <legend>Home</legend>
+    <p><em>Welcome to hikari3.ch!</em></p>
+	<p style="text-align:center;"><img src="/.static/masco.gif" width="210"></p>
+	<p>a Japanese-inspired imageboard where users can post images, with text, and generally have discussions. To get started, you can read the <a href="/.static/pages/globalRules.html">rules</a>, then read the <a href="/.static/pages/posting.html">FAQ</a>. After that, you can create a thread.</p>
+	<p>[<a href="login.html">Register</a>] [<a href="/.static/pages/moderation.html">Create a board</a>]</p>
+	 <hr>
+	 <p><strong>Current News</strong></p>
+	 <marquee><span class="hljs-string"><span class="doomText">"muscular men > femboys" - Kriem</span></span></marquee>
+	 <hr>
+	 <footer>
+	  <span>Total posts: <span id="labelTotalPosts"></span></span>
+      <span>/</span> <span>Posts in last hour: <span id="labelTotalPPH"></span></span>
+      <span>/</span> <span>Unique recent IPs: <span id="labelTotalIps"></span></span>
+      <span>/</span> <span>Total boards: <span id="labelTotalBoards"></span></span>
+      <span>/</span> <span>Media files stored: <span id="labelTotalFiles"></span></span>
+      <span>/</span> <span>Total media size: <span id="labelTotalSize"></span></span>
+</footer>
+  </fieldset>
+  <div style="display: flex; flex-direction: column; flex:1; margin-left: 10px;">
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+    <fieldset class="titleFieldset" style="flex: 1; margin-bottom: 10px;">
+      <legend>Top Boards</legend>
+      <div id="divBoards" class="topBoards title"></div>
+    </fieldset>
+    <div style="display: flex; flex-direction: row; align-items: flex-start;">
+      <fieldset class="box-g" style="flex: 1; margin-right: 10px;">
+        <div class="box-g-title">Latest Images</div>
+        <div id="divLatestImages"></div>
+      </fieldset>
+      <fieldset class="box-b" style="flex: 1;">
+        <div class="box-b-title">Latest Posts</div>
+        <div id="divLatestPosts"></div>
+      </fieldset>
+    </div>
+  </div>
+</div>
+	</div>
+
+  </div>
+  <footer>"Always click on fishing link" - Fish</footer>
+  <hr>
+  <footer id="dynamicFooter"></footer>
+
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/multiboardMenu.js"></script>
+
+</html>

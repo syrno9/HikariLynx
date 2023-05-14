@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+<link
+  href="/.static/css/katex.min.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeaderBoard"></nav>
+
+  <input type=checkbox value="showSideCatalog" id="showSideCatalog"/>
+  <label for="showSideCatalog" id="sideCatalogMenu">
+    <div
+      id="sideCatalogDiv">
+
+      <div id="sideCatalogHeader">
+
+        <button
+          id="sideCatalogRefreshButton"
+          class="catalogLabel">Refresh</button>
+        <span
+          id="closeSideCatalogButton"
+          class="close-btn coloredIcon glowOnHover"></span>
+      </div>
+
+      <div id="sideCatalogBody"></div>
+
+    </div>
+
+    <div id="sideCatalogOverlay"> </div>
+  </label>
+
+  <header class="boardHeader">
+    <img id="bannerImage" />
+    <div>
+	    <strong> <p id="labelName"></p></strong>
+    </div>
+    <p id="labelDescription"></p>
+	<span class="boardLinks">
+		<a href="catalog.html">Catalog</a>
+		<a id="archiveLinkBoard">Archive</a>
+	</span>
+  </header>
+
+  <div id="postingForm">
+    <fieldset id="newPostFieldset" class="boardFieldset">
+      <legend><label for="newPostFieldHide">Submit a Thread</label></legend>
+      <input type="checkbox" id="newPostFieldHide" class="hidden" />
+
+      <form
+        action="/newThread.js"
+        enctype="multipart/form-data"
+        method="post">
+
+        <div id="postingFormContents"></div>
+
+        <p class="small">
+	  Before posting, make sure to read the
+          <a href="rules.html"
+            class="localPageLink">rules</a>
+        </p>
+
+        <input type="submit" id="formButton" value="Post">
+
+      </form>
+
+    </fieldset>
+
+  </div>
+
+  <div id="dynamicAnnouncement"></div>
+  <div id="panelMessage">
+    <hr>
+    <div id="divMessage"></div>
+  </div>
+
+  <div id="threadList">
+
+    <form
+      action="/contentActions.js"
+      method="post"
+      enctype="multipart/form-data">
+
+      <div id="divThreads"></div>
+
+      <hr class="clearer" />
+
+      <div>
+
+        <span class="containPages">[ <a id="linkPrevious" class="coloredIcon"></a> <span
+          id="divPages"></span> <a id="linkNext" class="coloredIcon"></a> ]
+        </span>
+
+        <br>
+
+        <div id="boardContentLinks" class="innerUtility">
+          <a id="linkManagement">Manage Board</a>
+          <a id="linkModeration">Moderate Board</a>
+          <a id="linkMod">Moderate Thread</a>
+        </div>
+
+      </div>
+
+      <div id="actionsForm"></div>
+
+    </form>
+
+  </div>
+<hr>
+  <footer id="dynamicFooterAlt"></footer>
+  <div id="thread-post-template" class="hidden"></div>
+  <div id="thread-upload-template" class="hidden"></div>
+
+</body>
+
+<script src="/.static/js/crypto.js"></script>
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/postCommon.js"></script>
+<script src="/.static/js/board.js"></script>
+
+<script src="/.static/js/watcher.js"></script>
+<script src="/.static/js/thumbs.js"></script>
+<script src="/.static/js/embed.js"></script>
+<script src="/.static/js/tooltips.js"></script>
+<script src="/.static/js/hiding.js"></script>
+<script src="/.static/js/postingMenu.js"></script>
+<script src="/.static/js/posting.js"></script>
+<script src="/.static/js/multiboardMenu.js"></script>
+
+<script src="/.static/js/captchaUtils.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/sideCatalog.js"></script>
+<script src="/.static/js/bypassUtils.js"></script>
+<script src="/.static/js/ruffle/ruffle.js" defer></script>
+
+</html>

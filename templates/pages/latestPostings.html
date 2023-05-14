@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+<script src="/.static/js/interfaceUtils.js"></script>
+</head>
+<body>
+
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+    <img
+      src="/.static/logo.png"
+      class="logoImg"
+      alt="logo" />
+  </header>
+
+  <div class="titleWrapper">
+    <fieldset class="titleFieldset">
+
+      <legend>Search</legend>
+      <a id="linkPrevious" class="coloredIcon">Previous page</a>
+      <a id="linkNext" class="coloredIcon">Next page</a>
+
+      <form
+        action="/latestPostings.js"
+        method="get">
+        Date:
+        <input
+          type="text"
+          name="date"
+          id="fieldDate">
+        <br>
+        <span id="panelIp"> IP: <input
+            type="text"
+            name="ip"
+            id="fieldIp"> <br></span> Boards (separate with comma, if
+        empty, all boards will be checked):
+        <input
+          id="fieldBoards"
+          type="text"
+          name="boards">
+        <br>
+        <input
+          type="hidden"
+          name="banId"
+          id="inputBanId">
+        <input
+          type="hidden"
+          name="boardUri"
+          id="inputBoardUri">
+        <input
+          type="hidden"
+          name="threadId"
+          id="inputThreadId">
+        <input
+          type="hidden"
+          name="postId"
+          id="inputPostId">
+        <button type="submit">Search</button>
+      </form>
+
+      <hr>
+      <h3>Postings</h3>
+
+      <form
+        action="/contentActions.js"
+        method="post"
+        enctype="multipart/form-data">
+
+        <div id="actionsForm"></div>
+
+        <button
+          id="buttonLoadMore"
+          class="hidden">Load more</button>
+        <div id="divPostings"></div>
+
+      </form>
+
+    </fieldset>
+  </div>
+  <footer id="dynamicFooter"></footer>
+
+  <div id="thread-post-template" class="hidden"></div>
+  <div id="thread-upload-template" class="hidden"></div>
+
+</body>
+
+<script src="/.static/js/api.js"></script>
+<script src="/.static/js/settingsMenu.js"></script>
+<script src="/.static/js/watcher.js"></script>
+<script src="/.static/js/postCommon.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/latestPostings.js"></script>
+<script src="/.static/js/multiboardMenu.js"></script>
+
+<script src="/.static/js/thumbs.js"></script>
+<script src="/.static/js/embed.js"></script>
+<script src="/.static/js/tooltips.js"></script>
+<script src="/.static/js/hiding.js"></script>
+<script src="/.static/js/postingMenu.js"></script>
+<script src="/.static/js/posting.js"></script>
+
+<script src="/.static/js/captchaUtils.js"></script>
+<script src="/.static/js/ruffle/ruffle.js" defer></script>
+
+</html>

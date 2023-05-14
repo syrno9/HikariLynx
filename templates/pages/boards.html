@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+<link
+  href="/.static/css/global.css"
+  type="text/css"
+  rel="stylesheet" />
+
+<script src="/.static/js/theme.js"></script>
+</head>
+<body>
+  <nav class="navHeader" id="dynamicHeader"></nav>
+
+  <header>
+   </header>
+
+  <div id="secondaryBar" class="innerUtility" hidden>
+
+    <span>[</span>
+    <a
+      class="coloredIcon"
+      id="linkOverboard"></a>
+    <span>/</span>
+    <a
+      class="coloredIcon"
+      id="linkSfwOver"></a>
+    <span>]</span>
+
+  </div>
+<div class="titleWrapper" id="indexWrapper">
+<div style="display: flex; flex-direction: row; align-items: flex-start;">
+  <fieldset class="box-g" style="flex: 0.5;">
+    <div class="box-g-title">Board Search</div>
+    <div class="box-content">
+      <form
+        action="/boards.js"
+        method="get">
+
+          <input
+            type="text"
+            name="boardUri"
+            placeholder="board">
+
+          <input
+            type="text"
+            name="tags"
+            placeholder="tags">
+		<hr>
+          <select name="sorting">
+            <option value=''>Most popular</option>
+            <option value='1'>Least popular</option>
+            <option value='2'>Most posts first</option>
+            <option value='3'>Least posts first</option>
+            <option value='4'>Highest PPH first</option>
+            <option value='5'>Lowest PPH first</option>
+            <option value='6'>Alphabetic order</option>
+            <option value='7'>Reverse alphabetic order</option>
+          </select>
+		<hr>
+		<label>
+          <input
+            type="checkbox"
+            name="sfw">
+          SFW boards only
+		</label>
+		<hr>
+		<label>
+          <input
+            type="checkbox"
+            name="unindexed">
+          Unindexed boards only
+		</label>
+		<hr>
+		<label>
+          <input
+            type="checkbox"
+            name="inactive">
+          Abandoned boards only
+		</label>
+		<hr>
+        <input
+          type="submit"
+          value="Search">
+
+      </form>
+  </div>
+  </fieldset>
+  <div style="flex: 1; margin-left: 10px;">
+  <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
+  <div class="box-b-title" id="0">Boards</div>
+  <div class="box-content">
+      <div
+        id="divBoards"
+        class="wide">
+        <span id="divBoardsLegend"> <span id="legend"><span
+            id="labelPPH"
+            class="cellComponent">PPH</span><span
+            id="labelPosts"
+            class="cellComponent">Posts</span><span
+            id="labelUsers"
+            class="cellComponent">Users</span></span></span>
+    
+	</div>
+	<div class="containPages"> [ <div id="divPages"></div> ] </div>
+	</div>
+	</div>
+    </fieldset>
+
+
+    
+</div>
+  </div>
+
+  <footer>"Always click on fishing link" - Fish</footer>
+  <hr>
+  <footer id="dynamicFooter"></footer>
+</body>
+
+<script src="/.static/js/api.js" defer></script>
+<script src="/.static/js/interfaceUtils.js" defer></script>
+<script src="/.static/js/favouriteBoards.js" defer></script>
+<script src="/.static/js/settingsMenu.js" defer></script>
+<script src="/.static/js/watcher.js" defer></script>
+
+</html>
