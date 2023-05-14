@@ -1,0 +1,98 @@
+/* Tomorrow theme */
+@import "./syntax/srcery.css";
+:root {
+	--background-color: #1d1f21;
+	--background-gradient: var(--background-color);
+	--text-color: #c5c8c6;
+	--contrast-color: #282a2e;
+	--menu-color: #333;
+	--background-highlight-color: #282a2e;
+	--horizon-sep-color: #474b53;
+	--border-color: #111;
+	--marked-color: #1d1d21;
+	--marked-border-color: #111;
+
+	--board-title-color: inherit;
+    /*--board-shadow-color: inherit;*/
+	--index-text-color: var(--text-color);
+
+	--link-color: #5f89ac;
+	--link-hover-color: #81a2be;
+
+	--navbar-text-color: var(--horizon-sep-color);
+	--table-every-other-color: var(--contrast-color);
+	/*--button-color: #fed;*/
+	--sfw-indicator-color: navy;
+	--subject-color: #cc1105;
+
+	--thread-navbar-background: #0f4c6a;
+	--thread-navbar-color: var(--text-color);
+
+    --logo-image: url("/.static/logo/logo_blue_light.png");
+}
+
+.quoteLink {
+  color: var(--link-color);
+}
+
+.quoteLink:hover {
+  color: var(--link-hover-color);
+}
+
+code {
+    background-color: rgba(0,0,0,0.15);
+}
+
+.box-g {
+  background-color: #282a2e;
+  border: 1px solid #000;
+  color: #c5c8c6;
+  border-style: solid;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.box-g-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 4px;
+  background-color: #282a2e;
+  color: #c5c8c6;
+  border-radius: 4px;
+  padding: 5px 8px;
+}
+
+.box-b {
+  background-color: #282a2e;
+  border: 1px solid #000;
+  color: #c5c8c6;
+  border-style: solid;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.box-b-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 4px;
+  background-color: #282a2e;
+  color: #c5c8c6;
+  border-radius: 4px;
+  padding: 5px 8px;
+}
+
+.modalTableBody input[type="text"], .modalTableBody select,
+#themeSelector,
+#modalAnswer,
+#cssInput, #jsInput,
+#postingForm input[type="text"], #postingForm textarea,
+#quick-reply input[type="text"], #quick-reply textarea {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+#themeSelector {
+  border-color: var(--navbar-text-color);
+}

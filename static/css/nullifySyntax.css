@@ -1,0 +1,32 @@
+/*Nullify all hljs classes */
+
+/* Comment */
+.hljs-comment, .hljs-quote,
+.hljs-variable, .hljs-template-variable,
+.hljs-tag, .hljs-name,
+.hljs-selector-id, .hljs-selector-class,
+.hljs-regexp, .hljs-deletion,
+.hljs-number, .hljs-built_in,
+.hljs-builtin-name, .hljs-literal,
+.hljs-type, .hljs-params,
+.hljs-meta, .hljs-link,
+.hljs-attribute, .hljs-string,
+.hljs-symbol, .hljs-bullet,
+.hljs-addition, .hljs-title,
+.hljs-section, .hljs-keyword,
+.hljs-selector-tag,
+
+.hljs-strong, .hljs-emphasis {
+  font-style: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.hljs {
+  display: inherit;
+  overflow-x: inherit;
+  background: inherit;
+  color: inherit;
+  padding: inherit;
+}
+
