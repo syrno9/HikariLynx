@@ -1,0 +1,21 @@
+@keyframes harmony-anim {
+	0% {background-color: #FE3434} /* red */
+	12% {background-color: #FE6666} /* pink */
+	25% {background-color: #FE9834} /* yellow */
+	37% {background-color: #66FE66} /* green */
+	50% {background-color: #CCCCCC} /* gray */
+	62% {background-color: #66FCFE} /* blue */
+	75% {background-color: #6666FE} /* indigo */
+	87% {background-color: #FE66FC} /* magenta */
+	100% {background-color: #FE3434} /* red */
+}
+
+body {
+	background-image: url("/.static/yaranai.svg");
+	background-repeat: repeat;
+	background-size: contain;
+	background-position: 20em 0;
+	animation-name: harmony-anim;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
