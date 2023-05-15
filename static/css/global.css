@@ -928,7 +928,11 @@ fieldset legend2 {
 }
 
 .boardHeader #labelName {
+  font-family: tahoma;
+  color: #AF0A0F;
+  font-size: 20pt;
   display: inline;
+  letter-spacing: -2px;
 }
 
 .boardHeader p#labelDescription {
