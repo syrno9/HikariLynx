@@ -1492,8 +1492,6 @@ fieldset legend2 {
   background: var(--post-color);
   border: 1px solid var(--horizon-sep-color);
   border-radius: 5px;
-  border-top-width: 0;
-  border-left-width: 0;
 }
 
 .postCell:target .innerPost, 
