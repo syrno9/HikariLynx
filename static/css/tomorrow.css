@@ -28,7 +28,8 @@
 	--thread-navbar-background: #0f4c6a;
 	--thread-navbar-color: var(--text-color);
 
-    --logo-image: url("/.static/logo/logo_blue_light.png");
+    --post-color: #282a2e;
+    --name-color: #117743;
 }
 
 .quoteLink {
@@ -73,6 +74,26 @@ code {
 }
 
 .box-b-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 4px;
+  background-color: #282a2e;
+  color: #c5c8c6;
+  border-radius: 4px;
+  padding: 5px 8px;
+}
+
+.box-min {
+  background-color: #282a2e;
+  border: 1px solid #000;
+  color: #c5c8c6;
+  border-style: solid;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.box-min-title {
   text-align: left;
   font-weight: bold;
   font-size: 80%;
