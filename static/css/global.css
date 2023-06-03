@@ -2479,6 +2479,26 @@ td.mb-cell-delete {
   border-radius: 4px;
 }
 
+.box-min {
+  background-color: #0d1a1d;
+  border: 1px solid #82cece;
+  color: #acacac;
+  border-style: solid;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.box-min-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 4px;
+  background-color: #182f3f;
+  color: #acacac;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+
 .box-content {
   font-size: 85%;
   vertical-align: middle;
