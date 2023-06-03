@@ -1,0 +1,237 @@
+:root {
+	--background-color: #d1d5ee;
+	--background-gradient: #eef2ff;
+	--text-color: black;
+	--contrast-color: #d6daf0;
+	--menu-color: #eef2ff;
+	--background-highlight-color: #98e;
+	--horizon-sep-color: #b7c5d9;
+	--border-color: black;
+
+	--marked-color: #d6bad0;
+	--marked-border-color: #ba9dbf;
+	--marked-text-color: #000000;
+
+	--board-title-color: #af0a0f;
+	/* --index-text-color: #000333; /* DEPRECATED */
+	/* --board-shadow-color: rgba(105,10,15,0.6); /* DEPRECATED */
+
+	--link-color: #34345C;
+	--link-hover-color: #d00;
+
+	--navbar-text-color: #89a;
+	/* --button-color: #eceff6; /* DEPRECATED */
+	--sfw-indicator-color: #8181a9; /* DEPRECATED? */
+	--subject-color: #8181a9;
+    --role-color: #f00;
+
+	--thread-navbar-background: #E04000;
+	--thread-navbar-color: aliceblue;
+	--navbar-text-display: none; /*sets whether to display text like "overboard" in the navbar*/
+	--post-color: #d6daf0;
+	--name-color: #0f0c5d;
+}
+
+.box-g {
+  background-color: #efe;
+  border: 1px solid #060;
+  color: black;
+  border-style: solid;
+  padding: 0;
+  border-radius: 1px;
+}
+
+.box-g-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 4px;
+  background-color: #9c6;
+  color: #060;
+  padding: 5px 8px;
+  border-radius: 1px;
+}
+
+.box-b {
+  background-color: #eff;
+  border: 1px solid #006;
+  color: #000000;
+  border-style: solid;
+  padding: 0;
+  border-radius: 1px;
+}
+
+.box-b-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 4px;
+  background-color: #59a;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 1px;
+}
+
+.box-min {
+  background-color: #d6daf0;
+  border: 1px solid black;
+  color: #000000;
+  border-style: solid;
+  padding: 0;
+  border-radius: 1px;
+}
+
+.box-min-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 4px;
+  background-color: #98e;
+  color: black;
+  padding: 5px 8px;
+  border-radius: 1px;
+}
+
+.box-content {
+  font-size: 85%;
+  vertical-align: middle;
+  text-align: left;
+  margin: 4px 0;
+  padding: 0 8px;
+}
+
+.titleFieldset {
+  border-radius: 1px;
+}
+
+#bannerImage {
+  border: 1px solid #34345c;
+}
+
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=url],
+textarea {
+  border-radius: 1px;
+}
+fieldset legend {
+  border-radius: 1px;
+}
+#postingForm th,
+.modalTableBody th {
+  border-radius: 1px;
+}
+input.hidden.reloadCaptchaButton {
+  border-radius: 1px;
+}
+#postingForm input[type=submit],
+#qrbutton {
+  border-radius: 1px;
+}
+.innerPost {
+  border-radius: 1px;
+}
+.containPages {
+  border-radius: 1px;
+}
+#indexWrapper > fieldset {
+  border-radius: 1px;
+}
+#indexWrapper > fieldset:not(#welcomeMessage) {
+  border-radius: 1px;
+}
+input[type=button],
+input[type=submit],
+button,
+.dropzone,
+.selectedCell {
+  border-radius: 1px;
+}
+#quick-reply {
+  border-radius: 1px;
+}
+#quick-reply th {
+  border-radius: 1px;
+}
+.modalForm {
+  border-radius: 1px;
+}
+.captchaImage {
+  border-radius: 1px;
+}
+.floatingMenu {
+  border-radius: 1px;
+}
+div#multiboardMenu.floatingMenu {
+  border-radius: 1px;
+}
+.splitField > * {
+  border-radius: 1px;
+}
+
+.labelSubject, .labelRole, .linkName {
+  font-size: 90%;
+}
+
+.labelSubject {
+  color: var(--subject-color);
+  word-wrap: break-word;
+}
+
+.labelRole {
+  color: var(--role-color);
+  font-size: 90%;
+}
+
+.labelRole:before {
+  font-family: 'Icons';
+  content: '\2606'; /*"\e0dc";*/
+  font-size: 90%;
+}
+
+.noEmailName, .noEmailName:hover {
+  color: #117743;
+  cursor: default;
+  font-size: 90%;
+}
+
+.youName::after {
+  content: ' (You)';
+  font-style: italic;
+  font-size: 90%;
+}
+
+.divMessage {
+  margin: 1em 1em 1em 3em;
+  /*white-space: break-spaces;*/
+  white-space: pre-wrap;
+  word-wrap: break-word; /* TODO use <br>s in backend, comment to make moe markdown work(?) */
+font-size: 90%;
+}
+
+.innerPost {
+  display: inline-block;
+  padding: 0.25em;
+  max-width: 100%;
+
+  background: var(--contrast-color);
+  border: 1px solid var(--horizon-sep-color);
+  border-top-width: 0;
+  border-left-width: 0;
+  font-size: 90%;
+}
+
+.innerOP, .innerPost {
+  font-size: 90%;
+}
+
+.boardHeader p#labelName {
+  font-family: "t";
+  font-size: 28px; /* Change this to adjust the font size */
+  background: linear-gradient(to bottom, #B4B6FC, #6B6FFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: #000;
+}
