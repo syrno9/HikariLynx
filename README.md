@@ -2,11 +2,6 @@
 
 HikariLynx is a modified fork of [Aleph](https://gitgud.io/8chan/Aleph) written for [hikari3.ch](https://hikari3.ch/).
 
-## What we have ##
-Frames
-
-Emotes (WIP)
-
 ## Installation ##
 You can install the frontend anywhere you want, just be sure to set the current location in your global settings.
 Best practices dictate you rename the folder to `fe` and place it in the `Lynxchan/src/` directory. This is the default location. User node will need to be able to see all files, and ideally will own them.
