@@ -18,7 +18,9 @@
         autocomplete="none"
         class="postingInput"
         id="fieldName"
-        name="name"></td>
+        name="name"
+		placeholder="Anonymous">
+		</td>
   </tr>
  
   <tr id="divOptions">
@@ -58,19 +60,42 @@
         tabindex="-3" /></td>
   </tr>
 
-  <tr>
-    <th>Message</th>
-    <td><textarea
-        rows="5"
-        cols="35"
-        class="postingInput"
-        id="fieldMessage"
-        name="message"></textarea>
+<tr>
+  <th>Message</th>
+  <td>
+    <textarea
+      rows="5"
+      cols="35"
+      class="postingInput"
+      id="fieldMessage"
+      name="message"></textarea>
 
-      <p class="small">
-        Max message length: <span id="labelMessageLength"></span>
-      </p></td>
-  </tr>
+    <p class="small">
+      Max message length: <span id="labelMessageLength"></span>
+    </p>
+    <details class="small">
+      <summary class="glowOnHover">Emotes</summary>
+	  <p></p>
+        <p><button type="button"><img src="/.static/emotes/angry.gif" width="40"><p>:angry:</p></button>
+        <button type="button"><img src="/.static/emotes/annoyed.png" width="40"><p>:annoyed:</p></button>
+        <button type="button"><img src="/.static/emotes/annoyed2.png" width="40"><p>:annoyed2:</p></button>
+        <button type="button"><img src="/.static/emotes/cry.gif" width="40"><p>:cry:</p></button>
+        <button type="button"><img src="/.static/emotes/down.gif" width="40"><p>:down:</p></button>
+        <button type="button"><img src="/.static/emotes/happy.png" width="40"><p>:happy:</p></button></p>
+        <p><button type="button"><img src="/.static/emotes/happy2.png" width="40"><p>:happy2:</p></button>
+        <button type="button"><img src="/.static/emotes/happy3.png" width="40"><p>:surprised:</p></button>
+        <button type="button"><img src="/.static/emotes/neco.png" width="40"><p>:neco:</p></button>
+        <button type="button"><img src="/.static/emotes/nya.png" width="40"><p>:nya:</p></button>
+        <button type="button"><img src="/.static/emotes/snicker.gif" width="40"><p>:snicker:</p></button>
+        <button type="button"><img src="/.static/emotes/vengence.gif" width="40"><p>:vengence:</p></button></p>
+		<p><button type="button"><img src="/.static/emotes/sleep.png" width="40"><p>:sleep:</p></button>
+		<button type="button"><img src="/.static/emotes/laugh.gif" width="40"><p>:laugh:</p></button>
+		<button type="button"><img src="/.static/emotes/drool.gif" width="40"><p>:drool:</p></button>
+		<button type="button"><img src="/.static/emotes/disgust.png" width="40"><p>:disgust:</p></button></p>
+	<script src="/.static/js/emotes.js"></script>
+	</details>
+  </td>
+</tr>
 
   <tr id="divUpload">
     <th>Files</th>
@@ -111,7 +136,7 @@
       </p>
       <p class="small">
         Supported file types: GIF, JPG, PNG, WebM, OGG, and
-       	<a class="localPageLink" href="/.static/pages/about.html#filetypes">more</a>
+       	<a class="localPageLink" href="/.static/pages/faq.html#filetypes">more</a>
       </p>
 
     </td>
