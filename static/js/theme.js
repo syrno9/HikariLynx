@@ -4,11 +4,14 @@ theme.themes = [ {
       label : 'Default CSS',
       id : 'custom'
   }, {
-      label : 'Hikari',
+      label : 'Hikari3',
       id : 'yotsuba_b'
   }, {
 	  label : 'Tomorow',
 	  id : 'tomorrow',
+  }, {
+	  label : 'Yotsuba B',
+	  id : 'yotsuba-b',
   }
 ];
 
