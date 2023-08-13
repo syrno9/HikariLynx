@@ -63,6 +63,7 @@
 	--navbar-text-display: none; /*sets whether to display text like "overboard" in the navbar*/
 	--post-color: #182f3f;
 	--name-color: #82cece;
+	--logo-image: url("/.static/nav.png");
 }
 
 /* body styles, inherited by whole page */
@@ -1183,6 +1184,27 @@ fieldset legend2 {
   max-height: 100vh;
 }
 
+.activeThreadCell {
+  padding: 0.5em;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 75%;
+  overflow: hidden;
+}
+
+.activeThreadCell img {
+  float: left;
+  margin-right: 10px;
+  max-width: 125px;
+  max-height: 80px;
+  border: 1px solid var(--horizon-sep-color)
+}
+
+.activeThreadCellText span {
+  text-align: right;
+}
+
+
 /************************* UPLOADCELL POSTING *********************************/
 
 .imgLink {
@@ -1477,6 +1499,10 @@ fieldset legend2 {
   margin-left: 0.75em;
 }
 
+.labelOmission:after {
+    content: " Click Reply to view.";
+}
+
 .divMessage {
   margin: 1em 1em 1em 3em;
   /*white-space: break-spaces;*/
@@ -1639,6 +1665,198 @@ em {
 .diceRoll {
   font-weight: bold;
   color: #AF0A0F;
+}
+
+.angry:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/angry.gif);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.angry {
+}
+
+.annoyed:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/annoyed.png);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.annoyed {
+}
+
+.annoyed2:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/annoyed2.png);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.annoyed2 {
+}
+
+.cry:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/cry.gif);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.cry {
+}
+
+.down:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/down.gif);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.down {
+}
+
+.happy:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/happy.png);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.happy {
+}
+
+.happy2:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/happy2.png);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.happy2 {
+}
+
+.happy3:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/happy3.png);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.happy3 {
+}
+
+.neco:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/neco.png);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.neco {
+}
+
+.nya:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/nya.png);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.nya {
+}
+
+.snicker:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/snicker.gif);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.snicker {
+}
+
+.vengence:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/vengence.gif);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.vengence {
+}
+
+.sleep:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/sleep.png);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.sleep {
+}
+
+.laugh:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/laugh.gif);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.laugh {
+}
+
+.drool:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/drool.gif);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.drool {
+}
+
+.disgust:before {
+  display: inline-block;
+  content: '';
+  background-image: url(/.static/emotes/disgust.png);
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.disgust {
 }
 
 span.spoiler {
@@ -2026,7 +2244,6 @@ code {
 
 #divLatestPosts {
   margin: 0;
-  /*margin: 1em;*/
   text-align: center;
 }
 
@@ -2058,6 +2275,8 @@ code {
 #divLatestImages {
   margin: 0 auto;
   text-align: center;
+  margin: 0.5rem;
+  object-fit: contain;
 }
 
 #divLatestImages .latestImageCell {
@@ -2068,12 +2287,11 @@ code {
 }
 
 #divLatestImages img {
-  max-width: 125px;
+  width: 35%;
   max-height: 125px;
-  padding: 5px;
-
-  background: unset;
-  border: 1px solid transparent;
+  margin: 0.5rem;
+  object-fit: cover;
+  border: 1px solid var(--horizon-sep-color)
 }
 
 /******************* BOARDS LIST ***********************************************/
@@ -2505,7 +2723,4 @@ td.mb-cell-delete {
   text-align: left;
   margin: 4px 0;
   padding: 0 8px;
-  
-span.rainbow { font-size: 1.25rem;  font-weight:  bold; animation: rainbow 1.5s linear infinite;  padding-left: 4px;  }
-
-@keyframes rainbow { 0%, 100% { color: red; text-shadow: -1px 0 0 orange, -2px 0 0 yellow, -3px 0 0 lime, -4px 0 0 green, -5px 0 0 blue, -6px 0 0 magenta; } 14% { color: orange; text-shadow: -1px 0 0 yellow, -2px 0 0 lime, -3px 0 0 green, -4px 0 0 blue, -5px 0 0 magenta, -6px 0 0 red; } 28% { color: yellow; text-shadow: -1px 0 0 lime, -2px 0 0 green, -3px 0 0 blue, -4px 0 0 magenta, -5px 0 0 red, -6px 0 0 orange; } 43% { color: lime; text-shadow: -1px 0 0 green, -2px 0 0 blue, -3px 0 0 magenta, -4px 0 0 red, -5px 0 0 orange, -6px 0 0 yellow; } 57% { color: green; text-shadow: -1px 0 0 blue, -2px 0 0 magenta, -3px 0 0 red, -4px 0 0 orange, -5px 0 0 yellow, -6px 0 0 lime; } 71% { color: blue; text-shadow: -1px 0 0 magenta, -2px 0 0 red, -3px 0 0 orange, -4px 0 0 yellow, -5px 0 0 lime, -6px 0 0 green; } 86% { color: magenta; text-shadow: -1px 0 0 red, -2px 0 0 orange, -3px 0 0 yellow, -4px 0 0 lime, -5px 0 0 green, -6px 0 0 blue; } }
+}
