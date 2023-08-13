@@ -18,13 +18,13 @@
     "management-volunteer-template": "cells/volunteerCell.html"
   },
   "templated": [
-    "pages/about.html",
+    "pages/faq.html",
     "pages/contact.html",
     "pages/globalRules.html",
     "pages/links.html",
-    "pages/moderation.html",
-    "pages/posting.html",
-	"pages/legal.html"
+    "pages/news.html",
+	"pages/legal.html",
+	"pages/irc.html"
   ],
   "logIndexCell": "cells/logIndexCell.html",
   "accountPage": "pages/account.html",
