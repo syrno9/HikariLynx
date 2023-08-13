@@ -42,8 +42,6 @@
 	  <u><a href="#3">Dashboard</a></u>
 	  <ul><u><li><a href="#4">Boards Owned</a></li></u>
 	  <u><li><a href="#5">Boards Volunteered</a></li></u></ul>
-	  <hr>
-	  <u><a href="/.static/pages/moderation.html">Create a board</a></u>
     </div>
   </fieldset>
   <div style="flex: 1; margin-left: 10px;">
@@ -218,14 +216,73 @@
       <a
         href="/latestPostings.js"
         id="latestPostingsLink">Latest Posts</a>
-
+	      <div id="boardCreationDiv">
+        <form
+          action="/createBoard.js"
+          enctype="multipart/form-data"
+          method="post">
+          <label>
+            Board Uri:
+            <input
+              type="text"
+              class="creationField"
+              name="boardUri"
+              id="newBoardFieldUri">
+          </label>
+		  <hr>
+          <label>
+            Board Name:
+            <input
+              type="text"
+              class="creationField"
+              name="boardName"
+              id="newBoardFieldName">
+          </label>
+		  <hr>
+          <label>
+            Board Description:
+            <input
+              class="creationField"
+              type="text"
+              name="boardDescription"
+              id="newBoardFieldDescription">
+          </label>
+		  <hr>
+          <div class="captchaDiv">
+            <img
+              src="/captcha.js"
+              class="captchaImage" />
+            <br>
+            <input
+              type="button"
+              tabindex="-1"
+              value="Reload"
+              class="hidden reloadCaptchaButton">
+            <span class="captchaTimer"></span>
+            <br>
+            <input
+              type="text"
+			  autocomplete="none"
+              class="captchaField creationField"
+              name="captcha"
+              id="fieldCaptcha"
+              placeholder="answer">
+            <a
+              href="/noCookieCaptcha.js"
+              class="small">No Cookies</a>
+          </div>
+          <input
+            type="submit"
+	    id="newBoardFormButton" value="Create Board" />
+        </form>
+    </div>
     </div>
   </fieldset>
 </div>
 </div>
 </div>
 </div>
-
+  <footer id="dynamicFooter"></footer>
 </body>
 
 <script src="/.static/js/api.js"></script>

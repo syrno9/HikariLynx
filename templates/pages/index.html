@@ -9,7 +9,6 @@
   href="/.static/css/global.css"
   type="text/css"
   rel="stylesheet" />
-
 <script src="/.static/js/theme.js"></script>
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
@@ -24,11 +23,12 @@
     <legend>Home</legend>
     <p><em>Welcome to hikari3.ch!</em></p>
 	<p style="text-align:center;"><img src="/.static/masco.gif" width="210"></p>
-	<p>An imageboard where users can post images, with text, and generally have discussions. To get started, you can read the <a href="/.static/pages/globalRules.html">rules</a>, then read the <a href="/.static/pages/about.html">FAQ</a>. After that, you can create a thread.</p>
-	<p>[<a href="login.html">Register</a>] [<a href="/.static/pages/moderation.html">Create a board</a>]</p>
+	<p>Very comfy imageboard for people that like to take it easy. To get started, read the <a href="/.static/pages/globalRules.html">rules</a>, then read the <a href="/.static/pages/faq.html">FAQ</a>. After that, you can create a thread.</p>
+	<hr>
+	<footer><p>[ <a href="/.static/pages/frames.html">Frames</a> / <a href="/.static/pages/links.html">Friends</a> / <a href="/.static/pages/irc.html">IRC</a> / <a href="https://discord.gg/s25YzfwE3">Discord (Post Notifs)</a> / <a href="https://steamcommunity.com/groups/Hikari3">Steam</a> ]</p></footer> 
 	 <hr>
 	 <p><strong>Current News</strong></p>
-	 <p><u><a href="/.static/pages/posting.html">Updates - syrno</a></u></p>
+	 <p><u><a href="/.static/pages/news.html">New rules - syrno</a></u></p>
 	 <hr>
 	 <footer>
       <p><span>Media files stored: <span id="labelTotalFiles"></span>
@@ -44,16 +44,24 @@
       <div id="divBoards" class="topBoards title"></div>
     </fieldset>
     <div style="display: flex; flex-direction: row; align-items: flex-start;">
-      <fieldset class="box-g" style="flex: 1; margin-right: 10px;">
+      <fieldset class="box-g" style="flex: 1;">
         <div class="box-g-title">Latest Images</div>
         <div id="divLatestImages"></div>
       </fieldset>
+	  <div style="flex: 1; margin-left: 10px;"> 
+	  
+	  <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
+	  <div class="box-b-title">Active Threads</div>
+	  <div id="threads-container"></div>
+	  </fieldset>
+	  
       <fieldset class="box-b" style="flex: 1;">
         <div class="box-b-title">Latest Posts</div>
         <div id="divLatestPosts"></div>
       </fieldset>
     </div>
   </div>
+</div>
 </div>
 	</div>
 
@@ -63,6 +71,8 @@
 </body>
 
 <script src="/.static/js/api.js"></script>
+<script src="/.static/js/jquery.min.js"></script>
+<script src="/.static/js/activeThreads.js"></script>
 <script src="/.static/js/settingsMenu.js"></script>
 <script src="/.static/js/watcher.js"></script>
 <script src="/.static/js/favouriteBoards.js"></script>
