@@ -22,7 +22,9 @@
   <fieldset class="titleFieldset" style="flex: 0.4;">
     <legend>Home</legend>
     <p><em>Welcome to hikari3.ch!</em></p>
-	<p style="text-align:center;"><img src="/.static/masco.gif" width="210"></p>
+    <div style="width: 100%; text-align: center;">
+      <img src="/.static/masco.gif" style="min-width: 1px; max-width: 210px; width: 100%; object-fit: contain;"/>
+    </div>
 	<p>Very comfy imageboard for people that like to take it easy. To get started, read the <a href="/.static/pages/globalRules.html">rules</a>, then read the <a href="/.static/pages/faq.html">FAQ</a>. After that, you can create a thread.</p>
 	<hr>
 	<footer><p>[ <a href="/.static/pages/frames.html">Frames</a> / <a href="/.static/pages/links.html">Friends</a> / <a href="/.static/pages/irc.html">IRC</a> / <a href="https://discord.gg/s25YzfwE3">Discord (Post Notifs)</a> / <a href="https://steamcommunity.com/groups/Hikari3">Steam</a> ]</p></footer> 
@@ -43,12 +45,12 @@
       <legend>Top Boards</legend>
       <div id="divBoards" class="topBoards title"></div>
     </fieldset>
-    <div style="display: flex; flex-direction: row; align-items: flex-start;">
-      <fieldset class="box-g" style="flex: 1;">
+    <div style="display: flex; flex-direction: row; align-items: flex-start; width: 100%">
+      <fieldset id="divLatestImagesFieldset" class="box-g" style="flex: 1; margin-right: 10px;">
         <div class="box-g-title">Latest Images</div>
         <div id="divLatestImages"></div>
       </fieldset>
-	  <div style="flex: 1; margin-left: 10px;"> 
+	  <div style="flex: 1; width: 100%;">
 	  
 	  <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
 	  <div class="box-b-title">Active Threads</div>
@@ -58,6 +60,10 @@
       <fieldset class="box-b" style="flex: 1;">
         <div class="box-b-title">Latest Posts</div>
         <div id="divLatestPosts"></div>
+      </fieldset>
+      <fieldset id="divLatestImagesMobileFieldset" class="box-g" style="margin-top: 10px;">
+        <div class="box-g-title">Latest Images</div>
+        <div id="divLatestImagesMobile"></div>
       </fieldset>
     </div>
   </div>

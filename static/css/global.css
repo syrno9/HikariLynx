@@ -2069,6 +2069,10 @@ code {
 
 /******************* INDEX PAGE ***********************************************/
 
+fieldset#divLatestImagesMobileFieldset {
+  display: none;
+}
+
 #indexWrapper {
   max-width: 1110px;
   padding-right: 0.5em;
@@ -2272,21 +2276,21 @@ code {
   /*display: block;*/
 }
 
-#divLatestImages {
+#divLatestImages, #divLatestImagesMobile {
   margin: 0 auto;
   text-align: center;
   margin: 0.5rem;
   object-fit: contain;
 }
 
-#divLatestImages .latestImageCell {
+#divLatestImages .latestImageCell, #divLatestImagesMobile .latestImageCell {
   display: inline-block;
   max-width: 15%;
   margin: 0 0.5em;
   vertical-align: middle;
 }
 
-#divLatestImages img {
+#divLatestImages img, #divLatestImagesMobile img {
   width: 35%;
   max-height: 125px;
   margin: 0.5rem;
@@ -2390,6 +2394,16 @@ td.mb-cell-delete {
 
 .innerOP.hidden {
   display: none;
+}
+
+/************************** MOBILE LATEST IMAGES PANE *************************/
+@media only screen and (max-width: 770px) {
+  fieldset#divLatestImagesMobileFieldset {
+    display: block;
+  }
+  fieldset#divLatestImagesFieldset {
+    display: none;
+  }
 }
 
 /************************** BEGIN ICONS/AFTER CONTENT *************************/
