@@ -12,6 +12,9 @@ theme.themes = [ {
   }, {
 	  label : 'Yotsuba B',
 	  id : 'yotsuba-b',
+  }, {
+	  label : 'Futaba',
+	  id : 'futaba',
   }
 ];
 
@@ -31,11 +34,7 @@ theme.addThemeSelector = function() {
  
   themesBefore.parentNode.insertBefore(document.createTextNode(' '),
       referenceNode);
- 
-  var divider = document.createElement('span');
-  divider.innerText = '/';
-  themesBefore.parentNode.insertBefore(divider, referenceNode);
- 
+  
   themesBefore.parentNode.insertBefore(document.createTextNode(' '),
       referenceNode);
  
