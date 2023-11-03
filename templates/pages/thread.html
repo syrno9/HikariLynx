@@ -18,8 +18,19 @@
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
 <body>
-
-  <nav class="navHeader" id="dynamicHeaderThread"></nav>
+<nav class="navHeader" id="dynamicHeader"></nav>
+<div class="page-wrapper">
+<div class="sidebar-wrapper">
+<div class="sidebar-wrapper-ontop">
+<div class="navigation-sidebar">
+<div class="navHeader" id="dynamicSidebarThread"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="content-wrapper">
+<div id="page-content">
 
   <input type=checkbox value="showSideCatalog" id="showSideCatalog"/>
   <label for="showSideCatalog" id="sideCatalogMenu">
@@ -64,7 +75,7 @@
     <div id="postingForm">
 
       <fieldset id="newPostFieldset" class="threadFieldset">
-        <legend><label for="newPostFieldHide">Submit a Reply</label></legend>
+        <legend><label for="newPostFieldHide"><a>Submit a Reply</a></label></legend>
         <input type="checkbox" id="newPostFieldHide" class="hidden" />
 
         <form
@@ -81,8 +92,7 @@
 
           <p class="small">
             Before posting, don't forget to check the 
-            <a href="../rules.html"
-              class="localPageLink">rules</a>
+            <a href="/rules">rules</a>
           </p>
 
           <input type="submit" id="formButton" value="Reply">
@@ -308,7 +318,12 @@
       </form>
 
     </div>
-
+	<hr>
+  <div class="haImage">
+	<a href="#" id="haContainer">
+		<img src="#" class="haImage" id="haImage">
+	</a>
+  </div>
     <div id="dynamicAnnouncement"></div>
     <div id="panelMessage">
       <hr>
@@ -335,11 +350,12 @@
 				<a id="replyButton" href="#postingForm">Reply</a>
 			</span>
 
-			<span class="threadInfo">
+			<p><span class="threadInfo">
 				<span id="postCount"></span>
 				<span id="idCount"></span>
+				Posters: <span id="userCountLabel"></span>
 				<span id="fileCount"></span>
-			</span>
+			</span></p>
 
 		</div>
 
@@ -363,12 +379,6 @@
 
         </div>
 
-        <div id="boardContentLinks" class="innerUtility">
-          <a id="linkManagement">Manage Board</a>
-          <a id="linkModeration">Moderate Board</a>
-          <a id="linkMod">Moderate Thread</a>
-        </div>
-
         <div id="actionsForm"></div>
 
       </form>
@@ -379,12 +389,14 @@
     <div id="thread-post-template" class="hidden"></div>
     <div id="thread-upload-template" class="hidden"></div>
 
-  </div>
-<hr>
+<div>
   <footer id="dynamicFooterAlt"></footer>
-
+</div>
+  <div id="thread-post-template" class="hidden"></div>
+  <div id="thread-upload-template" class="hidden"></div>
 </body>
-
+<script src="/.static/js/song.js"></script>
+<script src="/.static/js/banner.js"></script>
 <script src="/.static/js/crypto.js"></script>
 <script src="/.static/js/api.js"></script>
 <script src="/.static/js/settingsMenu.js"></script>
