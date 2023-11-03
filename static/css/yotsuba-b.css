@@ -27,7 +27,6 @@
 
 	--thread-navbar-background: #E04000;
 	--thread-navbar-color: aliceblue;
-	--navbar-text-display: none; /*sets whether to display text like "overboard" in the navbar*/
 	--post-color: #d6daf0;
 	--name-color: #0f0c5d;
 }
@@ -92,6 +91,10 @@
   border-radius: 1px;
 }
 
+.box-min-title2 {
+  border-radius: 1px;
+}
+
 .box-content {
   font-size: 85%;
   vertical-align: middle;
@@ -106,6 +109,34 @@
 
 #bannerImage {
   border: 1px solid #34345c;
+}
+
+.box-g {
+  border-radius: 1px;
+}
+
+.box-g-title {
+  border-radius: 1px;
+}
+
+.box-b {
+  border-radius: 1px;
+}
+
+.box-b-title {
+  border-radius: 1px;
+}
+
+.box-min {
+  border-radius: 1px;
+}
+
+.box-min-title {
+  border-radius: 1px;
+}
+
+.titleFieldset {
+  border-radius: 1px;
 }
 
 input[type=text],
@@ -167,6 +198,22 @@ div#multiboardMenu.floatingMenu {
   border-radius: 1px;
 }
 .splitField > * {
+  border-radius: 1px;
+}
+
+.floatingList, .floatingMenu, .modalForm {
+  border-radius: 1px;
+}
+
+.floatingList ul li {
+  border-radius: 1px;
+}
+
+.catalogCell {
+  border-radius: 1px;
+}
+
+.sideCatalogCell {
   border-radius: 1px;
 }
 
@@ -234,4 +281,39 @@ font-size: 90%;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 0.1px;
   -webkit-text-stroke-color: #000;
+}
+
+.close-btn:before, .removeButton:before {
+  content: url(/.static/yb-icons/cross.png);
+}
+
+.uploadCell > details[open] .hideFileButton:before {
+  content: url(/.static/yb-icons/post_expand_minus.png);
+  padding: 0 0px 0 0px;
+}
+
+.uploadCell > details .hideFileButton:before {
+  content: url(/.static/yb-icons/post_expand_plus.png);
+  padding: 0 0px 0 0px;
+}
+
+.nameLink:after {
+  font-family: "Icons";
+  content: url(/.static/yb-icons/open.png);
+}
+
+.watchButton:before, .watchedCellDismissButton:before {
+  content: url('/.static/yb-icons/circle.png');
+}
+
+.pinIndicator:after{
+  content: url(/.static/sticky.gif);
+}
+
+.extraMenuButton:before {
+  content: url(/.static/yb-icons/arrow_up.png);
+}
+
+.box-min-title3 {
+  border-radius: 1px;
 }
