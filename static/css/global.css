@@ -60,7 +60,6 @@
 
 	--thread-navbar-background: #E04000;
 	--thread-navbar-color: aliceblue;
-	--navbar-text-display: none; /*sets whether to display text like "overboard" in the navbar*/
 	--post-color: #182f3f;
 	--name-color: #82cece;
 	--logo-image: url("/.static/nav.png");
@@ -79,7 +78,7 @@ body {
 header {
   margin: 1em 0px 1em 0px;
   text-align: center;
-  margin-top: 65px;
+  margin-top: 36px;
 }
 
 footer {
@@ -112,10 +111,10 @@ nav.navHeader {
   border-bottom: 1px solid var(--navbar-text-color);
   text-align: left;
   font-size: 75%;
-  
+  padding: 0 4px 2px 4px;
   position: fixed;
   top: 0px;
-  left: 0;
+  left: 225px;
   width: 100%;
   z-index: 1;
 }
@@ -135,47 +134,47 @@ nav.navHeader .coloredIcon:before, footer .coloredIcon:before {
 }
 
 .navLinkHome:before {
-  content: "\e078";
+  content: none;
 }
 
 .navLinkHome:after {
-  content: 'home';
+  content: 'Home';
 }
 
 .navBoardList:before {
-  content: "\e088";
+  content: none;
 }
 
 .navBoardList:after {
-  content: 'boards';
+  content: 'Boards';
 }
 
 .linkOverboard:before, .navOverboard:before {
-  content: "\e007";
+  content: none;
 }
 
 .navOverboard:after, .linkOverboard:after {
-  content: 'overboard';
+  content: 'Overboard';
 }
 
 .linkSfwOver:before {
-  content: "\e024";
+  content: none;
 }
 
 .linkSfwOver:after {
-  content: 'overboard sfw';
+  content: 'SFW Overboard';
 }
 
 .navPosting:before {
-  content: "\e09a";
+  content: none;
 }
 
 .navPosting:after {
-  content: 'help';
+  content: 'Help';
 }
 
-.watchButton:before, .watcherButton:before, .watchedCellDismissButton:before {
-  content: '\e065';
+.watchButton:before, .watchedCellDismissButton:before {
+  content: url('/.static/icons/h3circle.png');
 }
 
 .watcherButton:before {
@@ -183,27 +182,27 @@ nav.navHeader .coloredIcon:before, footer .coloredIcon:before {
 }
 
 .watcherButton:after {
-  content: 'watched threads';
+  content: 'Thread Watcher';
 }
 
 .settingsButton:before {
-  content: "\e041";
+  content: none;
 }
 
 .settingsButton:after {
-  content: 'settings';
+  content: 'Settings';
 }
 
 .navMod:before {
-  content: "\e081";
+  content: none;
 }
 
 .navMod:after {
-  content: 'user account';
+  content: 'Admin Login';
 }
 
 .multiboardButton:before, .navMultiboard:before {
-  content: "\e07b";
+  content: none;
 }
 
 .navMultiboard:after, .multiboardButton:after {
@@ -339,7 +338,6 @@ a:hover, .glowOnHover:hover {
 
 .coloredIcon:before {
   font-family: 'Icons';
-  margin-right: 0.25em;
 }
 
 #dynamicAnnouncement table {
@@ -351,13 +349,8 @@ a:hover, .glowOnHover:hover {
   display: inline-block;
 }
 
-#divPages a {
-  text-decoration: underline;
-  padding: 0 0.25em;
-}
-
 .close-btn:before, .removeButton:before {
-  content: '\e0db';
+  content: url(/.static/icons/h3cross.png);
 }
 
 .help-btn:before {
@@ -366,20 +359,6 @@ a:hover, .glowOnHover:hover {
 
 .delete-btn:before {
   content: '\e0cf';
-}
-
-#linkPrevious, #linkNext {
-  vertical-align: middle;
-}
-
-#linkPrevious:before {
-  content: "\e035";
-  margin: 0 0.25em;
-}
-
-#linkNext:before {
-  content: "\e036";
-  margin: 0 0.25em;
 }
 
 /************************FORMS AND MODALS**************************************/
@@ -404,8 +383,6 @@ input[type=button], input[type=submit], button, .dropzone, .selectedCell {
 }
 
 input[type=button], input[type=submit], button {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
   cursor: pointer;
 }
 
@@ -432,6 +409,10 @@ input[type=button], input[type=submit], button {
 
 #doSageCheckbox+label:after {
   content: "Sage";
+}
+
+#doFortuneCheckbox+label:after {
+  content: "Fortune";
 }
 
 #alwaysUseBypassCheckBox+label:after {
@@ -497,7 +478,6 @@ input[type=button], input[type=submit], button {
 
 #postingForm {
   text-align: center;
-  margin: 1em auto;
 }
 
 /* TODO: modals */
@@ -784,7 +764,7 @@ summary h3 {
 
 #newPostFieldset {
   display: inline-block;
-  min-width: 27.5em;
+  min-width: 9.5em;
   border: none;
 }
 
@@ -937,7 +917,12 @@ fieldset legend2 {
 }
 
 .boardHeader p#labelDescription {
-  font-size: 100%;
+  font-size: 80%;
+}
+
+#haImage {
+  border: 1px solid var(--border-color);
+  max-width: 468px;
 }
 
 #favoriteButton {
@@ -980,11 +965,10 @@ fieldset legend2 {
 .innerUtility.top {
   color: var(--thread-navbar-color);
   background-color: var(--thread-navbar-background);
-
+  background-image: -webkit-linear-gradient(left, rgb(0 0 0 / 50%), var(--thread-navbar-background), var(--thread-navbar-background), var(--thread-navbar-background), rgb(0 0 0 / 50%));
   margin: 1em;
   width: calc(100% - 2em);
   text-align: center;
-
   font-weight: bold;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -1005,9 +989,11 @@ fieldset legend2 {
 }
 
 .containPages {
-  color: var(--link-color);
-  background-color: var(--contrast-color);
-  padding: 0.1em 0.25em;
+  background-color: var(--post-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 13px;
 }
 
 .threadBottom .innerUtility {
@@ -1057,7 +1043,7 @@ fieldset legend2 {
 }
 
 .navCatalog:before {
-  content: "\e072";
+  content: none;
 }
 
 .navCatalog:after {
@@ -1065,7 +1051,7 @@ fieldset legend2 {
 }
 
 .linkRss:before {
-  content: "\e0b7";
+  content: none;
 }
 
 .linkRss:after {
@@ -1073,7 +1059,7 @@ fieldset legend2 {
 }
 
 .linkLogs:before {
-  content: "\e021"
+  content: none;
 }
 
 .linkLogs:after {
@@ -1081,7 +1067,7 @@ fieldset legend2 {
 }
 
 #linkTop:before {
-  content: "\e012";
+  content: none;
 }
 
 #linkTop:after {
@@ -1089,7 +1075,7 @@ fieldset legend2 {
 }
 
 #linkBottom:before {
-  content: "\e00f";
+  content: none;
 }
 
 #linkBottom:after {
@@ -1097,7 +1083,7 @@ fieldset legend2 {
 }
 
 .linkBack:before {
-  content: "\e003";
+  content: none;
 }
 
 .linkBack:after {
@@ -1105,7 +1091,7 @@ fieldset legend2 {
 }
 
 #navSideCatalog:before {
-  content: "\e087";
+  content: none;
 }
 
 #navSideCatalog:after {
@@ -1113,7 +1099,7 @@ fieldset legend2 {
 }
 
 #galleryLink:before {
-  content: "\e083";
+  content: none;
 }
 
 #galleryLink:after {
@@ -1131,7 +1117,7 @@ fieldset legend2 {
   position: fixed;
   overflow-y: auto;
   right: -20%;
-  top: 51px;
+  top: 22px;
   height: calc(100vh - 22px);
   width: 20em;
   overscroll-behavior: contain;
@@ -1185,19 +1171,20 @@ fieldset legend2 {
 }
 
 .activeThreadCell {
-  padding: 0.5em;
-  margin-bottom: 10px;
-  display: block;
-  font-size: 75%;
-  overflow: hidden;
+  font-size: 85%;
+  display: inline-block;
+  width: 14em;
+  height: 14em;
+  padding: 0.25em;
+  margin: 0.1em;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .activeThreadCell img {
-  float: left;
-  margin-right: 10px;
-  max-width: 125px;
-  max-height: 80px;
-  border: 1px solid var(--horizon-sep-color)
+  max-height: 140px;
+  max-width: 140px;
+  border: 1px solid var(--border-color);
 }
 
 .activeThreadCellText span {
@@ -1237,8 +1224,8 @@ fieldset legend2 {
 
 /*Change the dimensions if you wish for larger thumbs*/
 .uploadCell img:not(.imgExpanded) {
-  max-width: 152px;
-  max-height: 123px;
+  max-width: 250px;
+  max-height: 250px;
   object-fit: contain;
 }
 
@@ -1277,7 +1264,7 @@ fieldset legend2 {
 
 .nameLink:after {
   font-family: "Icons";
-  content: '\e064';
+  content: url(/.static/icons/h3open.png);
 }
 
 .uploadCell > details a,
@@ -1286,12 +1273,11 @@ fieldset legend2 {
 }
 
 .uploadCell > details .hideFileButton:before {
-  content: '\e060';
-  padding: 0 2px 0 4px;
+  content: url(/.static/icons/h3plus.png);
 }
 
 .uploadCell > details[open] .hideFileButton:before {
-  content: '\e045';
+  content: url(/.static/icons/h3minus.png);
 }
 
 /* summary-based image expansion */
@@ -1315,7 +1301,6 @@ fieldset legend2 {
 
 .uploadDetails {
   white-space: nowrap;
-  margin-bottom: 0.5em;
 }
 
 .uploadDetails .sizeLabel, .uploadDetails .dimensionLabel {
@@ -1362,16 +1347,16 @@ fieldset legend2 {
 }
 
 .extraMenuButton, .hideButton, .watchButton {
-  margin-left: 0.25em;
   position: relative;
+  top: 4px;
 }
 
 .extraMenuButton:before {
-  content: '\e02f';
+  content: url(/.static/icons/h3up.png);
 }
 
 .hideButton:before {
-  content: '\e017';
+  content: none;
 }
 
 .divBanMessage:before, .lockIndicator:before, .pinIndicator:after, .archiveIndicator:after
@@ -1381,11 +1366,11 @@ fieldset legend2 {
 }
 
 .lockIndicator:before {
-  content: "\e08a";
+  content: url(/.static/icons/locked.gif);
 }
 
 .pinIndicator:after {
-  content: "\e0a8";
+  content: url(/.static/icons/h3sticky.png);
 }
 
 .archiveIndicator:after {
@@ -1420,7 +1405,8 @@ fieldset legend2 {
 
 .labelRole:before {
   font-family: 'Icons';
-  content: '\2606'; /*"\e0dc";*/
+  content: url('/.static/favicon.png');
+  margin-right: 4px;
 }
 
 .noEmailName, .noEmailName:hover {
@@ -1472,6 +1458,7 @@ fieldset legend2 {
 
 .quoteLink, .panelBacklinks a {
   text-decoration: underline;
+  font-size: 90%;
 }
 
 .quoteLink {
@@ -1538,9 +1525,7 @@ fieldset legend2 {
 }
 
 .divBanMessage:before {
-  content: "\e0d8";
-  padding-right: 0.25em;
-  vertical-align: middle;
+  content: none;
 }
 
 .inlineQuote .innerPost {
@@ -2076,7 +2061,7 @@ fieldset#divLatestImagesMobileFieldset {
 #indexWrapper {
   max-width: 1110px;
   padding-right: 0.5em;
-  margin: 4em auto;
+  margin: 2em auto;
 }
 
 #indexWrapper > fieldset {
@@ -2235,7 +2220,7 @@ fieldset#divLatestImagesMobileFieldset {
 .topBoards {
   width: 100%;
   text-align: center;
-  /*margin: 1em 0px;*/
+  margin-bottom: 15px
 }
 
 .topBoards a {
@@ -2291,8 +2276,8 @@ fieldset#divLatestImagesMobileFieldset {
 }
 
 #divLatestImages img, #divLatestImagesMobile img {
-  width: 35%;
-  max-height: 125px;
+  width: 130px;
+  max-height: 130px;
   margin: 0.5rem;
   object-fit: cover;
   border: 1px solid var(--horizon-sep-color)
@@ -2729,6 +2714,34 @@ td.mb-cell-delete {
   color: #acacac;
   padding: 5px 8px;
   border-radius: 4px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.box-min-title3 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 4px;
+  background-color: var(--background-highlight-color);
+  color: var(--text-color);
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.box-min-title2 {
+  font-weight: bold;
+  font-size: 80%;
+  padding: 4px;
+  background-color: var(--background-highlight-color);
+  color: var(--text-color);
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .box-content {
@@ -2737,4 +2750,264 @@ td.mb-cell-delete {
   text-align: left;
   margin: 4px 0;
   padding: 0 8px;
+}
+
+.box-content2 {
+  font-size: 75%;
+  vertical-align: middle;
+  text-align: left;
+  margin: 4px 0;
+  padding: 0 8px;
+}
+
+.box-content3 {
+  font-size: 100%;
+  text-align: left;
+  padding: 0.7em;
+}
+
+.boards-content {
+  font-size: 85%;
+  vertical-align: middle;
+  margin: -9px 0;
+  padding: 0 150px;
+}
+
+.column {
+  float: left;
+  width: 10em;
+  text-align: left;
+}
+
+.column-last {
+  float: left;
+}
+
+.sidebar-wrapper-ontop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 225px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  visibility: visible;
+  border-right: 1px solid var(--border-color);
+}
+
+.bracket-list {
+  position: relative;
+  color: var(--text-color);
+}
+
+.bracket-list:not(:empty)::before {
+  content: "[";
+  padding-right: 2px;
+}
+.bracket-list:not(:empty)::after {
+  content: "]";
+  padding-left: 2px;
+}
+
+.bracket-list > *:not(:last-child)::after {
+  content: "][";
+  color: var(--text-color);
+  display: inline-block;
+  font-size: 100%;
+  pointer-events: none;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.bracket-button::before,
+.bracket-button::after {
+  color: var(--text-color);
+}
+
+.bracket-button::before {
+  content: "[";
+  margin-right: 2px;
+}
+.bracket-button::after {
+  content: "]";
+  margin-left: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+@keyframes rainbow {
+  0% { color: #ff0000; }
+  16.67% { color: #ff7f00; }
+  33.33% { color: #ffff00; } 
+  66.67% { color: #0000ff; } 
+  83.33% { color: #8b00ff; } 
+  100% { color: #ff0000; } 
+}
+
+.divFortune {
+  animation: rainbow 2s infinite;
+  font-weight: bold;
+}
+
+.divFortune::before {
+  content: "Your fortune: ";
+}
+
+.s1 {
+  font-size: 70%;
+}
+
+.s2 {
+  font-size: 120%;
+}
+
+.s3 {
+  font-size: 140%;
+}
+
+.s4 {
+  font-size: 160%;
+}
+
+.s5 {
+  font-size: 180%;
+}
+
+.s6 {
+  font-size: 200%;
+}
+
+.s7 {
+  font-size: 220%;
+}
+
+.powerful {
+  animation: rainbow 0.5s infinite;
+  text-shadow: -1px 0 4px var(--border-color), 1px 1px 1px var(--menu-color), 2px 0 10px var(--marked-color);
+}
+
+.c1 {
+  color: red;
+}
+
+.c2 {
+  color: orange;
+}
+
+.c3 {
+  color: brown;
+}
+
+.c4 {
+  color: purple;
+}
+
+.c5 {
+  color: pink;
+}
+
+.c6 {
+  color: yellow;
+}
+
+.c7 {
+  color: green;
+}
+
+.c8 {
+  color: blue;
+}
+
+.c9 {
+  color: lightblue;
+}
+
+.content-wrapper {
+  margin-left: 225px;
+}
+
+.side-header {
+  float: right;
+  margin-right: 10px
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.haImage{
+    width: 100%;
+    text-align: center;
+}
+
+.mobileShow{
+  visibility: hidden;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sidebar-wrapper-ontop {
+    visibility: hidden;
+  }
+
+  .content-wrapper {
+    margin-left: 0px;
+  }
+
+  nav.navHeader {
+    left: 0px;
+  }
+  
+  .haImage{
+    max-width: 460px;
+    text-align: center;
+  }
+  
+  .mobileHide{
+	visibility: hidden;
+	display: none;
+  }
+  
+  .mobileShow{
+	visibility: visible;
+	display: contents;
+  }
+}
+
+.newsMobile{
+	visibility: visible;
+	display: contents;
+}
+
+.faqMobile{
+	visibility: hidden;
+	display: none;
+}
+
+.rulesMobile{
+	visibility: hidden;
+	display: none;
+}
+
+.friendsMobile{
+	visibility: hidden;
+	display: none;
+}
+
+.chatsMobile{
+	visibility: hidden;
+	display: none;
+}
+
+.flashSection{
+	visibility: hidden;
+	display: none;
 }
