@@ -14,53 +14,39 @@
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
 <body>
-
-  <nav class="navHeader" id="dynamicHeaderBoard"></nav>
+<nav class="navHeader" id="dynamicHeader"></nav>
+<div class="page-wrapper">
+<div class="sidebar-wrapper">
+<div class="sidebar-wrapper-ontop">
+<div class="navigation-sidebar">
+<div class="navHeader" id="dynamicSidebarBoard"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="content-wrapper">
+<div id="page-content">
 
   <header class="boardHeader">
     <img id="bannerImage" />
 	<p><h1 id="labelName">Catalog of <a href="." id="labelBoard"></a></h1>
   </header></p>
-
-
-  <div id="postingForm">
-    <button
-      id="togglePosting"
-      class="hidden">Submit a Thread</button>
-    <fieldset id="newPostFieldset" class="boardFieldset">
-      <legend><label for="newPostFieldHide">Mode: Thread</label></legend>
-      <input type="checkbox" id="newPostFieldHide" class="hidden" />
-
-      <form
-        action="/newThread.js"
-        enctype="multipart/form-data"
-        method="post">
-
-        <div id="postingFormContents"></div>
-
-        <p class="small">
-	  Before posting, make sure to read the
-          <a href="rules.html"
-            class="localPageLink">rules</a>
-        </p>
-
-        <input type="submit" id="formButton" value="Post">
-
-      </form>
-
-    </fieldset>
-
+  <hr>
+  <div class="haImage">
+	<a href="#" id="haContainer">
+		<img src="#" class="haImage" id="haImage">
+	</a>
   </div>
-
   <div id="dynamicAnnouncement"></div>
   <hr>
 
   <div id="catalogWrapper">
+  <a id="togglePosting"></a>
     <div id="divTools">
 
 	  <div class="innerUtility">
         <a href="./#">Index</a>
-        <a id="archiveLinkBoard">Archive</a>
         <a class="navButton" href="#footer">Bottom</a>
 	  </div>
 
@@ -86,12 +72,14 @@
       id="divThreads"
       class="catalogDiv"></div>
   </div>
+</div>
   <footer id="dynamicFooterAlt"></footer>
-
+</div>
   <div id="catalog-cell-template" class="hidden"></div>
 
 </body>
-
+<script src="/.static/js/song.js"></script>
+<script src="/.static/js/banner.js"></script>
 <script src="/.static/js/crypto.js"></script>
 <script src="/.static/js/api.js"></script>
 <script src="/.static/js/board.js"></script>
