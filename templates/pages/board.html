@@ -18,9 +18,19 @@
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
 <body>
-
-  <nav class="navHeader" id="dynamicHeaderBoard"></nav>
-
+<nav class="navHeader" id="dynamicHeader"></nav>
+<div class="page-wrapper">
+<div class="sidebar-wrapper">
+<div class="sidebar-wrapper-ontop">
+<div class="navigation-sidebar">
+<div class="navHeader" id="dynamicSidebarBoard"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="content-wrapper">
+<div id="page-content">
   <input type=checkbox value="showSideCatalog" id="showSideCatalog"/>
   <label for="showSideCatalog" id="sideCatalogMenu">
     <div
@@ -50,14 +60,17 @@
     </div>
     <p id="labelDescription"></p>
 	<span class="boardLinks">
+		[
 		<a href="catalog.html">Catalog</a>
-		<a id="archiveLinkBoard">Archive</a>
+		] [
+		<a href="index.rss">RSS</a>
+		]
 	</span>
   </header>
 
   <div id="postingForm">
     <fieldset id="newPostFieldset" class="boardFieldset">
-      <legend><label for="newPostFieldHide">Submit a Thread</label></legend>
+      <legend><label for="newPostFieldHide"><a>Submit a Thread</a></label></legend>
       <input type="checkbox" id="newPostFieldHide" class="hidden" />
 
       <form
@@ -69,8 +82,7 @@
 
         <p class="small">
 	  Before posting, make sure to read the
-          <a href="rules.html"
-            class="localPageLink">rules</a>
+          <a href="/rules">rules</a>
         </p>
 
         <input type="submit" id="formButton" value="Post">
@@ -80,7 +92,12 @@
     </fieldset>
 
   </div>
-
+  <hr>
+  <div class="haImage">
+	<a href="#" id="haContainer">
+		<img src="#" class="haImage" id="haImage">
+	</a>
+  </div>
   <div id="dynamicAnnouncement"></div>
   <div id="panelMessage">
     <hr>
@@ -98,20 +115,13 @@
 
       <hr class="clearer" />
 
-      <div>
+      <div id="contain">
 
-        <span class="containPages">[ <a id="linkPrevious" class="coloredIcon"></a> <span
-          id="divPages"></span> <a id="linkNext" class="coloredIcon"></a> ]
+        <span class="containPages"><a id="linkPrevious"><button type="button">Previous</button></a> </a> <span
+          id="divPages" class="bracket-list"></span> <a id="linkNext"><button type="button">Next</button></a> | <a href="catalog.html">Catalog</a>
         </span>
 
         <br>
-
-        <div id="boardContentLinks" class="innerUtility">
-          <a id="linkManagement">Manage Board</a>
-          <a id="linkModeration">Moderate Board</a>
-          <a id="linkMod">Moderate Thread</a>
-        </div>
-
       </div>
 
       <div id="actionsForm"></div>
@@ -119,13 +129,23 @@
     </form>
 
   </div>
+<div class="flashSection">
+<div id="closeSection" style="text-align: center">
+<button id="closeEmbeds">Close Embeds</button>
 <hr>
+</div>
+<div id="dynamicFlashBoard"></div>
+</div>
+</div>
   <footer id="dynamicFooterAlt"></footer>
+</div>
+
   <div id="thread-post-template" class="hidden"></div>
   <div id="thread-upload-template" class="hidden"></div>
 
 </body>
-
+<script src="/.static/js/song.js"></script>
+<script src="/.static/js/banner.js"></script>
 <script src="/.static/js/emotes.js"></script>
 <script src="/.static/js/crypto.js"></script>
 <script src="/.static/js/api.js"></script>
