@@ -4,7 +4,7 @@ function displayLatestThreads(data) {
   const threadsContainer = document.getElementById('threads-container');
   threadsContainer.innerHTML = '';
 
-  for (let i = 0; i < 3 && i < sortedThreads.length; i++) {
+  for (let i = 0; i < Math.min(8, sortedThreads.length); i++) {
     const threadData = sortedThreads[i];
     const threadContainer = document.createElement('div');
     threadContainer.classList.add('activeThreadCell');
@@ -17,7 +17,7 @@ function displayLatestThreads(data) {
 
     const threadBoard = document.createElement('p');
     const boardName = `Board: /${threadData.boardUri}/`;
-    threadBoard.textContent = boardName.length > 130 ? boardName.substring(0, 130) + '...' : boardName;
+    threadBoard.textContent = boardName.length > 20 ? boardName.substring(0, 20) + '...' : boardName;
     threadBoard.style.textAlign = 'left';
     threadContainer.appendChild(threadBoard);
 
@@ -30,18 +30,12 @@ function displayLatestThreads(data) {
     }
 
     const threadMessage = document.createElement('p');
-    const messageText = threadData.message.substring(0, 130) + (threadData.message.length > 130 ? '...' : '');
+    const messageText = threadData.message.substring(0, 20) + (threadData.message.length > 20 ? '...' : '');
     threadMessage.textContent = messageText;
     threadMessage.style.textAlign = 'left';
     threadLink.appendChild(threadMessage);
 
     threadsContainer.appendChild(threadContainer);
-
-    if (i < 2 && i < sortedThreads.length - 1) {
-      const hrElement = document.createElement('hr');
-      hrElement.style.textAlign = 'left';
-      threadsContainer.appendChild(hrElement);
-    }
   }
 }
 
