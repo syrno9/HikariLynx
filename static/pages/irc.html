@@ -1,53 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>IRC</title>
+<title>Chats</title>
 <meta charset="UTF-8" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0">
-<link
-  href="/.static/css/global.css"
-  type="text/css"
-  rel="stylesheet" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/.static/css/global.css" type="text/css" rel="stylesheet" />
 <script src="/.static/js/theme.js"></script>
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
 <body>
-
 <nav class="navHeader" id="dynamicHeader"></nav>
-
+<div class="page-wrapper">
+<div class="sidebar-wrapper">
+<div class="sidebar-wrapper-ontop">
+<div class="navigation-sidebar">
+<div class="navHeader" id="dynamicSidebar"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="content-wrapper" style="margin-left: 225px;">
 <div class="titleWrapper" id="indexWrapper">
-    <fieldset class="titleFieldset" style="margin-bottom: 10px;">
-      <legend>IRC</legend>
-	  <iframe src="https://qchat.rizon.net/?channels=hikari3&amp;uio=d4" width="1070" height="650"></iframe><p><a href="irc://irc.rizon.net/hikari3">Or if you prefer your own client.</a></p>
-	</fieldset>
+<div id="page-content">
+<img src="/.static/masco.gif" width="200">
+<em><p id="quote" style="margin-bottom: 15px;"></p></em>
+<p class="small" style="margin-bottom: 5px;"><a href="/"><u>Home</u></a> | <a href="/news"><u>News</u></a> | <a href="/faq"><u>FAQ</u></a> | <a href="/rules"><u>Rules</u></a> | <a href="/links"><u>Friends</u></a> | <u>Chats</u></p>
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 1000px; margin: 0 auto;">
+    <div style="display: flex; flex-direction: row; align-items: flex-start; width: 100%">
+    <div style="flex: 1;">
+    <h1 style="text-align: center; font-family: tahoma; color: #AF0A0F; font-size: 20pt; letter-spacing: -2px;">Chats</h1>
+		<div class="box-content">
+<style>
+.box-min-title3 {
+  font-size: 100%;
+}
+</style>
+		<div class="box-min-title3"><strong>Chats</strong></div>
+		<div style="margin-left: 15px; margin-top: 10px; margin-bottom: 20px">
+		<p>These are for if you would like to have quick conversations instant conversations with other hikari3 users.</p>
+		<p>(These are not meant to be replacement for discussions on the boards however, try to keep the discussions there)</p>
+		<hr>
+		<h3>Discord (Post Notifications)</h3>
+		<p>The primary use for this is to be notified when a post is made on the site, but is also linked with the IRC chat.</p>
+		<p><a href="https://discord.gg/ZYNhhTHX9">Invite link</a></p>
+		<p>(The invite expires every 30 days, may not always be up to date)</p>
+		<hr>
+		<h3>IRC</h3>
+		<div style="text-align: center">
+		<iframe src="https://qchat.rizon.net/?channels=hikari3&amp;uio=d4" width="700px" height="500px"></iframe><p><a href="irc://irc.rizon.net/hikari3">Or if you prefer your own client.</a></p>
+		</div>
+		</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<footer id="dynamicFooter"></footer>
 
-</div>
-<footer id="dynamicFooter"><div id="footer">
-	<div class="footerDisclaimer">
-		"Always click on fishing link" - Fish
-    <hr>
-	</div>
-    <a href="/.static/pages/faq.html">FAQ</a>
-    •
-    <a href="/.static/pages/globalRules.html">Global Rules</a>
-    •
-    <a href="/.static/pages/legal.html">Legal</a>
-    •
-    <a href="/.static/pages/contact.html">Contact</a>
-	<br>
-	<a class="coloredIcon" id="linkEngine" href="//gitgud.io/LynxChan/LynxChan"></a>
-    +
-	<a class="coloredIcon" href="//github.com/syrno9/HikariLynx">HikariLynx</a>
-</div>
-</footer>
 </body>
-
+<script src="/.static/js/quote.js"></script>
 <script src="/.static/js/api.js"></script>
-<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/jquery.min.js"></script>
+<script src="/.static/js/activeThreads.js"></script>
 <script src="/.static/js/settingsMenu.js"></script>
 <script src="/.static/js/watcher.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/multiboardMenu.js"></script>
 
 </html>
