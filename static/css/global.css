@@ -394,7 +394,7 @@ input[type=button], input[type=submit], button {
 }
 
 #postingForm input[type=text], #postingForm textarea {
-  width: calc(100% - 7px);
+  width: 400px;
 }
 
 #checkboxSpoiler+label:after,
@@ -495,9 +495,6 @@ input[type=button], input[type=submit], button {
 }
 
 #postingForm input[type=submit], #qrbutton {
-  width: 9em;
-  margin: 0.5em auto;
-  font-size: 115%;
 }
 
 .captchaImage {
@@ -780,10 +777,10 @@ summary h3 {
 }
 
 #newPostFieldset form {
-  display: none;
+  display: block;
 }
 #newPostFieldset #newPostFieldHide:checked + form {
-  display: block;
+  display: none;
 }
 
 fieldset legend {
@@ -923,6 +920,11 @@ fieldset legend2 {
 #haImage {
   border: 1px solid var(--border-color);
   max-width: 468px;
+}
+
+#haImage2 {
+  border: 1px solid var(--border-color);
+  max-width: 668px;
 }
 
 #favoriteButton {
@@ -1178,7 +1180,7 @@ fieldset legend2 {
   padding: 0.25em;
   margin: 0.1em;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .activeThreadCell img {
@@ -1335,7 +1337,7 @@ fieldset legend2 {
 
 .opCell > .innerOP {
   display: inline-block;
-  width: 95%;
+  width: 100%;
 }
 
 .postInfo {
@@ -1352,7 +1354,7 @@ fieldset legend2 {
 }
 
 .extraMenuButton:before {
-  content: url(/.static/icons/h3up.png);
+  content: url(/.static/icons/h3menu.png);
 }
 
 .hideButton:before {
@@ -1382,10 +1384,8 @@ fieldset legend2 {
 }
 
 .bumpLockIndicator:after {
-  content: "\2693\FE0E";
-  background: url(/.static/anchor.png) no-repeat;
+  content: "AS";
   background-size: 11pt;
-  color: transparent;
   font-size: 12pt;
   font-weight: bold;
 }
@@ -2477,10 +2477,10 @@ td.mb-cell-delete {
   }
   /* Flipped logic for phones */
   #newPostFieldset form {
-    display: none;
+    display: block;
   }
   #newPostFieldset #newPostFieldHide:checked + form {
-    display: block;
+    display: none;
   }
 
   #navLinkSpan > #hamburger-menu-icon, #navOptionsSpan > a {
@@ -2860,6 +2860,51 @@ td.mb-cell-delete {
   content: "Your fortune: ";
 }
 
+.excellentLuck {
+	font-weight: bold;
+    color: #FD4D32;
+}
+
+.goodLuck {
+	font-weight: bold;
+    color: #E7890C;
+}
+
+.averageLuck {
+	font-weight: bold;
+    color: #BAC200;
+}
+
+.badLuck {
+	font-weight: bold;
+    color: #7FEC11;
+}
+
+.tellYouNow {
+	font-weight: bold;
+    color: #2A56FB;
+}
+
+.outlookGood {
+	font-weight: bold;
+    color: #6023F8;
+}
+
+.veryBadLuck {
+	font-weight: bold;
+    color: #9D05DA;
+}
+
+.godlyLuck {
+	font-weight: bold;
+    color: #D302A7;
+}
+
+.youAreBanned {
+	font-weight: bold;
+    color: red;
+}
+
 .s1 {
   font-size: 70%;
 }
@@ -2948,9 +2993,42 @@ td.mb-cell-delete {
     text-align: center;
 }
 
+.haImage2{
+    width: 100%;
+    text-align: center;
+}
+
 .mobileShow{
   visibility: hidden;
   display: none;
+}
+
+#dynamicBlotter {
+    border: none;
+    border-top: 1px solid var(--horizon-sep-color);
+    max-width: 435px;
+    width: max-content;
+    margin: auto;
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+#dynamicBlotter table {
+    padding: 5px 0px 5px 0px;
+}
+
+#dynamicBlotter td {
+    vertical-align: top;
+    padding-right: 4px;
+}
+
+#dynamicBlotter tr {
+    line-height: 14px;
+}
+
+#dynamicBlotter.alt {
+    border-bottom: 1px solid #282a2e;
+    margin-bottom: 10px;
 }
 
 @media (max-width: 767px) {
@@ -2970,7 +3048,12 @@ td.mb-cell-delete {
     max-width: 460px;
     text-align: center;
   }
-  
+
+  .haImage2{
+    max-width: 460px;
+    text-align: center;
+  }
+
   .mobileHide{
 	visibility: hidden;
 	display: none;
@@ -2980,6 +3063,25 @@ td.mb-cell-delete {
 	visibility: visible;
 	display: contents;
   }
+  
+  #postingForm input[type=submit], #qrbutton {
+    width: 9em;
+    margin: 0.5em auto;
+    font-size: 115%;
+  }
+  
+  #postingForm input[type=text], #postingForm textarea {
+	width: 300px;
+  }
+  
+  #dynamicBlotter {
+    border: none;
+    border-top: 1px solid var(--horizon-sep-color);
+    max-width: 355px;
+    margin: auto;
+    font-size: 11px;
+    margin-bottom: 12px;
+ }
 }
 
 .newsMobile{
@@ -3010,4 +3112,60 @@ td.mb-cell-delete {
 .flashSection{
 	visibility: hidden;
 	display: none;
+}
+
+.stickyNav {
+	border: 1px solid var(--border-color);
+	float: right;
+	background-color: var(--background-highlight-color);
+	padding: 2px;
+	border-radius: 5px;
+	display: block;
+}
+
+.stickyNavB {
+	border: 1px solid rgba(0, 0, 0, 0.20);
+	float: right;
+	background-color: #d6daf0;
+	padding: 2px;
+	border-radius: 1px;
+	display: none;
+}
+
+.stickyNavC {
+	border: 1px solid rgba(0, 0, 0, 0.20);
+	float: right;
+	background-color: #f0e0d6;
+	padding: 2px;
+	border-radius: 1px;
+	display: none;
+}
+
+.stickyNavD {
+	border: 1px solid var(--border-color);
+	float: right;
+	background-color: var(--background-highlight-color);
+	padding: 2px;
+	border-radius: 5px;
+	display: none;
+}
+
+.sage {
+	color: red;
+}
+
+.submitButton {
+    font-size: large;
+    border: none;
+    text-decoration: underline;
+    background: none;
+	color: var(--link-color);
+}
+
+.submitButton:hover {
+  color: var(--link-hover-color);
+}
+
+.stickyNavC, .boardLinks {
+    z-index: 2;
 }

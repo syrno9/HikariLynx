@@ -1,0 +1,124 @@
+:root {
+	--background-color: #222222eb;
+	--background-gradient: #0d1a1d;
+	--text-color: #dcdcdc;
+	--contrast-color: #000000;
+	--menu-color: #000000;
+	--background-highlight-color: #222222;
+	--horizon-sep-color: #d2738a;
+	--border-color: #d2738a;
+	--marked-color: #6d99ba73;
+	--marked-border-color: #82cece;
+	--marked-text-color: #ffffff;
+	--board-title-color: #af0a0f;
+	--link-color: #6d98ba;
+	--link-hover-color: #d00;
+
+	--navbar-text-color: #d2738a;
+	--sfw-indicator-color: #d2738a;
+	--subject-color: #f4c095;
+    --role-color: #15ff00;
+
+	--thread-navbar-background: #E04000;
+	--thread-navbar-color: aliceblue;
+	--post-color: #222222;
+	--name-color: #d2738a;
+	--logo-image:
+}
+
+body {
+	background: linear-gradient(#6d99BA50,#1c1c1c75 400px calc(100% - 200px),#d2738A90),url(/.global/mimeThumbs/645c675f9a1178582ac3c385),#0d0d0d none repeat scroll 0 0
+}
+
+
+#bannerImage {
+  border: 1px solid #d2738a;
+}
+
+.boardHeader #labelName {
+  font-family: tahoma;
+  color: #f4c095;
+}
+
+.boardHeader p, #overboardId {
+  color: #ffffff;
+}
+
+.box-g {
+  background-color: #000000;
+}
+
+.box-b {
+  background-color: #000000;
+  border: 1px solid #d2738a;
+  color: #dcdcdc;
+  border-style: solid;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.box-b-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 4px;
+  background-color: #282a2e;
+  color: #f4c095;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+
+.box-min {
+  background-color: #000000;
+  border: 1px solid #d2738a;
+  color: #dcdcdc;
+  border-style: solid;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.box-min-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 4px;
+  background-color: #282a2e;
+  color: #f4c095;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+
+.close-btn:before, .removeButton:before {
+  content: url('/.static/other-ico/cross.png');
+}
+
+.uploadCell > details[open] .hideFileButton:before {
+  content: url('/.static/other-ico/minus.png');
+  padding: 0 0px 0 0px;
+}
+
+.uploadCell > details .hideFileButton:before {
+  content: url('/.static/other-ico/plus.png');
+  padding: 0 0px 0 0px;
+}
+
+.nameLink:after {
+  font-family: "Icons";
+  content: url('/.static/other-ico/open.png');
+}
+
+.pinIndicator:after{
+  content: url('/.static/sticky.gif');
+}
+
+.extraMenuButton:before {
+  content: url('/.static/other-ico/menu.png');
+}
+
+.stickyNav {
+	display: none;
+}
+
+.stickyNavD {
+	display: block;
+}

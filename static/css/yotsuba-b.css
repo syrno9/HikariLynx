@@ -311,9 +311,17 @@ font-size: 90%;
 }
 
 .extraMenuButton:before {
-  content: url(/.static/yb-icons/arrow_up.png);
+  content: url(/.static/yb-icons/menu.png);
 }
 
 .box-min-title3 {
   border-radius: 1px;
+}
+
+.stickyNav {
+	display: none;
+}
+
+.stickyNavB {
+	display: block;
 }

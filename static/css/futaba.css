@@ -197,7 +197,7 @@ nav.navHeader {
 }
 
 .extraMenuButton:before {
-  content: url(/.static/css/arrow_up.png);
+  content: url(/.static/css/menu.png);
 }
 
 .settingsButton:before {
@@ -373,7 +373,6 @@ div#multiboardMenu.floatingMenu {
 
 footer {
   width: 100%;
-  font-family: Tahoma;
   text-align: center;
   font-size: 65%;
 }
@@ -429,4 +428,53 @@ footer {
 
 .activeThreadCell {
   font-family: Tahoma;
+}
+
+input[type=button], input[type=submit], button, .dropzone, .selectedCell {
+  border: 1px solid gray;
+  background: white;
+  color: black;
+  font-size: 80%;
+  font-weight: 100;
+}
+
+.stickyNav {
+	display: none;
+}
+
+.stickyNavC {
+	display: block;
+}
+
+#postingForm th, .modalTableBody th {
+  border: none;
+}
+
+input[type=text], input[type=password], input[type=number], input[type=url],
+textarea {
+  border: 1px solid gray;
+}
+
+.dropzone {
+  text-align: left;
+}
+
+.submitButton {
+	font-family: Times New Roman;
+	font-weight: bold;
+    font-size: large;
+    border: none;
+    text-decoration: underline;
+    background: none;
+	color: var(--link-color);
+}
+
+#dynamicBlotter {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    max-width: 435px;
+    width: max-content;
+    margin: auto;
+    font-size: 11px;
+    margin-bottom: 12px;
 }
