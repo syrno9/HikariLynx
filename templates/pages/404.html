@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>404!</title>
 <meta charset="UTF-8" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0">
-<link
-  href="/.static/css/global.css"
-  type="text/css"
-  rel="stylesheet" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/.static/css/global.css" type="text/css" rel="stylesheet" />
 <script src="/.static/js/theme.js"></script>
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
 <body>
-
-  <nav class="navHeader" id="dynamicHeader"></nav>
-
-  <header>
-  </header>
-
-  <div class="titleWrapper">
-<fieldset class="titleFieldset">
-      <legend>404 Not Found</legend>
-		<div style="text-align:center;">
-    <img id="image" src="" width="404">
-    <script src="/.static/js/404.js"></script>
+<nav class="navHeader" id="dynamicHeader"></nav>
+<div class="page-wrapper">
+<div class="sidebar-wrapper">
+<div class="sidebar-wrapper-ontop">
+<div class="navigation-sidebar">
+<div class="navHeader" id="dynamicSidebar"></div>
 </div>
-    </fieldset>
-<fieldset class="titleFieldset">
-<p>Hikari-san could not find your file! Did you expect something? Email me: <a href="mailto:syrno@hikari3.ch">syrno@hikari3.ch</a>
-</p>
-    </fieldset>
+</div>
+</div>
+</div>
+</div>
+<div class="content-wrapper">
+<div class="titleWrapper" id="indexWrapper">
+<div id="page-content">
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 800px; margin: 0 auto;">
+    <div style="display: flex; flex-direction: row; align-items: flex-start; width: 100%">
+    <div style="flex: 1;">
+	  <fieldset class="box-min" style="flex: 1; margin-right: 10px;">
+        <div class="box-min-title">404 Not Found</div>
+		<div class="box-content">
+		<div style="width: 100%; text-align: center;">
+		<img id="image" src="" width="404">
+		<script src="/.static/js/404.js"></script>
+		<hr>
+		<p>Hikari-chan could not find your file! Did you expect something? Email me: <a href="mailto:syrno@hikari3.ch">syrno@hikari3.ch</a></p>
+		</div>
+		</div>
+      </fieldset>
   </div>
-  <footer id="dynamicFooter"></footer>
-  </div>
+</div>
+</div>
+</div>
+</div>
+<footer id="dynamicFooter"></footer>
 
 </body>
-
 <script src="/.static/js/api.js"></script>
-<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/jquery.min.js"></script>
+<script src="/.static/js/activeThreads.js"></script>
 <script src="/.static/js/settingsMenu.js"></script>
 <script src="/.static/js/watcher.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/multiboardMenu.js"></script>
 
 </html>

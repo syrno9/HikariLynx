@@ -14,41 +14,17 @@
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
 <body>
-
-  <nav class="navHeader" id="dynamicHeader"></nav>
-
-  <header>
-  </header>
-
 <div class="titleWrapper" id="indexWrapper">
-    <fieldset class="titleFieldset" style="margin-bottom: 10px;">
-      <legend>Account</legend>
+    <fieldset class="box-min">
+      <div class="box-min-title">Account</div>
 	  <div class="box-content">
-    <p>Logged in as: <span id="labelLogin"></span>, <span id="labelGlobalRole"></span></p>       <form action="/logout.js">
+	      <p>Logged in as: <span id="labelLogin"></span>, <span id="labelGlobalRole"></span></p>   <br>    <form action="/logout.js">
         <button
           id="logoutFormButton"
           type="submit">Logout</button>
       </form>
-	</fieldset>
-<div style="display: flex; flex-direction: row; align-items: flex-start;">
-  <fieldset class="box-g" style="flex: 0.5;">
-    <div class="box-g-title">Sections</div>
-    <div class="box-content">
-      <u><a href="#1">Account settings</a></u>
-	  <ul><u><li><a href="#2">Email</a></li></u>
-	  <u><li><a href="#p">Change Password</a></li></u>
-	  <u><li><a href="#d">Delete Account</a></li></u></ul>
 	  <hr>
-	  <u><a href="#3">Dashboard</a></u>
-	  <ul><u><li><a href="#4">Boards Owned</a></li></u>
-	  <u><li><a href="#5">Boards Volunteered</a></li></u></ul>
-    </div>
-  </fieldset>
-  <div style="flex: 1; margin-left: 10px;">
-  <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
-    <div class="box-b-title" id="1">Account settings</div>
-    <div class="box-content">
-            <form
+	            <form
         action="/changeAccountSettings.js"
         method="post"
         enctype="multipart/form-data">
@@ -178,12 +154,8 @@
           type="submit">Delete Account</button>
 
       </form>
-    </div>
-  </fieldset>
-  <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
-    <div class="box-b-title" id="3">Dashboard</div>
-    <div class="box-content">
-        <a
+
+	        <a
         href="/globalManagement.js"
         id="globalManagementLink">
         Global Management
@@ -209,13 +181,28 @@
       <h3 id="4">Boards Owned</h3>
       <div id="ownedDiv" class="linkList"></div>
       <hr />
-
+	<h3>Moderate Boards/Threads</h3>
+	<p><a href="/mod.js?boardUri=aca&page=1">/aca/ Moderation</a> | 
+	<a href="/boardModeration.js?boardUri=aca">/aca/ Board</a></p>
+	<p><a href="/mod.js?boardUri=en&page=1">/en/ Moderation</a> | 
+	<a href="/boardModeration.js?boardUri=en">/en/ Board</a></p>
+	<p><a href="/mod.js?boardUri=f&page=1">/f/ Moderation</a> | 
+	<a href="/boardModeration.js?boardUri=f">/f/ Board</a></p>
+	<p><a href="/mod.js?boardUri=h3&page=1">/h3/ Moderation</a> | 
+	<a href="/boardModeration.js?boardUri=h3">/h3/ Board</a></p>
+	<p><a href="/mod.js?boardUri=jp&page=1">/jp/ Moderation</a> | 
+	<a href="/boardModeration.js?boardUri=jp">/jp/ Board</a></p>
+	<p><a href="/mod.js?boardUri=t&page=1">/t/ Moderation</a> | 
+	<a href="/boardModeration.js?boardUri=t">/t/ Board</a></p>
+	<p><a href="/mod.js?boardUri=v&page=1">/v/ Moderation</a> | 
+	<a href="/boardModeration.js?boardUri=v">/v/ Board</a></p><hr>
       <h3 id="5">Boards Volunteered</h3>
       <div id="volunteeredDiv" class="linkList"></div>
-
-      <a
+	        <a
         href="/latestPostings.js"
         id="latestPostingsLink">Latest Posts</a>
+	<hr>
+	<h3>Create Board</h3>
 	      <div id="boardCreationDiv">
         <form
           action="/createBoard.js"
@@ -275,14 +262,13 @@
             type="submit"
 	    id="newBoardFormButton" value="Create Board" />
         </form>
-    </div>
-    </div>
-  </fieldset>
+
+	</div>
+    </fieldset>
+
 </div>
 </div>
-</div>
-</div>
-  <footer id="dynamicFooter"></footer>
+</fieldset>
 </body>
 
 <script src="/.static/js/api.js"></script>

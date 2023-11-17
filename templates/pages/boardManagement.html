@@ -14,59 +14,15 @@
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
 <body>
-
-  <nav class="navHeader" id="dynamicHeader"></nav>
-
-  <header>
-  </header>
-
-
 <div class="titleWrapper" id="indexWrapper">
-    <fieldset class="titleFieldset" style="margin-bottom: 10px;">
-      <legend>Board Management</legend>
-	  <div class="box-content">
+  <fieldset class="box-min" style="margin-bottom: 10px;">
+    <div class="box-min-title">Dashboard</div>
+    <div class="box-content">
     <p>    <div class="breadcrumb">
         <a href="/account.js">Account</a> &gt;
         <span id="boardLabel"></span>
         (<a id="linkSelf">Index</a>)
     </div></p>
-	</fieldset>
-<div style="display: flex; flex-direction: row; align-items: flex-start;">
-  <fieldset class="box-g" style="flex: 0.5;">
-    <div class="box-g-title">Sections</div>
-    <div class="box-content">
-	<u><a href="#1">Dashboard</a></u>
-	<hr>
-	<u><a href="#2">Settings Board</a></u>
-	<ul>
-    <u><li><a href="#1.5">Captcha</a></li></u>
-    <u><li><a href="#2.5">Posting</a></li></u>
-	</ul>
-	<hr>
-	<u><a href="#3">Board Customization</a></u>
-	<ul>
-    <u><li><a href="#3.5">Custom CSS</a></li></u>
-    <u><li><a href="#4.5">Custom JavaScript</a></li></u>
-	<u><li><a href="#5.5">Custom Spoiler</a></li></u>
-	</ul>
-	<hr>
-	<u><a href="#4">Volunteers</a></u>
-	<ul>
-    <u><li><a href="#6.5">Current Volunteers</a></li></u>
-    <u><li><a href="#7.5">Add Volunteers</a></li></u>
-	</ul>
-	<hr>
-	<u><a href="#5">Ownership</a></u>
-	<ul>
-	<u><li><a href="#8.5">Ownership Transfer</a></li></u>
-	<u><li><a href="#9.5">Ownership Delete</a></li></u>
-	</ul>
-	</div>
-  </fieldset>
-  <div style="flex: 1; margin-left: 10px;">
-  <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
-    <div class="box-b-title" id="1">Dashboard</div>
-    <div class="box-content">
             <p>
         <a
           id="linkTrash"
@@ -125,8 +81,8 @@
       </p>
 	</div>
   </fieldset>
-    <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
-    <div class="box-b-title" id="1">Board Settings</div>
+    <fieldset class="box-min" style="flex: 1; margin-bottom: 10px;">
+    <div class="box-min-title" id="1">Board Settings</div>
     <div class="box-content">
       <form
         id="settingsForm"
@@ -510,8 +466,8 @@
       </form>
 	</div>
   </fieldset>
-  <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
-    <div class="box-b-title" id="3">Board Customization</div>
+  <fieldset class="box-min" style="flex: 1; margin-bottom: 10px;">
+    <div class="box-min-title" id="3">Board Customization</div>
     <div class="box-content">
         <p>
           <a id="bannerManagementLink">Banners</a>
@@ -615,8 +571,8 @@
         </form>
 	</div>
   </fieldset>
-    <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
-    <div class="box-b-title" id="4">Volunteers</div>
+    <fieldset class="box-min" style="flex: 1; margin-bottom: 10px;">
+    <div class="box-min-title" id="4">Volunteers</div>
     <div class="box-content">
       <h3 id="6.5">Current Volunteers:</h3>
 
@@ -660,8 +616,8 @@
 
       </div>
 	</fieldset>
-    <fieldset class="box-b" style="flex: 1; margin-bottom: 10px;">
-    <div class="box-b-title" id="5">Ownership</div>
+    <fieldset class="box-min" style="flex: 1; margin-bottom: 10px;">
+    <div class="box-min-title" id="5">Ownership</div>
 	<div class="box-content">
       <h3 id="8.5">Ownership Transfer</h3>
 
@@ -726,7 +682,6 @@
   </div>
 </div>
   <div id="management-volunteer-template" class="hidden"></div>
-  <footer id="dynamicFooter"></footer>
 </body>
   </div>
 

@@ -30,7 +30,7 @@
 	  <div class="box-content">
         <div style="width: 100%; text-align: left;">
 		<img src="/.static/masco.gif" width="190">
-		<em><p id="quote"></p></em>
+		<em><p id="quote">"Three times the comfy!"</p></em>
 		<p class="small"><a href="/news"><u>News</u></a> | <a href="/faq"><u>FAQ</u></a> | <a href="/rules"><u>Rules</u></a> | <a href="/links"><u>Friends</u></a> | <a href="/irc"><u>Chats</u></a></p>
 		</div>
 		</div>
@@ -63,39 +63,39 @@
 	  <hr>
 	  <div  style="flex: 1; margin-bottom: 5px">
 		<div class="box-content">
-		<strong id="11"><a href="/news">Update - 10/27/23 @ 10:17 PM (PDT) by syrno</a></strong>
+		<strong>Current News: <a href="/news">UPDATE by syrno - 10/28/23 @ 5:17 AM (UTC)</a></strong>
 		</div>
       </div>
 	  <hr>
 	  <div style="flex: 1;">
 	  <div class="haImage">
-		<a href="#" id="haContainer">
-			<img src="#" class="haImage" id="haImage">
+		<a href="/v/" id="haContainer">
+			<img src="/.static/banners/Hikari_V2.gif" class="haImage" id="haImage">
 		</a>
 	  </div>
       </div>
 	  </div>
   </div>
 </div>
-  <div style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 0 auto;">
+<div id="mainContainer" style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 0 auto; display: none;">
     <div style="display: flex; flex-direction: row; align-items: flex-start; width: 100%">
-	  <div style="flex: 0.25; width: 100%; margin-right: 10px;">
-	  <div  style="flex: 1; margin-bottom: 10px;">
-	  <div class="box-min-title3">Latest Replies</div>
-	  <div class="box-content2">
-		<div id="latestPosts"></div>
-	  </div>
-	  </div>
+        <div style="flex: 0.25; width: 100%; margin-right: 10px;">
+            <div style="flex: 1; margin-bottom: 10px;">
+                <div class="box-min-title3">Latest Replies</div>
+                <div class="box-content2">
+                    <div id="latestPosts"></div>
+                </div>
+            </div>
+        </div>
+        <div style="flex: 1;">
+            <div style="flex: 1;">
+                <div style="margin-bottom: 10px">
+                    <div class="box-min-title3">Active Threads</div>
+                    <div id="threads-container"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div style="flex: 1;">
-	  <div style="flex: 1;">
-	  <div  style="margin-bottom: 10px">
-	  <div class="box-min-title3">Active Threads</div>
-	  <div id="threads-container"></div>
-	  </div>
-      </div>
-	  </div>
-  </div>
 </div>
 
   <div style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 0 auto;">
@@ -163,6 +163,7 @@
         <div class="box-min-title">Latest Posts</div>
         <div id="divLatestPosts"></div>
       </fieldset>
+<div id="mobileContainer" style="display: none">
 <p class="small" style="margin-bottom: 10px; margin-top: 10px; text-align: center">
     <a id="newsButton"><u>News</u></a> | 
     <a id="faqButton"><u>FAQ</u></a> | 
@@ -448,6 +449,7 @@
 		</div>
 		</div>
       </fieldset>
+	  </div>
 	  </div>
 
 </body>

@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Banned!</title>
 <meta charset="UTF-8" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0">
-<link
-  href="/.static/css/global.css"
-  type="text/css"
-  rel="stylesheet" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/.static/css/global.css" type="text/css" rel="stylesheet" />
 <script src="/.static/js/theme.js"></script>
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
 <body>
-
-  <nav class="navHeader" id="dynamicHeader"></nav>
-
-  <header>
-    <img
-      src="/.static/logo.png"
-      class="logoImg"
-      alt="logo" />
-  </header>
-
-  <div class="titleWrapper">
-
-    <fieldset class="titleFieldset">
-
-      <legend>Banned</legend>
-
-      <p>
-        <span id="descriptionLabel"></span>
-      </p>
-      <p id="reasonPanel">
-        Reason: <span id="reasonLabel"></span>
-      </p>
+<nav class="navHeader" id="dynamicHeader"></nav>
+<div class="page-wrapper">
+<div class="sidebar-wrapper">
+<div class="sidebar-wrapper-ontop">
+<div class="navigation-sidebar">
+<div class="navHeader" id="dynamicSidebar"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="content-wrapper">
+<div class="titleWrapper" id="indexWrapper">
+<div id="page-content">
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 800px; margin: 0 auto;">
+    <div style="display: flex; flex-direction: row; align-items: flex-start; width: 100%">
+    <div style="flex: 1;">
+	  <fieldset class="box-min" style="flex: 1; margin-right: 10px;">
+        <div class="box-min-title">You are banned! ;_;</div>
+		<div class="box-content">
+		<div style="float: right;">
+		<img src="/.static/gtfo.jpg" width="250">
+		</div>
+		<div style="display:flex;">
+		<div class="column-last">
+		<p><span id="descriptionLabel"></span> The following reason is: </p><br>
+      <strong><p id="reasonPanel">
+       <span id="reasonLabel"></span>
+      </p></strong><br>
       <p id="expirationPanel">
         Expiration: <span id="expirationLabel"></span>
       </p>
@@ -43,15 +45,15 @@
         Ban ID: <span id="idLabel"></span>
       </p>
 
-      <hr />
-
       <form
         action="/appealBan.js"
         id="formAppeal"
         method="post"
         enctype="multipart/form-data">
-
-        <h3>Appeal Ban</h3>
+		</div>
+		</div>
+		<hr>
+        <p><strong>Appeal Ban</strong></p>
 
         <input
           type="hidden"
@@ -69,16 +71,19 @@
           id="buttonFormAppeal">
 
       </form>
-
-    </fieldset>
-
+      </fieldset>
   </div>
-
+</div>
+</div>
+</div>
+</div>
+<footer id="dynamicFooter"></footer>
 </body>
-
 <script src="/.static/js/api.js"></script>
-<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/jquery.min.js"></script>
 <script src="/.static/js/settingsMenu.js"></script>
 <script src="/.static/js/watcher.js"></script>
+<script src="/.static/js/favouriteBoards.js"></script>
+<script src="/.static/js/multiboardMenu.js"></script>
 
 </html>

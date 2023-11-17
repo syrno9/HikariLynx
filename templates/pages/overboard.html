@@ -19,9 +19,19 @@
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
 <body>
-
-  <nav class="navHeader" id="dynamicHeader"></nav>
-
+<nav class="navHeader" id="dynamicHeader"></nav>
+<div class="page-wrapper">
+<div class="sidebar-wrapper">
+<div class="sidebar-wrapper-ontop">
+<div class="navigation-sidebar">
+<div class="navHeader" id="dynamicSidebarBoard"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="content-wrapper">
+<div id="page-content">
   <header class="boardHeader">
     <img
       id="bannerImage"
@@ -31,8 +41,14 @@
     </div>
 	<p id="labelDescription">The overboard index</p>
   </header>
-
+<hr>
+  <div class="haImage">
+	<a href="#" id="haContainer">
+		<img src="#" class="haImage" id="haImage">
+	</a>
+  </div>
   <div id="dynamicAnnouncement"></div>
+<hr>
   <div id="threadList">
 
     <form
@@ -172,8 +188,9 @@
     </div>
 
   </div>
-
+</div>
   <footer id="dynamicFooterAlt"></footer>
+</div>
   <div id="thread-post-template" class="hidden"></div>
   <div id="thread-upload-template" class="hidden"></div>
 <br class="textBrowserBreaks">
@@ -181,6 +198,7 @@
   <script>scanPage();</script>
 </body>
 
+<script src="/.static/js/banner.js"></script>
 <script src="/.static/js/api.js"></script>
 <script src="/.static/js/settingsMenu.js"></script>
 <script src="/.static/js/postCommon.js"></script>

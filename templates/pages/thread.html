@@ -31,7 +31,31 @@
 </div>
 <div class="content-wrapper">
 <div id="page-content">
-
+<div class="mobileHide">
+<div class="stickyNav" style="position: fixed;right: 5px;top: 20px;">
+  <a href="#"><img src="/.static/icons/h3up.png" title="Top"></a>
+  <a href="#footer"><img src="/.static/icons/h3down.png" title="Bottom"></a>
+  </div>
+<div class="stickyNavB" style="position: fixed;right: 5px;top: 20px;">
+  <a href="#"><img src="/.static/yb-icons/arrow_up.png" title="Top"></a>
+  <a href="#footer"><img src="/.static/yb-icons/arrow_down.png" title="Bottom"></a>
+  </div>
+<div class="stickyNavC" style="position: fixed;right: 5px;top: 20px;">
+  <a href="#"><img src="/.static/css/arrow_up.png" title="Top"></a>
+  <a href="#footer"><img src="/.static/css/arrow_down.png" title="Bottom"></a>
+  </div>
+<div class="stickyNavD" style="position: fixed;right: 5px;top: 20px;">
+  <a href="#"><img src="/.static/other-ico/up.png" title="Top"></a>
+  <a href="#footer"><img src="/.static/other-ico/down.png" title="Bottom"></a>
+  </div>
+<span class="boardLinks" style="position: fixed;right: 5px;top: 50px;">
+		[
+		<a href="catalog.html">Catalog</a>
+		 / 
+		<a href="index.rss">RSS</a>
+		]
+	</span> 
+</div>
   <input type=checkbox value="showSideCatalog" id="showSideCatalog"/>
   <label for="showSideCatalog" id="sideCatalogMenu">
     <div
@@ -71,37 +95,49 @@
 		<a class="navButton" href="#footer">Bottom</a>
 		<a class="reloadButton">Refresh</a>
 	</div>
+<noscript>
+  <style>
+    #newPostFieldset {
+      display: inline-block !important;
+    }
 
-    <div id="postingForm">
+    #submitButton {
+      display: none;
+    }
+  </style>
+</noscript>
+<div id="submitButton" style="text-align:center; margin-bottom: 10px">
+[<button id="submitBtn" class="submitButton">Submit a Reply</button>]
+</div>
+  <div id="postingForm">
+    <fieldset id="newPostFieldset" class="boardFieldset" style="display: none;">
+      <input type="checkbox" id="newPostFieldHide" class="hidden" />
 
-      <fieldset id="newPostFieldset" class="threadFieldset">
-        <legend><label for="newPostFieldHide"><a>Submit a Reply</a></label></legend>
-        <input type="checkbox" id="newPostFieldHide" class="hidden" />
+      <form
+        action="/newThread.js"
+        enctype="multipart/form-data"
+        method="post">
 
-        <form
-          action="/replyThread.js"
-          enctype="multipart/form-data"
-          method="post">
+        <div id="postingFormContents"></div>
+	  <div style="font-size: 70%;text-align: left">• Before posting, make sure to read the <a href="/rules">rules</a></div>
+      <div style="font-size: 70%;text-align: left">
+        • Max file size: <span id="labelMaxFileSize"></span>
+      </div>
+      <div style="font-size: 70%;text-align: left">
+        • Max files: <span id="labelMaxFiles"></span>
+      </div>
+	 <div style="font-size: 70%;text-align: left">
+	  • Supported file types: GIF, JPG, PNG, WebM, OGG, SWF
+	  </div>
+	  <div style="font-size: 70%;text-align: left">
+	  • Images greater than 250x250 pixels will be thumbnailed
+	  </div>
+        <div class="mobileShow"><input type="submit" id="formButton" value="Post"></div>
+      </form>
+    </fieldset>
 
-          <input
-            type="hidden"
-            name="threadId"
-            id="threadIdentifier">
-
-          <div id="postingFormContents"></div>
-
-          <p class="small">
-            Before posting, don't forget to check the 
-            <a href="/rules">rules</a>
-          </p>
-
-          <input type="submit" id="formButton" value="Reply">
-
-        </form>
-
-      </fieldset>
-
-    </div>
+  </div>
+<div id="dynamicBlotter"></div>
 
     <div id="divControls">
 
@@ -395,7 +431,7 @@
   <div id="thread-post-template" class="hidden"></div>
   <div id="thread-upload-template" class="hidden"></div>
 </body>
-<script src="/.static/js/song.js"></script>
+<script src="/.static/js/BUTTON.js"></script>
 <script src="/.static/js/banner.js"></script>
 <script src="/.static/js/crypto.js"></script>
 <script src="/.static/js/api.js"></script>
