@@ -19,10 +19,18 @@
         class="postingInput"
         id="fieldName"
         name="name"
-		placeholder="Anonymous">
+		placeholder="Anonymous" style="width: 244px">
 		</td>
   </tr>
- 
+  <tr>
+    <th>E-mail</th>
+    <td><input
+        type="text"
+        autocomplete="none"
+        class="postingInput"
+        id="fieldEmail"
+        name="email" style="width: 244px"></td>
+  </tr>
   <tr id="divOptions">
     <th>Options</th>
     <td>
@@ -34,7 +42,14 @@
           id="doSageCheckbox">
         <label for="doSageCheckbox"></label>
       </span>
-
+      <span id="useFortuneSpan">
+        <input
+          type="checkbox"
+          class="postingCheckbox postingInput"
+		  name="fortune"
+          id="doFortuneCheckbox">
+        <label for="doFortuneCheckbox"></label>
+      </span>
       <span class="hidden" id="alwaysUseBypassSpan">
         <input
           type="checkbox"
@@ -44,7 +59,7 @@
       </span>
     </td>
   </tr>
-
+<label>
   <tr>
     <th>Subject</th>
     <td><input
@@ -52,16 +67,16 @@
         autocomplete="none"
         class="postingInput"
         id="fieldSubject"
-        name="subject">
+        name="subject" style="width: 244px"><span class="mobileHide" style="margin-left:5px"><input type="submit" id="formButton" value="Submit"></span>
       <input
         name="boardUri"
         id="boardIdentifier"
         type="hidden"
         tabindex="-3" /></td>
   </tr>
-
+</label>
 <tr>
-  <th>Message</th>
+  <th>Comment</th>
   <td>
     <textarea
       rows="5"
@@ -71,12 +86,13 @@
       name="message"></textarea>
 
     <p class="small">
-      Max message length: <span id="labelMessageLength"></span>
+      Max comment length: <span id="labelMessageLength"></span>
     </p>
     <details class="small">
       <summary class="glowOnHover">Emotes</summary>
 	  <p></p>
-        <p><button type="button"><img src="/.static/emotes/angry.gif" width="40"><p>:angry:</p></button>
+        <p>
+		<button type="button"><img src="/.static/emotes/angry.gif" width="40"><p>:angry:</p></button>
         <button type="button"><img src="/.static/emotes/annoyed.png" width="40"><p>:annoyed:</p></button>
         <button type="button"><img src="/.static/emotes/annoyed2.png" width="40"><p>:annoyed2:</p></button>
         <button type="button"><img src="/.static/emotes/cry.gif" width="40"><p>:cry:</p></button>
@@ -91,21 +107,47 @@
 		<p><button type="button"><img src="/.static/emotes/sleep.png" width="40"><p>:sleep:</p></button>
 		<button type="button"><img src="/.static/emotes/laugh.gif" width="40"><p>:laugh:</p></button>
 		<button type="button"><img src="/.static/emotes/drool.gif" width="40"><p>:drool:</p></button>
-		<button type="button"><img src="/.static/emotes/disgust.png" width="40"><p>:disgust:</p></button></p>
-	<script src="/.static/js/emotes.js"></script>
+		<button type="button"><img src="/.static/emotes/disgust.png" width="40"><p>:disgust:</p></button>
+		<button type="button"><img src="/.static/emotes/neco.gif" width="40"><p>:neco_arc:</p></button>
+		<button type="button"><img src="/.static/emotes/neco_dance.gif" width="40"><p>:neco_dance:</p></button></p>
+		<p><button type="button"><img src="/.static/emotes/neco_dance2.gif" width="40"><p>:neco_dance2:</p></button>
+		</p>
+	</details>
+    <details class="small">
+      <summary class="glowOnHover">Styling</summary>
+	  <p></p>
+        <p><button type="button"><span><strong>Bold</strong></span><p>[b] [/b]</p></button>
+		<button type="button"><span><em>Italics</em></span><p>[i] [/i]</p></button>
+		<button type="button"><span><s>Strike</s></span><p>[s] [/s]</p></button>
+		<button type="button"><span class="spoiler">Spoiler</span><p>[spoiler] [/spoiler]</p></button>
+		<button type="button"><span class="moeText">Moe</span><p>[moe] [/moe]</p></button></p>
+		<p><button type="button"><span class="doomText">DOOM</span><p>[doom] [/doom]</p></button>
+		</p>
+		<p><button type="button"><span class="s1">Size 1</span><p>[s1] [/s1]</p></button>
+		<button type="button"><span class="s2">Size 2</span><p>[s2] [/s2]</p></button>
+		<button type="button"><span class="s3">Size 3</span><p>[s3] [/s3]</p></button>
+		<button type="button"><span class="s4">Size 4</span><p>[s4] [/s4]</p></button></p>
+		<p><button type="button"><span class="s5">Size 5</span><p>[s5] [/s5]</p></button>
+		<button type="button"><span class="s6">Size 6</span><p>[s6] [/s6]</p></button>
+		<button type="button"><span class="s7">Size 7</span><p>[s7] [/s7]</p></button></p>
+		<p><button type="button"><span class="c1">Red</span><p>[red] [/red]</p></button>
+		<button type="button"><span class="c2">Orange</span><p>[orange] [/orange]</p></button>
+		<button type="button"><span class="c3">Brown</span><p>[brown] [/brown]</p></button>
+		<button type="button"><span class="c4">Purple</span><p>[purple] [/purple]</p></button></p>
+		<p><button type="button"><span class="c5">Pink</span><p>[pink] [/pink]</p></button>
+		<button type="button"><span class="c6">Yellow</span><p>[yellow] [/yellow]</p></button>
+		<button type="button"><span class="c7">Green</span><p>[green] [/green]</p></button>
+		<button type="button"><span class="c8">Blue</span><p>[blue] [/blue]</p></button></p>
+		<p><button type="button"><span class="c9">Light Blue</span><p>[lightblue] [/lightblue]</p></button>
+		<button type="button"><span class="powerful">Rainbow</span><p>[rainbow] [/rainbow]</p></button></p>
 	</details>
   </td>
 </tr>
-
-  <tr id="divUpload">
+<tr id="divUpload">
     <th>Files</th>
     <td>
-      <div
-        class="hidden"
-        id="dragAndDropDiv">
-        <div
-          class="dropzone"
-          id="dropzone">
+      <div class="hidden" id="dragAndDropDiv">
+        <div class="dropzone" id="dropzone" style="width: 300px">
           Drag files to upload or
           <br>
           click here to select them
@@ -114,34 +156,24 @@
       </div>
 
       <div>
-        <input
-          type="file"
-          name="files"
-          id="inputFiles"
-          multiple
-          class="fileBrowser">
+        <input type="file" name="files" id="inputFiles" multiple="" class="fileBrowser" accept="image/png, image/jpeg, image/gif, image/bmp, video/webm, audio/mpeg, video/mp4, video/ogg, audio/ogg, audio/webm, text/javascript, application/javascript, application/x-shockwave-flash, application/vnd.adobe.flash.movie">
       </div>
-      <input
-        type="checkbox"
-        name="spoiler"
-        class="postingCheckbox"
-        id="checkboxSpoiler"> <label for="checkboxSpoiler"></label>
+      <input type="checkbox" name="spoiler" class="postingCheckbox" id="checkboxSpoiler"> <label for="checkboxSpoiler"></label>
       <label id="labelScramble" for="checkboxScramble"></label>
-
-      <p class="small">
-        Max file size: <span id="labelMaxFileSize"></span>
+		<p class="small" style="visibility: hidden;height: 0px;">
+        Supported file types: GIF, JPG, PNG, WebM, OGG, SWF
       </p>
-      <p class="small">
-        Max files: <span id="labelMaxFiles"></span>
-      </p>
-      <p class="small">
-        Supported file types: GIF, JPG, PNG, WebM, OGG, and
-       	<a class="localPageLink" href="/.static/pages/faq.html#filetypes">more</a>
-      </p>
-
     </td>
   </tr>
-
+  <tr>
+    <th>Password</th>
+    <td><input
+        id="fieldPostingPassword"
+        name="password"
+        class="postingInput"
+        type="password">
+      <span style="font-size: 60%;"> (Password used for deletion)</span></td>
+  </tr>
   <tr id="captchaDiv">
 
     <th>Captcha</th>
@@ -175,54 +207,6 @@
 
 </tbody> </table>
 
-<details class="postingFormExtra">
-<summary class="glowOnHover"></summary>
-
-<table> <tbody>
-
-  <tr>
-    <th>E-mail</th>
-    <td><input
-        type="text"
-        autocomplete="none"
-        class="postingInput"
-        id="fieldEmail"
-        name="email"></td>
-  </tr>
-
-  <tr>
-    <th>Password</th>
-    <td><input
-        id="fieldPostingPassword"
-        name="password"
-        class="postingInput"
-        type="password">
-      <p class="small">(used to delete files and postings)</p></td>
-  </tr>
-
-  <tr>
-    <th>Misc</th>
-    <td>
-      <div id="flagsDiv">
-        <select
-          name="flag"
-          id="flagCombobox"></select>
-        <img class="flagPreview">
-      </div>
-      <div id="noFlagDiv">
-        <input
-          type="checkbox"
-          class="postingCheckbox postingInput"
-          id="checkboxNoFlag"
-          name="noFlag">
-        <label for="checkboxNoFlag"></label>
-      </div>
-    </td>
-  </tr>
-</tbody> </table>
-
-</details>
-
 <div id="selected-cell-template" class="hidden">
   <a class="removeButton coloredIcon"></a>
   <span class="nameLabel"></span>
@@ -232,3 +216,4 @@
     Spoiler
   </label>
 </div>
+<script src="/.static/js/emotes.js"></script>

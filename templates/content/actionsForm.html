@@ -1,34 +1,11 @@
-<details class="showFormDetails">
-  <summary class="glowOnHover">Forms</summary>
-
-<fieldset class="reportFieldset">
-  <legend>Delete</legend>
-
+<div style="text-align: right;">
   <div class="contentAction">
     <label>
-      Password
-      <input
-        type="text"
-        class="deletionField"
-        id="deletionFieldPassword"
-        name="password">
-    </label>
-    <label>
-      <input
-        type="checkbox"
-        class="deletionField"
-        id="checkboxOnlyFiles"
-        name="deleteUploads">
-      Delete only files (Removes the file reference to the posts)
-    </label>
-    <label>
-      <input
-        type="checkbox"
-        class="deletionField"
-        id="checkboxMediaDeletion"
-        name="deleteMedia">
-      Delete media (Removes the saved files from the server)
-    </label>
+	Delete Post: [
+	<input type="checkbox" class="deletionField" id="checkboxOnlyFiles" name="deleteUploads">
+      File only ]
+	<input type="checkbox" class="deletionField" id="checkboxMediaDeletion" name="deleteMedia" style="display: none">
+      <input type="text" class="deletionField" id="deletionFieldPassword" name="password" style="width: 50px">
     <button
       type="submit"
       id="deleteFormButton"
@@ -38,38 +15,31 @@
       type="submit"
       id="trashFormButton"
       value="trash"
-      name="action">Trash</button>
+      name="action" style="display: none"></button>
+	</label>
 
   </div>
-</fieldset>
-
-<fieldset class="reportFieldset">
-  <legend>Report</legend>
 
   <div class="contentAction">
 
     <label>
-      Reason
+      Reason:
       <input
         type="text"
         class="reportField"
         id="reportFieldReason"
-        name="reasonReport">
-    </label>
-    <label id="reportCategoriesDiv">
-      Category
-      <select
-        class="reportField"
-        id="reportComboboxCategory"
-        name="categoryReport"></select>
-    </label>
-    <label>
+        name="reasonReport" style="width: 50px">
       <input
         type="checkbox"
         class="reportField"
         id="checkboxGlobalReport"
         name="globalReport">
       Global
+    <button
+      type="submit"
+      id="reportFormButton"
+      value="report"
+      name="action">Report</button>
     </label>
 
     <div id="divReportCaptcha">
@@ -97,14 +67,7 @@
       <br>
     </div>
 
-    <button
-      type="submit"
-      id="reportFormButton"
-      value="report"
-      name="action">Report</button>
-
   </div>
-</fieldset>
 
 <div
   id="divMod"
@@ -237,5 +200,4 @@
   </fieldset>
 
 </div>
-
-</details>
+</div>
