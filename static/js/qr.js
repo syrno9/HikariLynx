@@ -165,6 +165,7 @@ qr.setQr = function() {
   qr.registerSync('alwaysUseBypassCheckBox', 'qralwaysUseBypassCheckBox',
       'checked', 'change');
   qr.registerSync('doSageCheckbox', 'qrdoSageCheckbox', 'checked', 'change');
+  qr.registerSync('doFortuneCheckbox', 'qrdofortuneCheckbox', 'checked', 'change');
 
   if (noFlagDiv) {
 	document.getElementById("qr-flags-check-row")

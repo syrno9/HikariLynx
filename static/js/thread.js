@@ -579,6 +579,7 @@ thread.sendReplyData = function(files, captchaId) {
 
   var spoilerCheckBox = document.getElementById('checkboxSpoiler');
   var sageCheckbox = document.getElementById('doSageCheckbox');
+  var fortuneCheckbox = document.getElementById('doFortuneCheckbox');
 
   var noFlagCheckBox = document.getElementById('checkboxNoFlag');
 
@@ -599,6 +600,7 @@ thread.sendReplyData = function(files, captchaId) {
     message : typedMessage,
     email : typedEmail,
     sage : sageCheckbox ? sageCheckbox.checked : false,
+    fortune : fortuneCheckbox ? fortuneCheckbox.checked : false,
     files : files,
     boardUri : api.boardUri,
     threadId : api.threadId

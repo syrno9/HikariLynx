@@ -304,7 +304,7 @@ watcher.addWatchedCell = function(board, thread, watchData) {
 
 watcher.processOP = function(op) {
 
-  var checkBox = op.getElementsByClassName('deletionCheckBox')[0];
+  var checkBox = op.getElementsByClassName('watcheButton')[0];
 
   var nameParts = checkBox.name.split('-');
 

@@ -252,6 +252,7 @@ interfaceUtils.buildFloatingMenu = function(menuId, labelContents) {
 interfaceUtils.addMenuDropdown = function(post, title, buttonClass, buildMenu) {
 
   var parentNode = post.linkSelf.parentNode;
+  var postButton = parentNode.getElementsByClassName('postButton')[0];
   var checkbox = parentNode.getElementsByClassName('deletionCheckBox')[0];
   var actions = buildMenu(post);
 
@@ -259,7 +260,7 @@ interfaceUtils.addMenuDropdown = function(post, title, buttonClass, buildMenu) {
   dropdownButton.className = buttonClass + ' glowOnHover coloredIcon';
   dropdownButton.title = title;
 
-  parentNode.insertBefore(dropdownButton, checkbox ? checkbox.nextSibling
+  parentNode.insertBefore(dropdownButton, postButton ? postButton.nextSibling
       : parentNode.childNodes[0]);
 
   if (api.mobile) {

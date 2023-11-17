@@ -15,6 +15,9 @@ theme.themes = [ {
   }, {
 	  label : 'Futaba',
 	  id : 'futaba',
+  }, {
+	  label : 'Iwakura',
+	  id : 'lain',
   }
 ];
 

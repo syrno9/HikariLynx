@@ -9,30 +9,30 @@ function displayLatestThreads(data) {
     const threadContainer = document.createElement('div');
     threadContainer.classList.add('activeThreadCell');
 
-    const threadLink = document.createElement('a');
-    threadLink.href = `/${threadData.boardUri}/res/${threadData.threadId}.html`;
-    threadLink.classList.add('thread-link');
-    threadLink.style.textAlign = 'left';
-    threadContainer.appendChild(threadLink);
-
     const threadBoard = document.createElement('p');
     const boardName = `Board: /${threadData.boardUri}/`;
     threadBoard.textContent = boardName.length > 20 ? boardName.substring(0, 20) + '...' : boardName;
-    threadBoard.style.textAlign = 'left';
+    threadBoard.style.textAlign = 'center';
     threadContainer.appendChild(threadBoard);
+
+    const threadLink = document.createElement('a');
+    threadLink.href = `/${threadData.boardUri}/res/${threadData.threadId}.html`;
+    threadLink.classList.add('thread-link');
+    threadLink.style.textAlign = 'center';
+    threadContainer.appendChild(threadLink);
 
     if (threadData.files && threadData.files.length > 0) {
       const threadImage = document.createElement('img');
       threadImage.classList.add('thread-image');
       threadImage.src = threadData.files[0].thumb;
-      threadImage.style.textAlign = 'left';
+      threadImage.style.textAlign = 'center';
       threadLink.appendChild(threadImage);
     }
 
     const threadMessage = document.createElement('p');
     const messageText = threadData.message.substring(0, 20) + (threadData.message.length > 20 ? '...' : '');
     threadMessage.textContent = messageText;
-    threadMessage.style.textAlign = 'left';
+    threadMessage.style.textAlign = 'center';
     threadLink.appendChild(threadMessage);
 
     threadsContainer.appendChild(threadContainer);

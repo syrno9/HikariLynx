@@ -26,10 +26,6 @@ gallery.init = function() {
 
   backLink.parentNode.insertBefore(document.createTextNode(' '), backLink);
 
-  var separator = document.createElement('span');
-  separator.innerText = '/';
-  backLink.parentNode.insertBefore(separator, backLink);
-
   backLink.parentNode.insertBefore(document.createTextNode(' '), backLink);
 
   var outerPanel;

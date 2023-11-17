@@ -48,10 +48,6 @@ sideCatalog.init = function() {
   catalogButton.parentNode.insertBefore(document.createTextNode(' '),
       catalogButton.nextSibling);
 
-  var divider = document.createElement('span');
-  divider.innerText = '/';
-  catalogButton.parentNode.insertBefore(divider, catalogButton.nextSibling);
-
   catalogButton.parentNode.insertBefore(document.createTextNode(' '),
       catalogButton.nextSibling);
 
