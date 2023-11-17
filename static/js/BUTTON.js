@@ -1,3 +1,4 @@
+document.getElementById('submitBtn').addEventListener('click', toggleForm);
   function toggleForm() {
     var formFieldset = document.getElementById('newPostFieldset');
     var submitButton = document.getElementById('submitButton');
