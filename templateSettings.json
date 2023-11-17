@@ -1,12 +1,19 @@
 {
   "optional": {
 	"dynamicHeader": "content/header.html",
-	"dynamicHeaderBoard": "content/headerBoard.html",
-	"dynamicHeaderThread": "content/headerThread.html",
 	"dynamicFooter": "content/footer.html",
 	"dynamicFooterAlt": "content/footerAlt.html",
 	"dynamicAnnouncement": "content/announcement.html",
+	"dynamicNews": "content/news.html",
+	"dynamicBlotter": "content/blotter.html",
+	"dynamicFAQ": "content/faq.html",
+	"dynamicRules": "content/rules.html",
+	"dynamicNewsMobile": "content/newsMobile.html",
 	"dynamicLinks": "content/links.html",
+	"dynamicSidebar": "content/sidebar.html",
+	"dynamicSidebarBoard": "content/sidebarBoard.html",
+	"dynamicSidebarThread": "content/sidebarThread.html",
+	"dynamicFlashBoard": "content/flash.html",
 	"postingFormContents": "content/postingForm.html",
 	"actionsForm": "content/actionsForm.html",
     "quick-reply": "content/quickReply.html",
@@ -20,11 +27,12 @@
   "templated": [
     "pages/faq.html",
     "pages/contact.html",
-    "pages/globalRules.html",
+    "pages/rules.html",
     "pages/links.html",
     "pages/news.html",
 	"pages/legal.html",
-	"pages/irc.html"
+	"pages/irc.html",
+	"pages/banned.html"
   ],
   "logIndexCell": "cells/logIndexCell.html",
   "accountPage": "pages/account.html",
