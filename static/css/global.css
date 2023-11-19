@@ -435,6 +435,7 @@ input[type=button], input[type=submit], button {
   padding: 5px;
   margin-bottom: 10px;
   transition: all 0.2s ease 0s;
+  width: 300px
 }
 
 .selectedCell {
@@ -3168,4 +3169,8 @@ td.mb-cell-delete {
 
 .stickyNavC, .boardLinks {
     z-index: 2;
+}
+
+.fShow {
+	display: none;
 }

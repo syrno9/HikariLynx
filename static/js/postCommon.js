@@ -141,19 +141,26 @@ postCommon.init = function() {
     postCommon.setFlagPreviews(flagCombo);
   }
 
-  var formMore = document.getElementById('actionsForm');
-  
-  if (formMore) {
+var formMore = document.getElementById('actionsForm');
+
+if (formMore) {
     formMore = formMore.getElementsByClassName('showFormDetails')[0];
 
-    formMore.ontoggle = function() {
-      localStorage.setItem('showExtra', formMore.open);
-    };
+    if (formMore) {
+        formMore.ontoggle = function() {
+            localStorage.setItem('showExtra', formMore.open);
+        };
 
-    if (localStorage.showExtra) {
-      formMore.open = JSON.parse(localStorage.showExtra);
+        if (localStorage.showExtra) {
+            formMore.open = JSON.parse(localStorage.showExtra);
+        }
+    } else {
+        console.error("Element with class 'showFormDetails' not found inside 'actionsForm'");
     }
-  }
+} else {
+    console.error("Element with ID 'actionsForm' not found");
+}
+
 
   // add paste support
   window.addEventListener('paste', function(evt) {

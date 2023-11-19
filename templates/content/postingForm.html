@@ -22,7 +22,7 @@
 		placeholder="Anonymous" style="width: 244px">
 		</td>
   </tr>
-  <tr>
+  <tr class="hidden">
     <th>E-mail</th>
     <td><input
         type="text"
@@ -143,26 +143,42 @@
 	</details>
   </td>
 </tr>
-<tr id="divUpload">
+  <tr id="divUpload">
     <th>Files</th>
     <td>
-      <div class="hidden" id="dragAndDropDiv">
-        <div class="dropzone" id="dropzone" style="width: 300px">
-          Drag files to upload or
+      <div
+        class="hidden"
+        id="dragAndDropDiv">
+        <div
+          class="dropzone"
+          id="dropzone" 
+		  >
+          <div class="fHide">Drag files to upload or
           <br>
-          click here to select them
+          click here to select them</div>
+		  <div class="fShow">Choose File</div>
         </div>
         <div id="selectedDiv"></div>
       </div>
 
       <div>
-        <input type="file" name="files" id="inputFiles" multiple="" class="fileBrowser" accept="image/png, image/jpeg, image/gif, image/bmp, video/webm, audio/mpeg, video/mp4, video/ogg, audio/ogg, audio/webm, text/javascript, application/javascript, application/x-shockwave-flash, application/vnd.adobe.flash.movie">
+        <input
+          type="file"
+          name="files"
+          id="inputFiles"
+          multiple
+          class="fileBrowser">
       </div>
-      <input type="checkbox" name="spoiler" class="postingCheckbox" id="checkboxSpoiler"> <label for="checkboxSpoiler"></label>
+      <input
+        type="checkbox"
+        name="spoiler"
+        class="postingCheckbox"
+        id="checkboxSpoiler"> <label for="checkboxSpoiler"></label>
       <label id="labelScramble" for="checkboxScramble"></label>
 		<p class="small" style="visibility: hidden;height: 0px;">
         Supported file types: GIF, JPG, PNG, WebM, OGG, SWF
       </p>
+
     </td>
   </tr>
   <tr>

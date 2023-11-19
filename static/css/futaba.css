@@ -4,7 +4,7 @@
 	--text-color: #800009;
 	--contrast-color: #f0e0d6;
 	--menu-color: #f0e0d6;
-	--background-highlight-color: #fca;
+	--background-highlight-color: #ea8;
 	--horizon-sep-color: none;
 	--border-color: #800;
 
@@ -436,6 +436,7 @@ input[type=button], input[type=submit], button, .dropzone, .selectedCell {
   color: black;
   font-size: 80%;
   font-weight: 100;
+  font-family: arial;
 }
 
 .stickyNav {
@@ -457,6 +458,8 @@ textarea {
 
 .dropzone {
   text-align: left;
+  width: 80px;
+  padding: 2px 3px;
 }
 
 .submitButton {
@@ -477,4 +480,45 @@ textarea {
     margin: auto;
     font-size: 11px;
     margin-bottom: 12px;
+}
+
+.containPages {
+    background-color: var(--background-color);
+    border: 1px solid #000;
+    border-left-color: gray;
+    border-top-color: gray;
+    padding: 5px;
+    font-size: 100%;
+}
+
+#divPages {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 1px;
+    text-decoration: underline;
+}
+
+#linkNext {
+	border: 1px solid black;
+    padding: 1px 2px;
+}
+
+#linkPrevious {
+	border: 1px solid black;
+    padding: 1px 2px;
+}
+
+.altButton1 {
+    border: 1px solid black;
+    padding: 1px 2px;
+    text-decoration: underline;
+    margin-left: 3px;
+}
+
+.fHide {
+	display: none;
+}
+
+.fShow {
+	display: block;
 }
