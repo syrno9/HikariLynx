@@ -8,7 +8,6 @@
 	"dynamicBlotter": "content/blotter.html",
 	"dynamicFAQ": "content/faq.html",
 	"dynamicRules": "content/rules.html",
-	"dynamicNewsMobile": "content/newsMobile.html",
 	"dynamicLinks": "content/links.html",
 	"dynamicSidebar": "content/sidebar.html",
 	"dynamicSidebarBoard": "content/sidebarBoard.html",
