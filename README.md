@@ -6,7 +6,7 @@ HikariLynx is a modified fork of [Aleph](https://gitgud.io/8chan/Aleph) written 
 You can install the frontend anywhere you want, just be sure to set the current location in your global settings.
 Best practices dictate you rename the folder to `fe` and place it in the `Lynxchan/src/` directory. This is the default location. User node will need to be able to see all files, and ideally will own them.
 
-If you want stuff like emotes, styling, and fortunes to work, move the stuff in the addons folder here to `Lynxchan/src/be/addons`. The addons are modified from: [Moe Modifications](https://gitgud.io/8chan/moe_modifications) and [Fortune] (https://gitgud.io/nop/fortune)
+If you want stuff like emotes, styling, and fortunes to work, move the stuff in the addons folder here to `Lynxchan/src/be/addons`. The addons are modified from: [Moe Modifications](https://gitgud.io/8chan/moe_modifications) and [Fortune](https://gitgud.io/nop/fortune)
 
 ## Customization ##
 
