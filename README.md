@@ -9,6 +9,7 @@ Best practices dictate you rename the folder to `fe` and place it in the `Lynxch
 If you want stuff like emotes, styling, and fortunes to work, move the stuff in the addons folder here to `Lynxchan/src/be/addons`. The addons are modified from: [Moe Modifications](https://gitgud.io/8chan/moe_modifications) and [Fortune](https://gitgud.io/nop/fortune)
 
 ## Customization ##
+This front-end was made with only hikari3 in mind, so there's a lot to change if you want to use it for your own site.
 
 If you wish to swap in your own assets, you can simply replace the existing files with your own. Otherwise, you will need to modify templateSettings.json so the backend can locate your assets. Other images, including default banners and thumbnails, can be found in the `templates/image/` directory. To refresh the frontend and reload default images, run `lynxchan -nd -r`.
 
