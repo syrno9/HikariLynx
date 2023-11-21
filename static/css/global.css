@@ -1335,6 +1335,10 @@ fieldset legend2 {
   width: 100%;
 }
 
+.opCell {
+  clear: left;
+}
+
 .postInfo {
   margin-right: 1em;
 }
