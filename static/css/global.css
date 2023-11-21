@@ -925,7 +925,7 @@ fieldset legend2 {
 
 #haImage2 {
   border: 1px solid var(--border-color);
-  max-width: 668px;
+  max-width: 728px;
 }
 
 #favoriteButton {
@@ -1212,11 +1212,6 @@ fieldset legend2 {
 .uploadCell {
   margin: 0.25em 1em 0.25em 0.5em;
   float: none;
-  display: inline-block;
-}
-
-.uploadCell:only-child {
-  display: block;
 }
 
 .uploadCell img {
@@ -1337,7 +1332,6 @@ fieldset legend2 {
 }
 
 .opCell > .innerOP {
-  display: inline-block;
   width: 100%;
 }
 
@@ -1443,7 +1437,7 @@ fieldset legend2 {
   font-size: 10pt;
   background-color: rgba(0,0,0,0.05);
   bottom: 0px;
-  display: table;
+  display: none;
   padding: 2px;
   clear: both;
 }
