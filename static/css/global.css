@@ -110,7 +110,7 @@ nav.navHeader {
   background-color: var(--background-color);
   border-bottom: 1px solid var(--navbar-text-color);
   text-align: left;
-  font-size: 75%;
+  font-size: 85%;
   padding: 0 4px 2px 4px;
   position: fixed;
   top: 0px;
@@ -1497,7 +1497,7 @@ fieldset legend2 {
 }
 
 .innerPost {
-  display: inline-block;
+  display: table;
   padding: 0.25em;
   max-width: 100%;
 
@@ -3171,4 +3171,13 @@ td.mb-cell-delete {
 
 .fShow {
 	display: none;
+}
+
+.headerLinks {
+	right: 133px;
+	position: absolute;
+}
+
+.sideButt {
+	visibility: hidden;
 }

@@ -1,88 +1,43 @@
-<span id="navLinkSpan"><a class="nav" href="/">
-<img src="/.static/nav.png" width="210">
-  </a>
-<input type=checkbox id="mobile-hamburger" />
+  <input type=checkbox id="mobile-hamburger" />
   <label id="hamburger-menu-icon" for="mobile-hamburger" class="glowOnHover"> 
-<span id="navLinkSpan"> <span>[</span>
     <nav id="sidebar-menu">
+	<a href="/"><img src="/.static/nav.png" width="200"></a>
       <ul>
         <li> <a href="/"
-           class="coloredIcon navLinkHome">Home
-        </a></li>
-        <li> <a href="/boards.js"
-           class="coloredIcon navBoardList">Boards
+           class="coloredIcon navLinkHome">
         </a></li>
         <li> <a href="/overboard"
-           class="coloredIcon linkOverboard">Overboard
+           class="coloredIcon linkOverboard">
         </a></li>
         <li> <a
-           class="coloredIcon settingsButton">Settings
+           class="coloredIcon settingsButton">
         </a></li>
         <li> <a
-           class="coloredIcon watcherButton">Watcher
-        </a></li>
-        <li> <a href="/account.js"
-           class="coloredIcon navMod">User Account
+           class="coloredIcon watcherButton">
         </a></li>
       </ul>
-      <ul>
-        <li> <a href="/.static/pages/globalRules.html"
-           class="coloredIcon">Global Rules
-        </a></li>
-        <li> <a href="rules.html"
-           class="coloredIcon">Rules
-        </a></li>
-      </ul>
-      <div class="hamburger-bottom">
-        <a href="index.rss"
-           class="coloredIcon linkRss">
-           <hr>
-           RSS
-        </a>
-        <a href="../catalog.html"
-           class="coloredIcon navCatalog">
-           <hr>
-           Catalog
-        </a>
-      </div>
     </nav>
     <div id="hamburger-overlay">
     </div>
   </label>
-  <span>[</span>
-  <a href="/"
-  class="coloredIcon navLinkHome"
-  title="Home"></a> <span>/</span> <a
-  href="/boards.js"
-  class="coloredIcon navBoardList"
-  title="Boards"></a> <span>/</span> <a
-  href="/overboard"
-  class="coloredIcon linkOverboard"
-  title="Overboard"></a> <span>/</span> <a
-  class="coloredIcon settingsButton"
-  title="Settings (requires JavaScript)"></a> <span>/</span> <a
-  class="coloredIcon watcherButton"
-  title="Thread Watcher (requires JavaScript)"></a> <span>/</span> <a
-  href="/account.js" id="themesBefore"
-  class="coloredIcon navMod"
-  title="User Account"></a> <span>]</span>
+
+
+<span>[ <a href="/aca">aca</a> / <a href="/en">en</a> / <a href="/f">f</a> / <a href="/h3">h3</a> / <a href="/jp">jp</a> / <a href="/t">t</a> / <a href="/v">v</a> ]</span>
+<span class="mobileHide">
+<span class="headerLinks">
+		[
+		<a href="/">Home</a>
+		 / 
+		<a href="catalog.html">Catalog</a>
+		 / 
+		<a href="index.rss">RSS</a>
+		 ] 
+		<span class="sideButt">
+		 [ 
+		<a id="applyCustomCSS">Show Sidebar</a>
+		]
+		</span>
+	</span> 
 </span>
-<span id="navTopBoardsSpan"> </span>
-<span id="navBoardsSpan"> </span>
-<span id="navOptionsSpan"> <span>[ </span> <a
-	href="#"
-	class="coloredIcon"
-	title="Top"
-	id="linkTop"></a> <span>/</span> <a
-	href="#footer"
-	class="coloredIcon"
-	title="Bottom"
-	id="linkBottom"></a> <span>/</span> <a
-	href="catalog.html"
-	class="navCatalog hideMobile coloredIcon"
-	title="Catalog"
-	id="navCatalog"></a> <span>/</span> <a
-	href="index.rss"
-	class="linkRss hideMobile coloredIcon"
-	title="RSS"></a> <span>]</span>
-</span>
+<span class="mobileShow"><span class="side-header">[ <a href="/">Home</a> ]</span></span>
+<script src="/.static/js/sidebar.js"></script>

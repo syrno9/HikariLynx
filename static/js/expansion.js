@@ -1,19 +1,12 @@
-
-
 function expandThreadHandler(tThread, expandLink) {
   var missing = expandLink.missing;
-  //console.log('missing', missing);
-  //var done=0;
   var divPost=tThread.querySelector('.divPosts');
   insertPoint=divPost.children[0];
   var postHtml={};
   var lastDisplayed=0;
-  //missing.reverse();
 
   function checkDone() {
-    //done++;
-    //console.log(done, '==', missing.length);
-    var weHaveUpTo=missing.length; // if none is ever detect, we have everything
+    var weHaveUpTo=missing.length;
     for(var n in missing) {
       // find the first missing post
       if (!postHtml[n]) {
@@ -21,10 +14,8 @@ function expandThreadHandler(tThread, expandLink) {
         break;
       }
     }
-    //console.log('weHaveUpTo', weHaveUpTo);
     var startAdding=0;
     if (lastDisplayed<weHaveUpTo) {
-      //console.log('displaying from', lastDisplayed, 'to', weHaveUpTo);
       // if nothing displayed then start
       if (lastDisplayed===0) {
         startAdding=1;
@@ -32,8 +23,6 @@ function expandThreadHandler(tThread, expandLink) {
       // start inserting
       for(var m in missing) {
         if (startAdding) {
-          //console.log('earlyAdd', m);
-          //divPost.childNodes[0]
           // if they click collapse, stop adding
           if (expandLink.expanded) {
             // actually add post
@@ -44,12 +33,10 @@ function expandThreadHandler(tThread, expandLink) {
             processPostCell(insertedNode);
           }
         }
-        //console.log(m, '==', lastDisplayed, '==', weHaveUpTo);
         if (m==lastDisplayed) {
           startAdding=1;
         }
         if (m==weHaveUpTo) {
-          //console.log('conclude');
           startAdding=0;
           lastDisplayed=parseInt(m);
           break;
@@ -58,7 +45,6 @@ function expandThreadHandler(tThread, expandLink) {
       // done inserting
       // update IDs
       var ids = document.getElementsByClassName('labelId');
-      //console.log('threadjs found', ids.length, 'labelIds');
       // build idsRelation
       for (i = 0; i < ids.length; i++) {
         processIdLabel(ids[i]); // brings lookup up to date
@@ -70,15 +56,6 @@ function expandThreadHandler(tThread, expandLink) {
       }
       expandLink.expandingState=false;
     }
-    /*
-    if (done==missing.length) {
-      console.log('done');
-      // should be sequential
-      for(var l in missing) {
-        divPost.insertBefore(postHtml[l], divPost.childNodes[0]);
-      }
-    }
-    */
   }
 
   for(var l in missing) {
@@ -95,7 +72,6 @@ function expandThreadHandler(tThread, expandLink) {
           newDiv.id=missing[l]+'';
           postHtml[l]=newDiv;
           // add to the top
-          //divPost.appendChild(newDiv);
           checkDone();
         });
       } else {
@@ -147,7 +123,7 @@ for(var i=0; i<threads.length; i++) {
           } else {
             console.log('expanding');
             //libajaxget('/'+board+'/res/'+tThread.id+'.json', function(json) {
-            var threadJsonUrl = '/'boardUri'/res/'tThread'.json';
+            var threadJsonUrl = '/' + boardUri + '/res/' + tThread.id + '.json';
             //console.log('threadJsonUrl', threadJsonUrl);
             localRequest(threadJsonUrl, function receivedData(error, json) {
               //console.log('got json', json);

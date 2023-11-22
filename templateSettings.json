@@ -1,6 +1,8 @@
 {
   "optional": {
 	"dynamicHeader": "content/header.html",
+	"dynamicHeaderBoard": "content/headerBoard.html",
+	"dynamicHeaderThread": "content/headerThread.html",
 	"dynamicFooter": "content/footer.html",
 	"dynamicFooterAlt": "content/footerAlt.html",
 	"dynamicAnnouncement": "content/announcement.html",

@@ -2,11 +2,15 @@ document.getElementById('overrideButton').addEventListener('click', function() {
     var sidebar = document.querySelector('.sidebar-wrapper-ontop');
     var content = document.querySelector('.content-wrapper');
     var navHeader = document.querySelector('nav.navHeader');
+    var headerSide = document.querySelector('.headerLinks');
+    var butt = document.querySelector('.sideButt');
 
     if (sidebar && content && navHeader) {
         sidebar.style.visibility = 'hidden';
         content.style.marginLeft = '0';
         navHeader.style.left = '0';
+		headerSide.style.right= '13px';
+        butt.style.visibility = 'visible';
         
         // Store state in local storage
         localStorage.setItem('sidebarState', 'hidden');
@@ -19,11 +23,15 @@ document.getElementById('applyCustomCSS').addEventListener('click', function() {
     var sidebar = document.querySelector('.sidebar-wrapper-ontop');
     var content = document.querySelector('.content-wrapper');
     var navHeader = document.querySelector('nav.navHeader');
+    var headerSide = document.querySelector('.headerLinks');
+    var butt = document.querySelector('.sideButt');
 
     if (sidebar && content && navHeader) {
         sidebar.style.visibility = 'visible';
         content.style.marginLeft = '225px';
         navHeader.style.left = '225px';
+		headerSide.style.right= '133px';
+		butt.style.visibility = 'hidden';
 
         // Store state in local storage
         localStorage.setItem('sidebarState', 'visible');
@@ -39,11 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
         var sidebar = document.querySelector('.sidebar-wrapper-ontop');
         var content = document.querySelector('.content-wrapper');
         var navHeader = document.querySelector('nav.navHeader');
-        
+		var headerSide = document.querySelector('.headerLinks');
+		var butt = document.querySelector('.sideButt');
+
         if (sidebar && content && navHeader) {
             sidebar.style.visibility = 'hidden';
             content.style.marginLeft = '0';
             navHeader.style.left = '0';
+			headerSide.style.right= '13px';
+			butt.style.visibility = 'visible';
         } else {
             console.error('One or more elements not found!');
         }
