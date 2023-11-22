@@ -1402,9 +1402,14 @@ fieldset legend2 {
   color: var(--role-color);
 }
 
-.labelRole:before {
+.labelRole:after {
   font-family: 'Icons';
   content: url('/.static/favicon.png');
+  margin-left: 4px;
+}
+
+.labelRole:before {
+  content: '##';
   margin-right: 4px;
 }
 
