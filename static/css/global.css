@@ -3035,6 +3035,10 @@ td.mb-cell-delete {
     margin-bottom: 10px;
 }
 
+.divPosts {
+	margin-left: -12px;
+}
+
 @media (max-width: 767px) {
   .sidebar-wrapper-ontop {
     visibility: hidden;
@@ -3086,6 +3090,10 @@ td.mb-cell-delete {
     font-size: 11px;
     margin-bottom: 12px;
  }
+ 
+  .divPosts {
+	margin-left: 0px;
+  }
 }
 
 .newsMobile{
