@@ -427,9 +427,6 @@ postCommon.sha256 = async function(file) {
     for (var i = 0; i < i8a.length; i += 4) {
       a.push(i8a[i] << 24 | i8a[i + 1] << 16 | i8a[i + 2] << 8 | i8a[i + 3]);
     }
-
-    var wordArray = CryptoJS.lib.WordArray.create(a, i8a.length);
-    var hashHex = CryptoJS.SHA256(wordArray).toString();
   }
 
   return hashHex;

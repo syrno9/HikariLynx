@@ -33,7 +33,7 @@
     "pages/news.html",
 	"pages/legal.html",
 	"pages/irc.html",
-	"pages/banned.html"
+	"pages/blotter.html"
   ],
   "logIndexCell": "cells/logIndexCell.html",
   "accountPage": "pages/account.html",

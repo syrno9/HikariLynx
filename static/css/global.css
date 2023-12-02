@@ -925,7 +925,7 @@ fieldset legend2 {
 
 #haImage2 {
   border: 1px solid var(--border-color);
-  max-width: 728px;
+  max-width: 638px;
 }
 
 #favoriteButton {
@@ -3014,7 +3014,8 @@ td.mb-cell-delete {
     width: max-content;
     margin: auto;
     font-size: 11px;
-    margin-bottom: 12px;
+    margin-bottom: -8px;
+	font-weight: bold;
 }
 
 #dynamicBlotter table {
@@ -3033,6 +3034,10 @@ td.mb-cell-delete {
 #dynamicBlotter.alt {
     border-bottom: 1px solid #282a2e;
     margin-bottom: 10px;
+}
+
+.blotterPageNo {
+	display: block;
 }
 
 .divPosts {
@@ -3057,8 +3062,8 @@ td.mb-cell-delete {
     text-align: center;
   }
 
-  .haImage2{
-    max-width: 460px;
+  #haImage2{
+    max-width: 330px;
     text-align: center;
   }
 
@@ -3193,4 +3198,8 @@ td.mb-cell-delete {
 
 .sideButt {
 	visibility: hidden;
+}
+
+.spanId {
+	display: none;
 }
