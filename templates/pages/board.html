@@ -13,6 +13,10 @@
   href="/.static/css/katex.min.css"
   type="text/css"
   rel="stylesheet" />
+<link
+  href="/.static/css/PaintBBS/neo.css"
+  type="text/css"
+  rel="stylesheet" />
 <script src="/.static/js/theme.js"></script>
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
@@ -23,7 +27,6 @@
 <div class="sidebar-wrapper-ontop">
 <div class="navigation-sidebar">
 <div class="navHeader" id="dynamicSidebarBoard"></div>
-</div>
 </div>
 </div>
 </div>
@@ -70,7 +73,7 @@
     <div id="sideCatalogOverlay"> </div>
   </label>
   <header class="boardHeader">
-    <img id="bannerImage" />
+    <img id="bannerImage" title="click 2 change" style="cursor:pointer"/>
     <div>
 	<h1 id="labelName"></h1>
     </div>
@@ -79,12 +82,12 @@
 <hr>
 <div class="mobileHide">
 <div class="haImage2">
-<a href="https://a.jlist.com/moe.php?id=3017_1_1_3" target="_blank" rel="nofollow"><img src="https://a.jlist.com/media/banners/general--wide.jpg" alt="Visit J-List - Your Favorite Online Shop and Friend in Japan" id="haImage2"></a>
+<a href="https://a.jlist.com/moe.php?id=3017_1_1_3" target="_blank" rel="nofollow"><img src="/.static/general--wide.jpg" alt="Visit J-List - Your Favorite Online Shop and Friend in Japan" id="haImage2"></a>
 </div>
 </div>
 <div class="mobileShow">
 <div class="haImage2">
-<a href="https://a.jlist.com/moe.php?id=3017_2_1_6" target="_blank" rel="nofollow"><img style="border:1px solid var(--border-color)" src="https://a.jlist.com/media/banners/figure--mobile.jpg" alt="Get the Newest Figures from J-List - Your Favorite Online Shop and Friend in Japan"></a></a>
+<a href="https://a.jlist.com/moe.php?id=3017_2_1_6" target="_blank" rel="nofollow"><img style="border:1px solid var(--border-color)" src="/.static/figure-box.jpg" alt="Get the Newest Figures from J-List - Your Favorite Online Shop and Friend in Japan"></a>
 </div>
 </div>
 <hr>
@@ -133,8 +136,8 @@
 <div id="dynamicBlotter"></div>
   <hr>
   <div class="haImage">
-	<a href="/v/" id="haContainer">
-		<img src="/.static/banners/Hikari_V2.gif" class="haImage" id="haImage">
+	<a href="/" id="haContainer">
+		<img src="/.static/banners/Hikari_Home.gif" class="haImage" id="haImage">
 	</a>
   </div>
   <div id="dynamicAnnouncement"></div>
@@ -183,6 +186,7 @@
 
 </body>
 <script src="/.static/js/BUTTON.js"></script>
+<script src="/.static/js/i.js"></script>
 <script src="/.static/js/song.js"></script>
 <script src="/.static/js/banner.js"></script>
 <script src="/.static/js/emotes.js"></script>
@@ -204,5 +208,7 @@
 <script src="/.static/js/sideCatalog.js"></script>
 <script src="/.static/js/bypassUtils.js"></script>
 <script src="/.static/js/ruffle/ruffle.js" defer></script>
+<script src="/.static/js/PaintBBS/neo.js" defer></script>
+<script src="/.static/js/PaintBBS/integration.js" defer></script>
 
 </html>

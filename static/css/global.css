@@ -138,7 +138,7 @@ nav.navHeader .coloredIcon:before, footer .coloredIcon:before {
 }
 
 .navLinkHome:after {
-  content: 'Home';
+  content: 'Up to hikari3.ch';
 }
 
 .navBoardList:before {
@@ -435,7 +435,7 @@ input[type=button], input[type=submit], button {
   padding: 5px;
   margin-bottom: 10px;
   transition: all 0.2s ease 0s;
-  width: 300px
+  width: 285px
 }
 
 .selectedCell {
@@ -1404,7 +1404,7 @@ fieldset legend2 {
 
 .labelRole:after {
   font-family: 'Icons';
-  content: url('/.static/favicon.png');
+  content: url('/.static/staff.png');
   margin-left: 4px;
 }
 
@@ -1415,7 +1415,7 @@ fieldset legend2 {
 
 .noEmailName, .noEmailName:hover {
   color: var(--name-color);
-  cursor: default;
+  cursor: auto;
 }
 
 .youName::after {
@@ -1484,7 +1484,7 @@ fieldset legend2 {
   font-size: 120%;
 }
 
-.labelOmission, .labelLastEdit {
+.labelOmission {
   font-size: 80%;
   margin-top: 0.75em;
   margin-left: 0.75em;
@@ -1492,6 +1492,10 @@ fieldset legend2 {
 
 .labelOmission:after {
     content: " Click Reply to view.";
+}
+
+.labelLastEdit {
+  display: none;
 }
 
 .divMessage {
@@ -2605,7 +2609,7 @@ td.mb-cell-delete {
   .titleWrapper {
 	margin: 0;
 	margin-top: 2em;
-	width: 90%;
+	width: 100%;
     min-width: unset;
   }
   .logoImg {
@@ -3037,7 +3041,7 @@ td.mb-cell-delete {
 }
 
 .blotterPageNo {
-	display: block;
+	display: revert;
 }
 
 .divPosts {
@@ -3098,6 +3102,12 @@ td.mb-cell-delete {
  
   .divPosts {
 	margin-left: 0px;
+  }
+
+  .column {
+    float: left;
+    width: 8em;
+    text-align: left;
   }
 }
 
@@ -3202,4 +3212,57 @@ td.mb-cell-delete {
 
 .spanId {
 	display: none;
+}
+
+.BBSNeo {
+	display: none;
+}
+
+.homePosts {
+	height: 398px;
+	overflow-y: hidden;
+}
+
+.mobileThreadCell {
+  padding: 0.5em;
+  display: block;
+  font-size: 75%;
+  overflow: hidden;
+}
+
+.mobileThreadCell img {
+  float: left;
+  margin-right: 10px;
+  max-width: 125px;
+  max-height: 80px;
+  border: 1px solid var(--horizon-sep-color)
+}
+
+.mobileThreadCellText span {
+  text-align: right;
+}
+
+#mobileImages img{
+    width: 88px;
+    max-height: 88px;
+    margin: 0.5rem;
+    object-fit: cover;
+    border: 1px solid var(--horizon-sep-color);
+}
+
+#fieldEmail, #qremail {
+    width: 249px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+#postName {
+	color: var(--name-color);
+	font-weight: bold;
+}
+
+.flashContent {
+    vertical-align: middle;
+    text-align: left;
+    font-size: 10pt;
 }

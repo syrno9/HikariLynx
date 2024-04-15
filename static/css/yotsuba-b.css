@@ -258,7 +258,7 @@ font-size: 90%;
 }
 
 .innerPost {
-  display: inline-block;
+  display: table;
   padding: 0.25em;
   max-width: 100%;
 
@@ -324,4 +324,9 @@ font-size: 90%;
 
 .stickyNavB {
 	display: block;
+}
+
+#fieldEmail, #qremail {
+    border: 1px solid var(--border-color);
+    border-radius: 1px;
 }

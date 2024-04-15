@@ -22,16 +22,21 @@
 		placeholder="Anonymous" style="width: 244px">
 		</td>
   </tr>
-  <tr class="hidden">
+  <tr>
     <th>E-mail</th>
-    <td><input
+    <td><select
         type="text"
         autocomplete="none"
         class="postingInput"
         id="fieldEmail"
-        name="email" style="width: 244px"></td>
+        name="email">
+		<option value=""></option>
+		<option value="sage">sage</option>
+		<option value="fortune">fortune</option>
+		</select>
+		</td>
   </tr>
-  <tr id="divOptions">
+  <tr id="divOptions" class="hidden">
     <th>Options</th>
     <td>
       <span id="useSageSpan">
@@ -159,6 +164,12 @@
 		  <div class="fShow">Choose File</div>
         </div>
         <div id="selectedDiv"></div>
+		<div class="BBSNeo">
+        <applet-dummy name="paintbbs" width="512" height="512" >
+          <param name="image_width" value="384">
+          <param name="image_height" value="384">
+        </applet-dummy>
+		</div>
       </div>
 
       <div>

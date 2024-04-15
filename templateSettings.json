@@ -33,7 +33,8 @@
     "pages/news.html",
 	"pages/legal.html",
 	"pages/irc.html",
-	"pages/blotter.html"
+	"pages/blotter.html",
+	"pages/advertise.html"
   ],
   "logIndexCell": "cells/logIndexCell.html",
   "accountPage": "pages/account.html",

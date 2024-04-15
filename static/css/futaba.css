@@ -494,17 +494,23 @@ textarea {
 #divPages {
     display: inline-block;
     border: 1px solid black;
+	border-right-color: gray;
+    border-bottom-color: gray;
     padding: 1px;
     text-decoration: underline;
 }
 
 #linkNext {
 	border: 1px solid black;
+	border-right-color: gray;
+    border-bottom-color: gray;
     padding: 1px 2px;
 }
 
 #linkPrevious {
 	border: 1px solid black;
+	border-right-color: gray;
+    border-bottom-color: gray;
     padding: 1px 2px;
 }
 
@@ -521,4 +527,9 @@ textarea {
 
 .fShow {
 	display: block;
+}
+
+#fieldEmail, #qremail {
+    border: 1px solid gray;
+    border-radius: 1px;
 }

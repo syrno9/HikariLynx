@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
         '/h3/',
         '/rules',
         '/rules',
-        '/irc'
+        '/irc',
+        '/i/',
+        '/',
+        '/f/'
     ];
 
     const imageUrls = [
@@ -32,7 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
         '/.static/banners/Hikari_H3.png',
         '/.static/banners/Hikari_Rules.png',
         '/.static/banners/Hikari_Rules2.png',
-        '/.static/banners/Hikari_Irc.png'
+        '/.static/banners/Hikari_Irc.png',
+        '/.static/banners/Hikari_I.png',
+        '/.static/banners/Hikari_Home.gif',
+        '/.static/banners/Hikari_F.png'
     ];
 
     const randomIndex = Math.floor(Math.random() * haUrls.length);
@@ -40,3 +46,13 @@ document.addEventListener('DOMContentLoaded', function() {
     haContainer.href = haUrls[randomIndex];
     haImage.src = imageUrls[randomIndex];
 });
+
+    var bannerImage = document.getElementById('bannerImage');
+
+    bannerImage.addEventListener('click', function() {
+      var currentSrc = bannerImage.src;
+
+      var newSrc = currentSrc + '?timestamp=' + new Date().getTime();
+
+      bannerImage.src = newSrc;
+    });

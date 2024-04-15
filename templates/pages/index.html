@@ -12,6 +12,12 @@
 <script src="/.static/js/theme.js"></script>
 <script src="/.static/js/interfaceUtils.js"></script>
 </head>
+<style>
+    #toggle {
+      visibility: hidden;
+	  margin: 0
+    }
+</style>
 <body>
 <nav class="navHeader" id="dynamicHeader"></nav>
 <div class="page-wrapper">
@@ -37,6 +43,7 @@
 		<img src="/.static/masco.gif" width="190">
 		<em><p id="quote">"Three times the comfy!"</p></em>
 		<p class="small"><a href="/news"><u>News</u></a> | <a href="/faq"><u>FAQ</u></a> | <a href="/rules"><u>Rules</u></a> | <a href="/links"><u>Friends</u></a> | <a href="/irc"><u>Chats</u></a></p>
+		<p class="small"><a href="/legal"><u>Legal</u></a> | <a href="/contact"><u>Contact</u></a> | <a href="/advertise"><u>Advertise</u></a></p>
 		</div>
 		</div>
 	  </div>
@@ -47,19 +54,24 @@
 		<div class="box-content">
 		<em><p>Welcome to hikari3.ch!</p></em>
 		<p>A very comfy imageboard for people that like to take it easy. To get started, read the rules, then read the FAQ. After that, you can start posting!</p>
-		<hr>
+		</div>
+	  <div class="box-min-title3" style="margin-top: 15px">Boards</div>
+		<div class="box-content">
 		<div class="container">
 		<div class="column">
-        <p><u>Interests:</u></p>
+        <p><em><u>Interests:</u></em></p>
         <p><a href="/jp/">Otaku Culture</a></p>
         <p><a href="/t/">Technology</a></p>
         <p><a href="/v/">Video Games</a></p>
     </div>
     <div class="column">
-        <p><u>Other:</u></p>
+        <p><em><u>Other:</u></em></p>
         <p><a href="/en/">General</a></p>
+        <p><a href="/h3/">hikari3 Discussion</a></p>
+    </div>
+    <div class="column">
+        <p><em><u>Misc:</u></em></p>
 		<p><a href="/f/">Flash</a></p>
-        <p><a href="/h3/">Site Meta</a></p>
         <p><a href="/i/">Oekaki</a></p>
     </div>
     </div>
@@ -68,7 +80,7 @@
 	  <hr>
 	  <div  style="flex: 1; margin-bottom: 5px">
 		<div class="box-content">
-		<strong>Current News: <a href="/news">UPDATE by syrno - 10/28/23 @ 5:17 AM (UTC)</a></strong>
+		<strong>Current News: <a href="/news">MORE UPDATES by syrno - 12/21/23 @ 11:53 PM (UTC)</a></strong>
 		</div>
       </div>
 	  <hr>
@@ -86,9 +98,11 @@
     <div style="display: flex; flex-direction: row; align-items: flex-start; width: 100%">
         <div style="flex: 0.25; width: 100%; margin-right: 10px;">
             <div style="flex: 1; margin-bottom: 10px;">
-                <div class="box-min-title3">Latest Replies</div>
+                <div class="box-min-title3">Latest Posts <input type="checkbox" id="toggle"></div>
                 <div class="box-content2">
-                    <div id="latestPosts"></div>
+				<div class="homePosts">
+                    <div id="latestPosts" style="width: 185px;overflow-x: hidden;"></div>
+                </div>
                 </div>
             </div>
         </div>
@@ -144,327 +158,57 @@
 		<p>A very comfy imageboard for people that like to take it easy. To get started, read the rules, then read the FAQ. After that, you can start posting!</p>
 		</div>
 	  </fieldset>
+		<div style="text-align: center; margin-bottom: 10px">
+		<p class="small"><a href="/news"><u>News</u></a> | <a href="/faq"><u>FAQ</u></a> | <a href="/rules"><u>Rules</u></a> | <a href="/links"><u>Friends</u></a> | <a href="/irc"><u>Chats</u></a> | <a href="/legal"><u>Legal</u></a> | <a href="/contact"><u>Contact</u></a> | <a href="/advertise"><u>Advertise</u></a></p>
+		</div>
 	  <fieldset class="box-min">
         <div class="box-min-title">Boards</div>
 		<div class="box-content">
 		<div class="container">
-    <div class="column">
-        <p><u>Interests:</u></p>
-        <p><a href="/aca/">Academic Topics</a></p>
+		<div class="column">
+        <p><em><u>Interests:</u></em></p>
         <p><a href="/jp/">Otaku Culture</a></p>
         <p><a href="/t/">Technology</a></p>
         <p><a href="/v/">Video Games</a></p>
     </div>
     <div class="column">
-        <p><u>Other:</u></p>
+        <p><em><u>Other:</u></em></p>
         <p><a href="/en/">General</a></p>
+        <p><a href="/h3/">hikari3 Discussion</a></p>
+    </div>
+    <div class="column">
+        <p><em><u>Misc:</u></em></p>
 		<p><a href="/f/">Flash</a></p>
-        <p><a href="/h3/">Site Meta</a></p>
+        <p><a href="/i/">Oekaki</a></p>
+    </div>
     </div>
 		</div>
-		</div>
+      </fieldset>
+
+      <fieldset class="box-min" style="margin-bottom: 10px; margin-top: 10px;">
+        <div class="box-min-title">Active Threads</div>
+        <div id="mobile-threads"></div>
+      </fieldset>
+      <fieldset class="box-min" style="margin-bottom: 10px; margin-top: 10px;">
+        <div class="box-min-title">Recent Images</div>
+		<div id="mobileImages">
       </fieldset>
       <fieldset class="box-min" style="margin-bottom: 10px; margin-top: 10px;">
         <div class="box-min-title">Latest Posts</div>
         <div id="divLatestPosts"></div>
       </fieldset>
-<div id="mobileContainer" style="display: none">
-<p class="small" style="margin-bottom: 10px; margin-top: 10px; text-align: center">
-    <a id="newsButton"><u>News</u></a> | 
-    <a id="faqButton"><u>FAQ</u></a> | 
-    <a id="rulesButton"><u>Rules</u></a> | 
-    <a id="friendsButton"><u>Friends</u></a> | 
-    <a id="chatsButton"><u>Chats</u></a>
-</p>
-
-	  <div class="newsMobile">
-	  <fieldset class="box-min" style="margin-top: 10px;">
-        <div class="box-min-title">News</div>
-		<div class="box-content">
-		<div id="dynamicNews"></div>
-		</div>
-	  </fieldset>
+		<p class="small" style="text-align: center">- <a href="https://gitgud.io/LynxChan/LynxChan">LynxChan</a> + <a href="https://github.com/syrno9/HikariLynx/">HikariLynx</a> -</p>
 	  </div>
-	  <div class="faqMobile">
-	  <fieldset class="box-min" style="margin-top: 10px;">
-        <div class="box-min-title">FAQ</div>
-		<div class="box-content">
-			<p><strong>What is hikari3.ch?</strong>
-			<hr>
-			<div style="margin-left: 5px;">
-				<p>A simple imageboard based on being comfy, relaxed and fun.</p>
-				<p>It was founded in May, 2023 by syrno, the current administrator.</p>
-			</div>
-			<hr>
-			<p><strong>What is an imageboard?</strong></p>
-			<hr>
-			<div style="margin-left:5px;">
-				<p>A web forum based around anonymous discussions and images. Anonymity being the main difference from traditional forums, which allows people to focus more on posts instead of identity.</p></div><hr>
-<strong><p>Is there a way to authenticate my identity?</p></strong>
-<hr>
-<div style="margin-left:5px;">
-<p>Yes, by using a tripcode, although we encourage more anonymous posting. It’s more fun that way!</p>
-</div><hr>
-<strong><p>What are tripcodes?</p></strong>
-<hr>
-<div style="margin-left: 5px;">
-<p>After entering your name and #, you will put in a password, to which it converts the password into a code, which is then displayed next to the user's name or post. Secure tripcodes use ##. For example, you would put: name##password in the name field.</p><hr>
-<strong><p>Who is that blue woman??</p></strong>
-<hr>
-<div style="margin-left: 5px;">
-<p>Hikari-chan, our mascot. The art of her on the homepage was created by MEMEow.</p>
-</div>
-		</div>
-		</div>
-	  </fieldset>
-</div>
-
-	  <div class="rulesMobile">
-	  <fieldset class="box-min" style="flex: 1; margin-right: 10px;">
-        <div class="box-min-title">Rules</div>
-		<div class="box-content">
-		<p><strong>Global Rules</strong></p>
-		<hr>
-		<div style="margin-left: 5px;">
-		The content posted by users here do not reflect the views or opinions of anyone running the site. These rules should be common sense, but if for whatever reason, you violate any of them, you may be restricted from posting. If you think your ban wasn't deserved, <a href="/contact">tell me</a>.</p>
-		<ul>
-		<p style="margin-bottom: 15px;">1.) Lurk before posting. If you're new here, it's recommended to get a good idea of what the community is like before posting.</p>
-		<p style="margin-bottom: 15px;">2. You must be 18 years of age or older to browse this website.</p>
-		<p style="margin-bottom: 15px;">3. You will not upload, post, receive, or transmit content that violates local or United States.</p>
-		<p style="margin-bottom: 15px;">4. Any media that depicts the sexual abuse of children is explicitly forbidden. (This includes any jailbait/borderline content. Even if fictional, realistic/3DCG depictions)</p>
-		<p style="margin-bottom: 15px;">5. Post threads and images in the appropriate boards.</p>
-		<p style="margin-bottom: 15px;">6. Ecchi is allowed, but any showings of <span style="background-color: rgb(166,238,141); color: rgb(18,0,21);">PENIS</span> or <span style="background-color: rgb(65,236,48); color: rgb(251,93,168);">VAGINA</span> will be either deleted or spoilered.</p>
-		<p style="margin-bottom: 15px;">7. Posts with gore will be deleted, and will earn you a ban.</p>
-		<p style="margin-bottom: 15px;">8. Buzzwords and most nu-internet slang are not banned but should be kept minimum.</p>
-		<p style="margin-bottom: 15px;">9. NO raids, politics, useless posts, pepes, and wojacks.</p>
-		<p style="margin-bottom: 15px;">10. The most important rule: Keep it comfy. We're here to spread love, not hate!</p>
-		<p style="margin-bottom: 15px;">(Don't start flamewars. Take it easy! Know when a joke is taken too far)</p>
-		</ul>
-		<hr>
-		</div>
-		<p><strong>/aca/ - Academic Topics board</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">All threads must be on-topic. A good rule of thumb: if the field under which your thread falls has an academic journal dedicated to it, it is on topic.</p>
-		</ul><hr>
-		</div>
-		<p><strong>/en/ - General board</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">This is the main board where anything can happen... (All global rules still apply, and you must speak in engrish)</p>
-		</ul>
-		</div><hr>
-		<p><strong>/f/ - Flash board</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">Currently the only board where erotic content is allowed. Anything suspicious will be banned.</p>
-		<p style="margin-bottom: 15px;">(I recommend you put details in the subject line)</p>
-		</ul>
-		</div><hr>
-		<p><strong>/h3/ - hikari3 Discussion & Questions board</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">Only post questions, suggestions, or anything about the site.</p>
-		</ul>
-		</div><hr>
-		<p><strong>/jp/ - Otaku Culture</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">1. All images and discussions must be related to anime, manga, or Japanese culture.</p>
-		<p style="margin-bottom: 15px;">2. Don't delibrerately spoil any series'.</p>
-		<p style="margin-bottom: 15px;">3. Disrespect towards Japanese culture is not allowed.</p>
-		</ul>
-		</div><hr>
-		<p><strong>/t/ - Technology</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">1. This board is for general discussion on the topic of technology. For more theoretical matters post in <a href="/aca/">/aca/</a></p>
-		<p style="margin-bottom: 15px;">2. Let's all love Lain.</p>
-		</ul>
-		</div><hr>
-		<p><strong>/v/ - Video Games</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">1. Posts must be relevant to video games</p>
-		<p style="margin-bottom: 15px;">2. Spoil any spoiler files (duh)</p>
-		</ul>
-		</div>
-		</div>
-      </fieldset>
-	  </div>
-
-	  <div class="friendsMobile">
-	  <fieldset class="box-min" style="flex: 1; margin-right: 10px;">
-        <div class="box-min-title">Links</div>
-		<div class="box-content">
-			<p><strong>Friend Sites</strong>
-			<hr>
-			<div style="margin-left: 5px;">
-				<p>If you like this site, you should consider visiting these cool sites:</p>
-<ul>
-			<li><a href="https://wapchan.org/" target="_blank">wapchan.org</a> - Comfy imageboard for discussion of retro anime</li>
-			<li><a href="https://wapchan.org/kind/">/kind/</a> - A kind image board for discussing kind things</li>
-</ul>
-			</div>
-</div>
-</fieldset>
-	  </div>
-
-	  <div class="chatsMobile">
-	  <fieldset class="box-min" style="flex: 1; margin-right: 10px;">
-        <div class="box-min-title">Chats</div>
-		<div class="box-content">
-		<p>These are for if you would like to have quick conversations instant conversations with other hikari3 users.</p>
-		<p>(These are not meant to be replacement for discussions on the boards however, try to keep the discussions there)</p>
-		<hr>
-		<h3>Discord (Post Notifications)</h3>
-		<p>The primary use for this is to be notified when a post is made on the site, but is also linked with the IRC chat.</p>
-		<p><a href="https://discord.gg/XfpsgeTmum">Invite link</a></p>
-		<p>(The invite expires every 30 days, may not always be up to date)</p>
-		<hr>
-		<h3>IRC</h3>
-		<div style="text-align: center">
-		<p>#hikari3 @ irc.rizon.net</p>
-		</div>
-		</div>
-      </fieldset>
-	  </div>
-</div>
-
-	  <div class="rulesMobile">
-	  <fieldset  style="flex: 1; margin-right: 10px;">
-        <div class="box-min-title3">Rules</div>
-		<div class="box-content">
-		<p><strong>Global Rules</strong></p>
-		<hr>
-		<div style="margin-left: 5px;">
-		The content posted by users here do not reflect the views or opinions of anyone running the site. These rules should be common sense, but if for whatever reason, you violate any of them, you may be restricted from posting. If you think your ban wasn't deserved, <a href="/contact">tell me</a>.</p>
-		<ul>
-		<p style="margin-bottom: 15px;">1.) Lurk before posting. If you're new here, it's recommended to get a good idea of what the community is like before posting.</p>
-		<p style="margin-bottom: 15px;">2. You must be 18 years of age or older to browse this website.</p>
-		<p style="margin-bottom: 15px;">3. You will not upload, post, receive, or transmit content that violates local or United States.</p>
-		<p style="margin-bottom: 15px;">4. Any media that depicts the sexual abuse of children is explicitly forbidden. (This includes any jailbait/borderline content. Even if fictional, realistic/3DCG depictions)</p>
-		<p style="margin-bottom: 15px;">5. Post threads and images in the appropriate boards.</p>
-		<p style="margin-bottom: 15px;">6. Ecchi is allowed, but any showings of <span style="background-color: rgb(166,238,141); color: rgb(18,0,21);">PENIS</span> or <span style="background-color: rgb(65,236,48); color: rgb(251,93,168);">VAGINA</span> will be either deleted or spoilered.</p>
-		<p style="margin-bottom: 15px;">7. Posts with gore will be deleted, and will earn you a ban.</p>
-		<p style="margin-bottom: 15px;">8. Buzzwords and most nu-internet slang are not banned but should be kept minimum.</p>
-		<p style="margin-bottom: 15px;">9. NO raids, politics, useless posts, pepes, and wojacks.</p>
-		<p style="margin-bottom: 15px;">10. The most important rule: Keep it comfy. We're here to spread love, not hate!</p>
-		<p style="margin-bottom: 15px;">(Don't start flamewars. Take it easy! Know when a joke is taken too far)</p>
-		</ul>
-		<hr>
-		</div>
-		<p><strong>/aca/ - Academic Topics board</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">All threads must be on-topic. A good rule of thumb: if the field under which your thread falls has an academic journal dedicated to it, it is on topic.</p>
-		</ul><hr>
-		</div>
-		<p><strong>/en/ - General board</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">This is the main board where anything can happen... (All global rules still apply, and you must speak in engrish)</p>
-		</ul>
-		</div><hr>
-		<p><strong>/f/ - Flash board</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">Currently the only board where erotic content is allowed. Anything suspicious will be banned.</p>
-		<p style="margin-bottom: 15px;">(I recommend you put details in the subject line)</p>
-		</ul>
-		</div><hr>
-		<p><strong>/h3/ - hikari3 Discussion & Questions board</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">Only post questions, suggestions, or anything about the site.</p>
-		</ul>
-		</div><hr>
-		<p><strong>/jp/ - Otaku Culture</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">1. All images and discussions must be related to anime, manga, or Japanese culture.</p>
-		<p style="margin-bottom: 15px;">2. Don't delibrerately spoil any series'.</p>
-		<p style="margin-bottom: 15px;">3. Disrespect towards Japanese culture is not allowed.</p>
-		</ul>
-		</div><hr>
-		<p><strong>/t/ - Technology</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">1. This board is for general discussion on the topic of technology. For more theoretical matters post in <a href="/aca/">/aca/</a></p>
-		<p style="margin-bottom: 15px;">2. Let's all love Lain.</p>
-		</ul>
-		</div><hr>
-		<p><strong>/v/ - Video Games</p></strong>
-		<hr>
-		<div style="margin-left: 5px;">
-		<ul>
-		<p style="margin-bottom: 15px;">1. Posts must be relevant to video games</p>
-		<p style="margin-bottom: 15px;">2. Spoil any spoiler files (duh)</p>
-		</ul>
-		</div>
-		</div>
-      </fieldset>
-	  </div>
-
-	  <div class="friendsMobile">
-	  <fieldset  style="flex: 1; margin-right: 10px;">
-        <div class="box-min-title3">Links</div>
-		<div class="box-content">
-			<p><strong>Friend Sites</strong>
-			<hr>
-			<div style="margin-left: 5px;">
-				<p>If you like this site, you should consider visiting these cool sites:</p>
-<ul>
-			<li><a href="https://wapchan.org/" target="_blank">wapchan.org</a> - Comfy imageboard for discussion of retro anime</li>
-			<li><a href="https://wapchan.org/kind/">/kind/</a> - A kind image board for discussing kind things</li>
-</ul>
-			</div>
-</div>
-</fieldset>
-	  </div>
-
-	  <div class="chatsMobile">
-	  <fieldset  style="flex: 1; margin-right: 10px;">
-        <div class="box-min-title3">Chats</div>
-		<div class="box-content">
-		<p>These are for if you would like to have quick conversations instant conversations with other hikari3 users.</p>
-		<p>(These are not meant to be replacement for discussions on the boards however, try to keep the discussions there)</p>
-		<hr>
-		<h3>Discord (Post Notifications)</h3>
-		<p>The primary use for this is to be notified when a post is made on the site, but is also linked with the IRC chat.</p>
-		<p><a href="https://discord.gg/ZYNhhTHX9">Invite link</a></p>
-		<p>(The invite expires every 30 days, may not always be up to date)</p>
-		<hr>
-		<h3>IRC</h3>
-		<div style="text-align: center">
-		<p>#hikari3 @ irc.rizon.net</p>
-		</div>
-		</div>
-      </fieldset>
-	  </div>
-	  </div>
-
 </body>
 <script src="/.static/js/newPosts.js"></script>
+<script src="/.static/js/imgsMobile.js"></script>
 <script src="/.static/js/banner.js"></script>
 <script src="/.static/js/home.js"></script>
 <script src="/.static/js/quote.js"></script>
 <script src="/.static/js/api.js"></script>
 <script src="/.static/js/jquery.min.js"></script>
 <script src="/.static/js/activeThreads.js"></script>
+<script src="/.static/js/mobileThreads.js"></script>
 <script src="/.static/js/settingsMenu.js"></script>
 <script src="/.static/js/watcher.js"></script>
 <script src="/.static/js/favouriteBoards.js"></script>
