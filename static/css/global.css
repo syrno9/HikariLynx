@@ -76,9 +76,8 @@ body {
 
 /********* header, footer, and nav / top and bottom of page styles ************/
 header {
-  margin: 1em 0px 1em 0px;
+  margin: 30px 0px 0em 0px;
   text-align: center;
-  margin-top: 36px;
 }
 
 footer {
@@ -1340,7 +1339,7 @@ fieldset legend2 {
 }
 
 .postInfo {
-  margin-right: 1em;
+  margin-right: 0.5em;
 }
 
 .quoteTooltip .postInfo {
@@ -1507,7 +1506,6 @@ fieldset legend2 {
 
 .innerPost {
   display: table;
-  padding: 0.25em;
   max-width: 100%;
 
   background: var(--post-color);
@@ -3265,4 +3263,8 @@ td.mb-cell-delete {
     vertical-align: middle;
     text-align: left;
     font-size: 10pt;
+}
+
+#contain {
+  float:left;
 }
