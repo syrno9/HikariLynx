@@ -3009,15 +3009,14 @@ td.mb-cell-delete {
   display: none;
 }
 
-#dynamicBlotter {
-    border: none;
-    border-top: 1px solid var(--horizon-sep-color);
-    max-width: 435px;
-    width: max-content;
-    margin: auto;
-    font-size: 11px;
-    margin-bottom: -8px;
-	font-weight: bold;
+#dynamicBlotter{
+  border: none;
+  border-top: 1px solid var(--horizon-sep-color);
+  width: 488px;
+  margin: auto;
+  font-size: 11px;
+  margin-bottom: -8px;
+  font-weight: bold;
 }
 
 #dynamicBlotter table {
