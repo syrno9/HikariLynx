@@ -1,188 +1,119 @@
-function expandThreadHandler(tThread, expandLink) {
-  var missing = expandLink.missing;
-  var divPost=tThread.querySelector('.divPosts');
-  insertPoint=divPost.children[0];
-  var postHtml={};
-  var lastDisplayed=0;
+document.addEventListener('DOMContentLoaded', function() {
+  const threads = document.querySelectorAll('.opCell');
 
-  function checkDone() {
-    var weHaveUpTo=missing.length;
-    for(var n in missing) {
-      // find the first missing post
-      if (!postHtml[n]) {
-        weHaveUpTo=n-1;
-        break;
-      }
-    }
-    var startAdding=0;
-    if (lastDisplayed<weHaveUpTo) {
-      // if nothing displayed then start
-      if (lastDisplayed===0) {
-        startAdding=1;
-      }
-      // start inserting
-      for(var m in missing) {
-        if (startAdding) {
-          // if they click collapse, stop adding
-          if (expandLink.expanded) {
-            // actually add post
-            // is the postCell's ID set?
-            var insertedNode = divPost.insertBefore(postHtml[m], insertPoint);
-            // Do post processing for: quoting, timezones, hidepost posts
-            // needs postCell
-            processPostCell(insertedNode);
-          }
-        }
-        if (m==lastDisplayed) {
-          startAdding=1;
-        }
-        if (m==weHaveUpTo) {
-          startAdding=0;
-          lastDisplayed=parseInt(m);
-          break;
-        }
-      }
-      // done inserting
-      // update IDs
-      var ids = document.getElementsByClassName('labelId');
-      // build idsRelation
-      for (i = 0; i < ids.length; i++) {
-        processIdLabel(ids[i]); // brings lookup up to date
-      }
-      if (updateIdLabels) {
-        updateIdLabels();
-      } else {
-        console.log("expansion.js - updateIdLabels dne")
-      }
-      expandLink.expandingState=false;
-    }
-  }
+  threads.forEach(thread => {
+    const omissionMessage = thread.querySelector('.labelOmission');
 
-  for(var l in missing) {
-    var previewUrl = '/' + boardUri + '/preview/' + missing[l] + '.html';
-    var scope=function(missing, l) {
-      if (!postHtml[l]) {
-        localRequest(previewUrl, function receivedData(error, html) {
-          var newDiv=document.createElement('div');
-          // strip these off the preview
-          var start='<div id="panelContent"><div class="postCell">';
-          var end='</div></div>';
-          newDiv.innerHTML=html.substring(html.indexOf(start)+start.length, html.indexOf(end))+'</div>';
-          newDiv.className='postCell';
-          newDiv.id=missing[l]+'';
-          postHtml[l]=newDiv;
-          // add to the top
-          checkDone();
-        });
-      } else {
-        checkDone();
-      }
-    }(missing, l);
-  }
-}
+    if (omissionMessage) {
+      // Create the button
+      const expandButton = document.createElement('span');
+      expandButton.classList.add('expandButton');
+      expandButton.setAttribute('title', 'Expand Thread');
 
-// find all threads
-var threads=document.querySelectorAll('.opCell');
-for(var i=0; i<threads.length; i++) {
-  var tThread=threads[i];
-  var labelOmission=tThread.querySelector('.labelOmission');
-  if (labelOmission) {
-    var expandLink=document.createElement('a');
-    expandLink.href='javascript:';
-    expandLink.expanded=0;
-    expandLink.expandingState=false;
-    var scope=function(tThread, expandLink) {
-      expandLink.onclick=function() {
-        if (expandLink.expandingState) {
-          console.log('need to queue request, state:', expandLink.expanded);
-          return;
-        }
-        if (!expandLink.expanded) {
-          expandLink.expandingState=true;
-          //console.log('expanding', tThread);
-          var havePosts={};
-          var postCells=document.querySelectorAll('.postCell');
-          var insertPoint;
-          // inventory what posts we currently have
-          for(var j=0; j<postCells.length; j++) {
-            var cell=postCells[j];
-            if (cell.id) {
-              //console.log('registering', cell.id);
-              havePosts[cell.id]=cell;
-              //insertPoint=cell;
-            } else {
-              console.log('expansion.js - expand, cell without id', cell);
-            }
-          }
+      // Insert the button before the omission message
+      omissionMessage.parentNode.insertBefore(expandButton, omissionMessage);
 
-          // have we expanded before?
-          if (expandLink.missing) {
-            // we have expanded before
-            console.log('re-expanding');
-            expandThreadHandler(tThread, expandLink);
-          } else {
-            console.log('expanding');
-            //libajaxget('/'+board+'/res/'+tThread.id+'.json', function(json) {
-            var threadJsonUrl = '/' + boardUri + '/res/' + tThread.id + '.json';
-            //console.log('threadJsonUrl', threadJsonUrl);
-            localRequest(threadJsonUrl, function receivedData(error, json) {
-              //console.log('got json', json);
-              // determine last shown posts
-              // scan ids in divPosts
-              if (!json) {
-                return;
+      let repliesExpanded = false;
+      let fetchedPosts = [];
+
+      // Add click event to the button
+      expandButton.addEventListener('click', function() {
+        if (!repliesExpanded) {
+          const threadId = thread.id;
+          const threadUri = thread.getAttribute('data-boarduri');
+          const jsonUrl = `/${threadUri}/res/${threadId}.json`;
+
+          fetch(jsonUrl)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
               }
-              expandLink.expanded=1;
-              expandLink.innerText='Collapse Thread';
-              var obj=JSON.parse(json);
-              var missing=[];
-              var posts={};
-              for(var k in obj.posts) {
-                var post=obj.posts[k];
-                posts[post.postId]=post;
-                if (!havePosts[post.postId]) {
-                  missing.push(post.postId);
-                } else {
-                  //console.log('we have', post.postId);
+              return response.json();
+            })
+            .then(data => {
+              const postsContainer = thread.querySelector('.divPosts');
+              const existingPostIds = Array.from(postsContainer.querySelectorAll('.postCell')).map(postCell => postCell.id);
+
+              data.posts.forEach(post => {
+                if (!existingPostIds.includes(post.postId.toString())) {
+                  const postCell = document.createElement('div');
+                  postCell.classList.add('postCell');
+                  postCell.setAttribute('data-boarduri', threadUri);
+                  postCell.setAttribute('id', post.postId);
+
+                  let imageHtml = '';
+                  if (post.files && post.files.length > 0) {
+                    post.files.forEach(file => {
+                      imageHtml += `
+                        <div class="panelUploads">
+                          <figure class="uploadCell">
+                            <div class="uploadDetails">
+                              <a class="nameLink" target="_blank" href="${file.path}"></a>
+                              <a class="hideFileButton glowOnHover coloredIcon"></a>
+                              <span class="hideMobile">(</span>
+                              <span class="sizeLabel">${(file.size / 1024).toFixed(2)} KB</span>
+                              <span class="dimensionLabel">${file.width}x${file.height}</span>
+                              <a class="originalNameLink" href="${file.path}" download="${file.originalName}">${file.originalName}</a>
+                              <span class="hideMobile">)</span>
+                            </div>
+                            <div></div>
+                            <a class="imgLink" target="_blank" href="${file.path}" data-filewidth="${file.width}" data-fileheight="${file.height}" data-filemime="${file.mime}">
+                              <img loading="lazy" src="${file.thumb}" height="250">
+                            </a>
+                          </figure>
+                        </div>
+                      `;
+                    });
+                  }
+
+                  postCell.innerHTML = `
+                    <div class="mobileHide" style="float: left; margin-right: 3px; font-size: small">&gt;&gt;</div>
+                    <div class="innerPost">
+                      <div class="postInfo title">
+                        <input type="checkbox" class="deletionCheckBox" name="${threadUri}-${threadId}-${post.postId}">
+                        <span class="hideButton glowOnHover coloredIcon" title="Hide"></span>
+                        <a class="linkName noEmailName">${post.name}</a>
+                        <span class="labelCreated">${new Date(post.creation).toLocaleString()}</span>
+                        <a class="linkSelf" href="#${post.postId}">No.</a>
+                        <a class="linkQuote" href="#q${post.postId}">${post.postId}</a>
+                        <a class="postButton"></a>
+                        <span class="extraMenuButton glowOnHover coloredIcon" title="Post Menu"></span>
+                        <span class="panelBacklinks"></span>
+                      </div>
+                      <div></div>
+                      ${imageHtml}
+                      <div class="divMessage">${post.markdown}</div>
+                    </div>
+                  `;
+
+                  fetchedPosts.push(postCell);
                 }
-              }
-              expandLink.missing=missing;
-              expandThreadHandler(tThread, expandLink);
+              });
+
+              // Insert new posts in reverse order
+              fetchedPosts.reverse().forEach(postCell => {
+                postsContainer.insertBefore(postCell, postsContainer.firstChild);
+              });
+
+              repliesExpanded = true;
+              expandButton.classList.remove('expandButton');
+              expandButton.classList.add('collapseButton');
+              expandButton.setAttribute('title', 'Collapse Thread');
+            })
+            .catch(error => {
+              console.error('Error fetching the JSON file:', error);
             });
-          }
         } else {
-          console.log('collapsing');
-          expandLink.expandingState=true;
-          expandLink.expanded=0;
-          expandLink.innerText='Expand Thread';
-          var missing=expandLink.missing;
-          var havePosts={};
-          var postCells=document.querySelectorAll('.postCell');
-          for(var j=0; j<postCells.length; j++) {
-            var cell=postCells[j];
-            if (cell.id) {
-              //console.log('registering', cell.id);
-              havePosts[cell.id]=cell;
-              //insertPoint=cell;
-            } else {
-              console.log('expansion.js - collapse, cell without id', cell);
-            }
-          }
-          var divPost=tThread.querySelector('.divPosts');
-          for(var l in missing) {
-            // find
-            if (havePosts[missing[l]]) {
-              divPost.removeChild(havePosts[missing[l]]);
-            } else {
-              console.log('expansion.js - collapse, cant find', missing[l]);
-            }
-          }
-          //console.log('havePosts', havePosts);
-          expandLink.expandingState=false;
+          // Remove fetched posts
+          fetchedPosts.forEach(postCell => postCell.remove());
+          fetchedPosts = [];
+
+          repliesExpanded = false;
+          expandButton.classList.remove('collapseButton');
+          expandButton.classList.add('expandButton');
+          expandButton.setAttribute('title', 'Expand Thread');
         }
-      }
-    }(tThread, expandLink);
-    expandLink.appendChild(document.createTextNode('Expand thread'));
-    labelOmission.appendChild(expandLink);
-  }
-}
+      });
+    }
+  });
+});

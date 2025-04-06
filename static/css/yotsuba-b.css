@@ -29,6 +29,11 @@
 	--thread-navbar-color: aliceblue;
 	--post-color: #d6daf0;
 	--name-color: #0f0c5d;
+	--header-color: #eef2ff;
+}
+
+.dropdowns {
+	background-color: var(--horizon-sep-color);
 }
 
 .box-g {

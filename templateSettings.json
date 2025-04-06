@@ -1,5 +1,6 @@
 {
   "optional": {
+	"topHeader": "content/header-top.html",
 	"dynamicHeader": "content/header.html",
 	"dynamicHeaderBoard": "content/headerBoard.html",
 	"dynamicHeaderThread": "content/headerThread.html",

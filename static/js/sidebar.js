@@ -6,8 +6,7 @@ document.getElementById('overrideButton').addEventListener('click', function() {
     var butt = document.querySelector('.sideButt');
 
     if (sidebar && content && navHeader) {
-        sidebar.style.visibility = 'hidden';
-        content.style.marginLeft = '0';
+        sidebar.style.width = '0px';
         navHeader.style.left = '0';
 		headerSide.style.right= '13px';
         butt.style.visibility = 'visible';
@@ -27,8 +26,7 @@ document.getElementById('applyCustomCSS').addEventListener('click', function() {
     var butt = document.querySelector('.sideButt');
 
     if (sidebar && content && navHeader) {
-        sidebar.style.visibility = 'visible';
-        content.style.marginLeft = '225px';
+        sidebar.style.width = '200px';
         navHeader.style.left = '225px';
 		headerSide.style.right= '133px';
 		butt.style.visibility = 'hidden';
